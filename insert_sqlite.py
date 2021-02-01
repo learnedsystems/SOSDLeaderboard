@@ -69,7 +69,7 @@ def delete_index_results(conn, index):
 def process_csv(filename):
     rows = []
     with open(filename, newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='|')
+        reader = csv.reader(csvfile, delimiter=',')
         for row in reader:
             rows.append(row)
 
@@ -78,7 +78,7 @@ def process_csv(filename):
 def read_csv_into_sqlite(conn, filename):
     rows = process_csv(filename)
     for row in rows:
-        name, variant, size, *latency, build_time, searcher = row
+        name, variant, size, *latency, build_time, searcher, dataset = row
         # Get median latency of run
         latency = median(latency)
         new_row = (name, variant, size, latency, build_time, searcher)

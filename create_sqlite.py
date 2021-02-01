@@ -41,6 +41,7 @@ def main():
                                         latency real NOT NULL,
                                         build_time integer NOT NULL,
                                         searcher text NOT NULL,
+                                        dataset text NOT NULL
                                     ); """
 
     conn = create_connection(database)
