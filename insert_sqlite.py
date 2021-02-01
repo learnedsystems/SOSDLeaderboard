@@ -2,6 +2,7 @@ import csv
 import sqlite3
 
 from sqlite3 import Error
+from statistics import median
 
 def create_connection(db_file):
     """ create a database connection to the SQLite database
@@ -77,4 +78,8 @@ def process_csv(filename):
 def read_csv_into_sqlite(conn, filename):
     rows = process_csv(filename)
     for row in rows:
-        insert_index_file(conn, row)
+        name, variant, size, *latency, build_time, searcher = row
+        # Get median latency of run
+        latency = median(latency)
+        new_row = (name, variant, size, latency, build_time, searcher)
+        insert_index_file(conn, new_row)

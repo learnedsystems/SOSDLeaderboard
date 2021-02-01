@@ -16,7 +16,8 @@ def get_ranked_indexes(dbname):
     pareto_points = defaultdict(list)
 
     # Get the median latency, build time, and size for each index for each size
-    for name, variant, size, *latency, build_time, searcher in all_indexes:
+    for name, variant, size, latency, build_time, searcher in all_indexes:
+        # Could have been multiple runs for latency
         pareto_points[name].append((size, latency))
 
         size_category = ''
