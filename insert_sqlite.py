@@ -25,8 +25,8 @@ def insert_index_file(conn, index_entry):
     :param index:
     :return: index id
     """
-    sql = ''' INSERT INTO indexes(name,size,build_ns,searcher,latency)
-              VALUES(?,?,?,?,?) '''
+    sql = ''' INSERT INTO indexes(name,variant,size,latency,build_time,searcher)
+              VALUES(?,?,?,?,?,?) '''
     cur = conn.cursor()
     cur.execute(sql, index_entry)
     conn.commit()
@@ -68,18 +68,13 @@ def delete_index_results(conn, index):
 def process_csv(filename):
     rows = []
     with open(filename, newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+        reader = csv.reader(csvfile, delimiter=',', quotechar='|')
         for row in reader:
             rows.append(row)
 
     return rows
 
 def read_csv_into_sqlite(conn, filename):
-    cur = conn.cursor() 
-
     rows = process_csv(filename)
     for row in rows:
-        # row format is index name, variant, nanoseconds per lookup, index size, latency, and search function
-        index_entry = (row[0], row[3], )
-        insert_index_file(conn, index_entry)
-        
+        insert_index_file(conn, row)

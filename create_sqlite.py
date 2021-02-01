@@ -36,10 +36,11 @@ def main():
 
     sql_create_indexes_table = """ CREATE TABLE IF NOT EXISTS indexes (
                                         name text NOT NULL,
-                                        size real NOT NULL,
-                                        build_ns integer NOT NULL,
+                                        variant integer NOT NULL,
+                                        size integer NOT NULL,
+                                        latency real NOT NULL,
+                                        build_time integer NOT NULL,
                                         searcher text NOT NULL,
-                                        latency integer NOT NULL
                                     ); """
 
     conn = create_connection(database)
