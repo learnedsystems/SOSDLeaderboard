@@ -78,8 +78,4 @@ def process_csv(filename):
 def read_csv_into_sqlite(conn, filename):
     rows = process_csv(filename)
     for row in rows:
-        name, variant, size, *latency, build_time, searcher, dataset = row
-        # Get median latency of run
-        latency = median(latency)
-        new_row = (name, variant, size, latency, build_time, searcher)
-        insert_index_file(conn, new_row)
+        insert_index_file(conn, row)
