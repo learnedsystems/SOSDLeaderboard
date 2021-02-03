@@ -1,5 +1,6 @@
 import csv
 import sqlite3
+import os
 
 from sqlite3 import Error
 from statistics import median
@@ -26,8 +27,8 @@ def insert_index_file(conn, index_entry):
     :param index:
     :return: index id
     """
-    sql = ''' INSERT INTO indexes(name,variant,size,latency,build_time,searcher)
-              VALUES(?,?,?,?,?,?) '''
+    sql = ''' INSERT INTO indexes(name,variant,latency,size,build_time,searcher,dataset)
+              VALUES(?,?,?,?,?,?,?) '''
     cur = conn.cursor()
     cur.execute(sql, index_entry)
     conn.commit()
@@ -79,3 +80,14 @@ def read_csv_into_sqlite(conn, filename):
     rows = process_csv(filename)
     for row in rows:
         insert_index_file(conn, row)
+
+if __name__ == "__main__":
+    conn = create_connection("./indexes.db")
+
+    data_dir = './data/'
+    csvfiles = os.listdir(data_dir)
+    print(csvfiles)
+    for file in csvfiles:
+        read_csv_into_sqlite(conn, data_dir + file)
+    
+    print(get_all_indexes(conn))

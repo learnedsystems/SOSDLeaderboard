@@ -32,13 +32,13 @@ def create_table(conn, create_table_sql):
 
 
 def main():
-    database = r"./sqlite/indexes.db"
+    database = r"./indexes.db"
 
     sql_create_indexes_table = """ CREATE TABLE IF NOT EXISTS indexes (
                                         name text NOT NULL,
                                         variant integer NOT NULL,
-                                        size integer NOT NULL,
                                         latency real NOT NULL,
+                                        size integer NOT NULL,
                                         build_time integer NOT NULL,
                                         searcher text NOT NULL,
                                         dataset text NOT NULL
