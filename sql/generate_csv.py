@@ -1,8 +1,8 @@
 import numpy as np
 import csv
 
-from sql.create_sqlite import create_connection
-from sql.insert_sqlite import get_all_indexes
+from create_sqlite import create_connection
+from insert_sqlite import get_all_indexes
 from collections import defaultdict
 from statistics import geometric_mean
 from sklearn.metrics import auc
@@ -85,4 +85,42 @@ if __name__ == "__main__":
     db = r"./indexes.db"
     
     latencies, build_times, sizes = get_ranked_indexes(db)
-    print(latencies)
+    headers = ["Name", "XS", "S", "M", "L", "XL"]
+    with open("./_data/latency.csv", "w") as f:
+        writer = csv.writer(f, delimiter=',')
+        writer.writerow(headers)
+        for index in latencies:
+            writer.writerow([
+                index,
+                latencies[index].get('xs', 'N/A'),
+                latencies[index].get('s', ' '),
+                latencies[index].get('m', ' '),
+                latencies[index].get('l', ' '),
+                latencies[index].get('xl', ' '),
+            ])
+    
+    with open("./_data/buildtimes.csv", "w") as f:
+        writer = csv.writer(f, delimiter=',')
+        writer.writerow(headers)
+        for index in build_times:
+            writer.writerow([
+                index,
+                build_times[index].get('xs', ' '),
+                build_times[index].get('s', ' '),
+                build_times[index].get('m', ' '),
+                build_times[index].get('l', ' '),
+                build_times[index].get('xl', ' ')
+            ])
+    
+    with open("./_data/sizes.csv", "w") as f:
+        writer = csv.writer(f, delimiter=',')
+        writer.writerow(headers)
+        for index in sizes:
+            writer.writerow([
+                index,
+                sizes[index].get('xs', ' '),
+                sizes[index].get('s', ' '),
+                sizes[index].get('m', ' '),
+                sizes[index].get('l', ' '),
+                sizes[index].get('xl', ' ')
+            ])

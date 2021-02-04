@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: home
+title: "Home"
 ---
 
 ## Search on Sorted Data
@@ -16,4 +17,4 @@ machine. This dataset is distributed under the [GPL 3.0](https://www.gnu.org/lic
 To have a new learned index added to the benchmark and leaderboard, send an email to [Andreas Kipf](mailto:kipf@mit.edu) or
 [Ryan Marcus](mailto:rcmarcus@mit.edu) with the manuscript and repository of the index.
 
-![DSG Logo](assets/logo.png)
+![DSG Logo](/assets/logo.png)
