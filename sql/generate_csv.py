@@ -118,9 +118,9 @@ if __name__ == "__main__":
         for index in sizes:
             writer.writerow([
                 index,
-                sizes[index].get('xs', ' '),
-                sizes[index].get('s', ' '),
-                sizes[index].get('m', ' '),
-                sizes[index].get('l', ' '),
-                sizes[index].get('xl', ' ')
+                sizes[index]['xs']/1000 if 'xs' in sizes[index] and sizes[index]['xs'] is not None else ' ',
+                sizes[index]['s']/1000 if 's' in sizes[index] and sizes[index]['s'] is not None else ' ',
+                sizes[index]['m']/1000 if 'm' in sizes[index] and sizes[index]['m'] is not None else ' ',
+                sizes[index]['l']/1000 if 'l' in sizes[index] and sizes[index]['l'] is not None else ' ',
+                sizes[index]['xl']/1000 if 'xl' in sizes[index] and sizes[index]['xl'] is not None else ' '
             ])

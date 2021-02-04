@@ -27,10 +27,10 @@ Metric to display by:
 <select id="select" onchange="changeTable(this.value)">
     <option value="latency-leaderboard">Latency (ns)</option>
     <option value="buildtime-leaderboard">Build time (ns)</option>
-    <option value="size-leaderboard">Size (MB)</option>
+    <option value="size-leaderboard">Size (KB)</option>
 </select>
 
-Results below are by model.
+Results below are by model. Click on a header to sort by that measure.
 <div id="latency-leaderboard" class = "group">
 <table id="leaderboard" class="sortable">
     <thead>
@@ -69,7 +69,7 @@ Results below are by model.
         </tr>
     </thead>
     <tbody>
-    {% for row in /data/buildtimes %}
+    {% for row in site.data.buildtimes %}
         {% if forloop.first %}
             {% continue %}
         {% endif %}
