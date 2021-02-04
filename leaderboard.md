@@ -69,7 +69,7 @@ Results below are by model.
         </tr>
     </thead>
     <tbody>
-    {% for row in site.data.buildtimes %}
+    {% for row in /data/buildtimes %}
         {% if forloop.first %}
             {% continue %}
         {% endif %}
