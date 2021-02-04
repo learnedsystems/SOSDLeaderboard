@@ -260,9 +260,9 @@ sorttable = {
      you are comparing a[0] and b[0] */
   sort_numeric: function(a,b) {
     aa = parseFloat(a[0].replace(/[^0-9.-]/g,''));
-    if (isNaN(aa)) aa = 0;
+    if (isNaN(aa)) aa = Infinity;
     bb = parseFloat(b[0].replace(/[^0-9.-]/g,''));
-    if (isNaN(bb)) bb = 0;
+    if (isNaN(bb)) bb = Infinity;
     return aa-bb;
   },
   sort_alpha: function(a,b) {

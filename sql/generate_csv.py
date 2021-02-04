@@ -92,11 +92,11 @@ if __name__ == "__main__":
         for index in latencies:
             writer.writerow([
                 index,
-                latencies[index].get('xs', ' '),
-                latencies[index].get('s', ' '),
-                latencies[index].get('m', ' '),
-                latencies[index].get('l', ' '),
-                latencies[index].get('xl', ' '),
+                round(latencies[index]['xs']) if 'xs' in latencies[index] and latencies[index]['xs'] is not None else ' ',
+                round(latencies[index]['s']) if 's' in latencies[index] and latencies[index]['s'] is not None else ' ',
+                round(latencies[index]['m']) if 'm' in latencies[index] and latencies[index]['m'] is not None else ' ',
+                round(latencies[index]['l']) if 'l' in latencies[index] and latencies[index]['l'] is not None else ' ',
+                round(latencies[index]['xl']) if 'xl' in latencies[index] and latencies[index]['xl'] is not None else ' '
             ])
     
     with open("./_data/buildtimes.csv", "w") as f:
@@ -105,11 +105,11 @@ if __name__ == "__main__":
         for index in build_times:
             writer.writerow([
                 index,
-                build_times[index].get('xs', ' '),
-                build_times[index].get('s', ' '),
-                build_times[index].get('m', ' '),
-                build_times[index].get('l', ' '),
-                build_times[index].get('xl', ' ')
+                round(build_times[index]['xs']) if 'xs' in build_times[index] and build_times[index]['xs'] is not None else ' ',
+                round(build_times[index]['s']) if 's' in build_times[index] and build_times[index]['s'] is not None else ' ',
+                round(build_times[index]['m']) if 'm' in build_times[index] and build_times[index]['m'] is not None else ' ',
+                round(build_times[index]['l']) if 'l' in build_times[index] and build_times[index]['l'] is not None else ' ',
+                round(build_times[index]['xl']) if 'xl' in build_times[index] and build_times[index]['xl'] is not None else ' '
             ])
     
     with open("./_data/sizes.csv", "w") as f:
@@ -118,9 +118,9 @@ if __name__ == "__main__":
         for index in sizes:
             writer.writerow([
                 index,
-                sizes[index]['xs']/1000 if 'xs' in sizes[index] and sizes[index]['xs'] is not None else ' ',
-                sizes[index]['s']/1000 if 's' in sizes[index] and sizes[index]['s'] is not None else ' ',
-                sizes[index]['m']/1000 if 'm' in sizes[index] and sizes[index]['m'] is not None else ' ',
-                sizes[index]['l']/1000 if 'l' in sizes[index] and sizes[index]['l'] is not None else ' ',
-                sizes[index]['xl']/1000 if 'xl' in sizes[index] and sizes[index]['xl'] is not None else ' '
+                round(sizes[index]['xs']/1000) if 'xs' in sizes[index] and sizes[index]['xs'] is not None else ' ',
+                round(sizes[index]['s']/1000) if 's' in sizes[index] and sizes[index]['s'] is not None else ' ',
+                round(sizes[index]['m']/1000) if 'm' in sizes[index] and sizes[index]['m'] is not None else ' ',
+                round(sizes[index]['l']/1000) if 'l' in sizes[index] and sizes[index]['l'] is not None else ' ',
+                round(sizes[index]['xl']/1000) if 'xl' in sizes[index] and sizes[index]['xl'] is not None else ' '
             ])
