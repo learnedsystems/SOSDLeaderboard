@@ -35,6 +35,7 @@ def main():
     database = r"./indexes.db"
 
     sql_create_indexes_table = """ CREATE TABLE IF NOT EXISTS indexes (
+                                        id integer PRIMARY KEY,
                                         name text NOT NULL,
                                         variant integer NOT NULL,
                                         latency real NOT NULL,

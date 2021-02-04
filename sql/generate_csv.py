@@ -27,7 +27,7 @@ def get_ranked_indexes(dbname):
     # Dictionaries have structure name -> size -> dataset -> variant -> time of that variant
     # First we'll process to get the lowest-latency variant on each dataset, then take the geometric
     # mean across datasets which gives us name -> size -> mean latency across datasets
-    for name, variant, latency, size, build_time, searcher, dataset in all_indexes:
+    for entry_id, name, variant, latency, size, build_time, searcher, dataset in all_indexes:
         # Could have been multiple runs for latency
 
         size_category = ''
@@ -92,7 +92,7 @@ if __name__ == "__main__":
         for index in latencies:
             writer.writerow([
                 index,
-                latencies[index].get('xs', 'N/A'),
+                latencies[index].get('xs', ' '),
                 latencies[index].get('s', ' '),
                 latencies[index].get('m', ' '),
                 latencies[index].get('l', ' '),

@@ -27,7 +27,7 @@ def insert_index_file(conn, index_entry):
     :param index:
     :return: index id
     """
-    sql = ''' INSERT INTO indexes(name,variant,latency,size,build_time,searcher,dataset)
+    sql = ''' INSERT OR IGNORE INTO indexes(name,variant,latency,size,build_time,searcher,dataset)
               VALUES(?,?,?,?,?,?,?) '''
     cur = conn.cursor()
     cur.execute(sql, index_entry)
@@ -84,10 +84,8 @@ def read_csv_into_sqlite(conn, filename):
 if __name__ == "__main__":
     conn = create_connection("./indexes.db")
 
-    data_dir = './data/'
+    data_dir = './benchmark_results/'
     csvfiles = os.listdir(data_dir)
-    print(csvfiles)
+
     for file in csvfiles:
         read_csv_into_sqlite(conn, data_dir + file)
-    
-    print(get_all_indexes(conn))
