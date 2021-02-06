@@ -259,7 +259,7 @@ PLATFORMS
   universal-darwin-20
 
 DEPENDENCIES
-  github-pages
+  github-pages (~> 211)
   jekyll (~> 3.9.0)
   jekyll-feed (~> 0.12)
   kramdown-parser-gfm

@@ -25,14 +25,16 @@ the average improvement of the index over binary search.
 Metric to display by:
 <script src="/scripts/sorttable.js" type="text/javascript"></script>
 <select id="select">
-    <option value="improvement">Improvement over Binary Search</option>
     <option value="latency-leaderboard">Latency (ns)</option>
     <option value="buildtime-leaderboard">Build time (ns)</option>
     <option value="size-leaderboard">Size (KB)</option>
 </select>
 
-Results below are by model. Click on a header to sort by that measure.
+Results below are by model. Click on a header to sort by that measure. 
+
+The smallest model size is constrained to 0.01% dataset size. Each successive category represents a 10x increase in size.
 <div id="latency-leaderboard" class = "group">
+Top approach in each row is bold and green. Yellow indicates 2-3x degraded performance. Red indicates > 3x degraded performance.
 <table id="latency-table" class="sortable">
     <thead>
         <tr>
@@ -52,33 +54,7 @@ Results below are by model. Click on a header to sort by that measure.
     {% endfor %}
     </tbody>
 </table>
-<script type="text/javascript">
-var $table = $("#latency-table");
-$table.find("th").each(function(columnIndex)
-{
-    var oldValue=Infinity, currentValue=0, $elementToMark=null;
-    var $trs = $table.find("tr");
-    $trs.each(function(index, element)
-    {
-        $(this).find("td:eq("+ columnIndex +")").each(function()
-        {
-            if(!isNaN(currentValue) && currentValue != 0 && currentValue < oldValue)
-               oldValue = currentValue;
-            currentValue = parseFloat($(this).html());
-            if(!isNaN(currentValue) && currentValue != 0 && currentValue < oldValue)
-            {
-                $elementToMark = $(this);
-            }
-            if(index == $trs.length-1)
-            {
-              if ($elementToMark != null) {
-                $elementToMark.css("font-weight", "bold");
-              }
-            }
-        });
-    });
-})
-</script>
+<script src="/scripts/annotate.js" type="text/javascript"></script>
 </div>
 <div id="buildtime-leaderboard" class = "group">
 <table id="buildtime-table" class="sortable">

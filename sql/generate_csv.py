@@ -5,13 +5,13 @@ from create_sqlite import create_connection
 from insert_sqlite import get_all_indexes
 from collections import defaultdict
 from statistics import geometric_mean
-from sklearn.metrics import auc
+from statistics import mean
 
-XS_SIZE = 1e5
-S_SIZE = 1e6
-M_SIZE = 1e7
-L_SIZE = 1e8
-XL_SIZE = 1e9
+XS_SIZE = 1.6e5
+S_SIZE = 1.6e6
+M_SIZE = 1.6e7
+L_SIZE = 1.6e8
+XL_SIZE = 1.6e9
 
 def rec_dd():
     """ Recursive nested defaultdict generating function """
@@ -62,24 +62,16 @@ def get_ranked_indexes(dbname):
         for size_cat in build_times[index_name]:
             # Possibly filed with zeros
             if all(build_times[index_name][size_cat].values()):
-                build_times[index_name][size_cat] = geometric_mean(build_times[index_name][size_cat].values())
+                build_times[index_name][size_cat] = mean(build_times[index_name][size_cat].values())
             else:
                 build_times[index_name][size_cat] = None
-            latencies[index_name][size_cat] = geometric_mean(latencies[index_name][size_cat].values())
+            latencies[index_name][size_cat] = mean(latencies[index_name][size_cat].values())
             if all(sizes[index_name][size_cat].values()):
-                sizes[index_name][size_cat] = geometric_mean(sizes[index_name][size_cat].values())
+                sizes[index_name][size_cat] = mean(sizes[index_name][size_cat].values())
             else:
                 sizes[index_name][size_cat] = None
     
     return latencies, build_times, sizes
-
-def compute_improvement(pareto_points, index):
-    points = pareto_points[index]
-    points.sort()
-
-    x = np.array([point[0] for point in points])
-    y = np.array([point[1] for point in points])
-    return auc(x, y)
 
 if __name__ == "__main__":
     db = r"./indexes.db"
