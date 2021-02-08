@@ -43,7 +43,7 @@ Top approach in each row is bold and green. Yellow indicates 2-3x degraded perfo
             <span style="font-size:12px;">0.01% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
             <span style="font-size:12px;">0.1% of data size</span></th>
-            <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
+            <th style="text-align:center;"><span style="font-size:15px;">M</span><br>
             <span style="font-size:12px;">1% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">L</span><br>
             <span style="font-size:12px;">10% of data size</span></th>
@@ -70,7 +70,7 @@ Top approach in each row is bold and green. Yellow indicates 2-3x degraded perfo
             <span style="font-size:12px;">0.01% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
             <span style="font-size:12px;">0.1% of data size</span></th>
-            <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
+            <th style="text-align:center;"><span style="font-size:15px;">M</span><br>
             <span style="font-size:12px;">1% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">L</span><br>
             <span style="font-size:12px;">10% of data size</span></th>
@@ -96,7 +96,7 @@ Top approach in each row is bold and green. Yellow indicates 2-3x degraded perfo
             <span style="font-size:12px;">0.01% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
             <span style="font-size:12px;">0.1% of data size</span></th>
-            <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
+            <th style="text-align:center;"><span style="font-size:15px;">M</span><br>
             <span style="font-size:12px;">1% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">L</span><br>
             <span style="font-size:12px;">10% of data size</span></th>
