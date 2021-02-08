@@ -169,6 +169,9 @@ sorttable = {
     for (var i=0; i<table.tBodies[0].rows.length; i++) {
       text = sorttable.getInnerText(table.tBodies[0].rows[i].cells[column]);
       if (text != '') {
+        if (text.slice(-1) == "B") {
+          return sorttable.sort_bytes;
+        }
         if (text.match(/^-?[£$¤]?[\d,.]+%?$/)) {
           return sorttable.sort_numeric;
         }
@@ -265,6 +268,35 @@ sorttable = {
     if (isNaN(bb)) bb = Infinity;
     return aa-bb;
   },
+  sort_bytes: function(a,b) {
+    aa = parseFloat(a[0]);
+    bb = parseFloat(b[0]);
+    if (isNaN(aa)) return 1;
+    if (isNaN(bb)) return -1;
+    switch(a[0].slice(-2)) {
+      case "KB":
+        a_val = aa * 1000;
+        break;
+      case "MB":
+        a_val = aa * 1000000;
+        break;
+      case "GB":
+        a_val = aa * 1000000000;
+    }
+    switch(b[0].slice(-2)) {
+      case "KB":
+        b_val = bb * 1000;
+        break;
+      case "MB":
+        b_val = bb * 1000000;
+        break;
+      case "GB":
+        b_val = bb * 1000000000;
+    }
+    console.log(a_val);
+    console.log(b_val);
+    return a_val-b_val;
+  },
   sort_alpha: function(a,b) {
     if (a[0]==b[0]) return 0;
     if (a[0]<b[0]) return -1;
@@ -312,7 +344,7 @@ sorttable = {
     while(swap) {
         swap = false;
         for(var i = b; i < t; ++i) {
-            if ( comp_func(list[i], list[i+1]) > 0 || (isNaN(parseFloat(list[i]) && !isNaN(parseFloat(list[i+1]))))) {
+            if ( comp_func(list[i], list[i+1]) > 0 ) {
                 var q = list[i]; list[i] = list[i+1]; list[i+1] = q;
                 swap = true;
             }
@@ -322,7 +354,7 @@ sorttable = {
         if (!swap) break;
 
         for(var i = t; i > b; --i) {
-            if ( comp_func(list[i], list[i-1]) < 0 || (isNaN(parseFloat(list[i-1]) && !isNaN(parseFloat(list[i]))))) {
+            if ( comp_func(list[i], list[i-1]) < 0 ) {
                 var q = list[i]; list[i] = list[i-1]; list[i-1] = q;
                 swap = true;
             }

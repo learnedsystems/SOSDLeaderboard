@@ -27,7 +27,7 @@ Metric to display by:
 <select id="select">
     <option value="latency-leaderboard">Latency (ns)</option>
     <option value="buildtime-leaderboard">Build time (ns)</option>
-    <option value="size-leaderboard">Size (KB)</option>
+    <option value="size-leaderboard">Size</option>
 </select>
 
 Results below are by model. Click on a header to sort by that measure. 

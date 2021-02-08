@@ -72,6 +72,14 @@ def get_ranked_indexes(dbname):
                 sizes[index_name][size_cat] = None
     
     return latencies, build_times, sizes
+    
+def get_size_str(size):
+    if size < 1e6:
+        return str(round(size/1000, 2)) + " KB"
+    elif size < 1e9:
+        return str(round(size/1e6, 2)) + " MB"
+    else:
+        return str(round(size/1e9, 2)) + " GB"
 
 if __name__ == "__main__":
     db = r"./indexes.db"
@@ -110,9 +118,9 @@ if __name__ == "__main__":
         for index in sizes:
             writer.writerow([
                 index,
-                round(sizes[index]['xs']/1000) if 'xs' in sizes[index] and sizes[index]['xs'] is not None else ' ',
-                round(sizes[index]['s']/1000) if 's' in sizes[index] and sizes[index]['s'] is not None else ' ',
-                round(sizes[index]['m']/1000) if 'm' in sizes[index] and sizes[index]['m'] is not None else ' ',
-                round(sizes[index]['l']/1000) if 'l' in sizes[index] and sizes[index]['l'] is not None else ' ',
-                round(sizes[index]['xl']/1000) if 'xl' in sizes[index] and sizes[index]['xl'] is not None else ' '
+                get_size_str(sizes[index]['xs']) if 'xs' in sizes[index] and sizes[index]['xs'] is not None else ' ',
+                get_size_str(sizes[index]['s']) if 's' in sizes[index] and sizes[index]['s'] is not None else ' ',
+                get_size_str(sizes[index]['m']) if 'm' in sizes[index] and sizes[index]['m'] is not None else ' ',
+                get_size_str(sizes[index]['l']) if 'l' in sizes[index] and sizes[index]['l'] is not None else ' ',
+                get_size_str(sizes[index]['xl']) if 'xl' in sizes[index] and sizes[index]['xl'] is not None else ' '
             ])
