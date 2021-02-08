@@ -33,6 +33,7 @@ $table.find("th").each(function(columnIndex)
             if(!isNaN(currentValue) && currentValue != 0)
             {
                 if (currentValue == minValue) {
+                    $(this).css("font-weight", "bold");
                     $(this).css("background-color", "green");
                 }
                 else if (currentValue / minValue < 2) {

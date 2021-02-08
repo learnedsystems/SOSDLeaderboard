@@ -39,11 +39,16 @@ Top approach in each row is bold and green. Yellow indicates 2-3x degraded perfo
     <thead>
         <tr>
             <th>Model</th>
-            <th>XS</th>
-            <th>S</th>
-            <th>M</th>
-            <th>L</th>
-            <th>XL</th>
+            <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
+            <span style="font-size:12px;">0.01% of data size</span></th>
+            <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
+            <span style="font-size:12px;">0.1% of data size</span></th>
+            <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
+            <span style="font-size:12px;">1% of data size</span></th>
+            <th style="text-align:center;"><span style="font-size:15px;">L</span><br>
+            <span style="font-size:12px;">10% of data size</span></th>
+            <th style="text-align:center;"><span style="font-size:15px;">XL</span><br>
+            <span style="font-size:12px;">No limit</span></th>
         </tr>
     </thead>
     <tbody>
@@ -61,11 +66,16 @@ Top approach in each row is bold and green. Yellow indicates 2-3x degraded perfo
     <thead>
         <tr>
             <th>Model</th>
-            <th>XS</th>
-            <th>S</th>
-            <th>M</th>
-            <th>L</th>
-            <th>XL</th>
+            <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
+            <span style="font-size:12px;">0.01% of data size</span></th>
+            <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
+            <span style="font-size:12px;">0.1% of data size</span></th>
+            <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
+            <span style="font-size:12px;">1% of data size</span></th>
+            <th style="text-align:center;"><span style="font-size:15px;">L</span><br>
+            <span style="font-size:12px;">10% of data size</span></th>
+            <th style="text-align:center;"><span style="font-size:15px;">XL</span><br>
+            <span style="font-size:12px;">No limit</span></th>
         </tr>
     </thead>
     <tbody>
@@ -82,11 +92,16 @@ Top approach in each row is bold and green. Yellow indicates 2-3x degraded perfo
     <thead>
         <tr>
             <th>Model</th>
-            <th>XS</th>
-            <th>S</th>
-            <th>M</th>
-            <th>L</th>
-            <th>XL</th>
+            <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
+            <span style="font-size:12px;">0.01% of data size</span></th>
+            <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
+            <span style="font-size:12px;">0.1% of data size</span></th>
+            <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
+            <span style="font-size:12px;">1% of data size</span></th>
+            <th style="text-align:center;"><span style="font-size:15px;">L</span><br>
+            <span style="font-size:12px;">10% of data size</span></th>
+            <th style="text-align:center;"><span style="font-size:15px;">XL</span><br>
+            <span style="font-size:12px;">No limit</span></th>
         </tr>
     </thead>
     <tbody>
