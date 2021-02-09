@@ -32,11 +32,7 @@ $table.find("th").each(function(columnIndex)
             if (url_map.has(currentText)) {
                 $(this).css("cursor", "pointer");
                 $(this).css("text-decoration", "underline");
-                $(this).click(function () {
-                    currentText = $(this).html().trim();
-                    console.log(currentText);
-                    window.open(url_map.get(currentText), "_blank");
-                })
+                $(this).wrap(`<a href="${url_map.get(currentText)}"/>`);
             }
             if(!isNaN(currentValue) && currentValue != 0 && currentValue < oldValue)
             {
