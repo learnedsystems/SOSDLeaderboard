@@ -1,3 +1,19 @@
+//github url map
+let url_map = new Map([
+    ["RMI", "https://github.com/learnedsystems/RMI"],
+    ["RS", "https://github.com/learnedsystems/RadixSpline"],
+    ["RBS", "https://github.com/learnedsystems/SOSD/blob/master/competitors/radix_binary_search.h"],
+    ["ART", "https://github.com/learnedsystems/SOSD/blob/master/competitors/art_primary_lb.h"],
+    ["IBTree", "https://github.com/learnedsystems/SOSD/blob/master/competitors/interpolation_btree.h"],
+    ["FST", "https://github.com/christophanneser/FST"],
+    ["FAST", "https://github.com/RyanMarcus/fast64"],
+    ["PGM", "https://github.com/gvinciguerra/PGM-index"],
+    ["BTree", "https://github.com/bingmann/stx-btree"],
+    ["Wormhole", "https://github.com/wuxb45/wormhole"],
+    ["CuckooMap", "https://github.com/learnedsystems/SOSD/blob/master/competitors/stanford_hash.h"],
+    ["RobinHash", "https://github.com/Tessil/robin-map"]
+]);
+
 // annotate latency table
 var $table = $("#latency-table");
 $table.find("th").each(function(columnIndex)
@@ -12,6 +28,16 @@ $table.find("th").each(function(columnIndex)
             if(!isNaN(currentValue) && currentValue != 0 && currentValue < oldValue)
                oldValue = currentValue;
             currentValue = parseFloat($(this).html());
+            currentText = $(this).html().trim();
+            if (url_map.has(currentText)) {
+                $(this).css("cursor", "pointer");
+                $(this).css("text-decoration", "underline");
+                $(this).click(function () {
+                    currentText = $(this).html().trim();
+                    console.log(currentText);
+                    window.open(url_map.get(currentText), "_blank");
+                })
+            }
             if(!isNaN(currentValue) && currentValue != 0 && currentValue < oldValue)
             {
                 $elementToMark = $(this);

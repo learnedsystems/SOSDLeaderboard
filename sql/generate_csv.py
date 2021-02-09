@@ -7,11 +7,17 @@ from collections import defaultdict
 from statistics import geometric_mean
 from statistics import mean
 
+# 64-bit datasets
 XS_SIZE = 1.6e5
 S_SIZE = 1.6e6
 M_SIZE = 1.6e7
 L_SIZE = 1.6e8
-XL_SIZE = 1.6e9
+
+# 32-bit datasets
+XS_SIZE_32 = 8e4
+S_SIZE_32 = 8e5
+M_SIZE_32 = 8e6
+L_SIZE_32 = 8e7
 
 def rec_dd():
     """ Recursive nested defaultdict generating function """
@@ -31,19 +37,36 @@ def get_ranked_indexes(dbname):
         # Could have been multiple runs for latency
 
         size_category = ''
-        if size == 0:
-            # on-the-fly algorithm, put the latency in medium
-            size_category = 'm'
-        elif size < XS_SIZE:
-            size_category = 'xs'
-        elif size < S_SIZE:
-            size_category = 's'
-        elif size < M_SIZE:
-            size_category = 'm'
-        elif size < L_SIZE:
-            size_category = 'l'
+        if 'uint64' in dataset:
+            if size == 0:
+                # on-the-fly algorithm, put the latency in medium
+                size_category = 'm'
+            elif size < XS_SIZE:
+                size_category = 'xs'
+            elif size < S_SIZE:
+                size_category = 's'
+            elif size < M_SIZE:
+                size_category = 'm'
+            elif size < L_SIZE:
+                size_category = 'l'
+            else:
+                size_category = 'xl'
+        elif 'uint32' in dataset:
+            if size == 0:
+                # on-the-fly algorithm, put the latency in medium
+                size_category = 'm'
+            elif size < XS_SIZE_32:
+                size_category = 'xs'
+            elif size < S_SIZE_32:
+                size_category = 's'
+            elif size < M_SIZE_32:
+                size_category = 'm'
+            elif size < L_SIZE_32:
+                size_category = 'l'
+            else:
+                size_category = 'xl'
         else:
-            size_category = 'xl'
+            raise ValueError("Dataset name does not contain data type")
         
         build_times[name][size_category][dataset][variant] = build_time
         latencies[name][size_category][dataset][variant] = latency
