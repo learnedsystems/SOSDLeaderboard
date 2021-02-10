@@ -28,11 +28,14 @@ $table.find("th").each(function(columnIndex)
             if(!isNaN(currentValue) && currentValue != 0 && currentValue < oldValue)
                oldValue = currentValue;
             currentValue = parseFloat($(this).html());
-            currentText = $(this).html().trim();
+            let currentText = $(this).html().trim();
             if (url_map.has(currentText)) {
-                $(this).css("cursor", "pointer");
+                $(this).css("cursor", "pointer")
                 $(this).css("text-decoration", "underline");
-                $(this).wrap(`<a href="${url_map.get(currentText)}"/>`);
+                $(this).css("color", "blue");
+                $(this).click( function() {
+                    window.open(url_map.get(currentText), "_blank");
+                });
             }
             if(!isNaN(currentValue) && currentValue != 0 && currentValue < oldValue)
             {
