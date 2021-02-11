@@ -21,15 +21,28 @@ Metric to display by:
 </select>
 
 To select which indexes to display:
-
-<div id="display" style="height:100px;overflow:auto;">
+<button id="displayToggle" onclick="changeDisplay()">Show options</button>
+<script type="text/javascript">
+function changeDisplay() {
+    if ($("#display").is(":visible")) {
+        document.getElementById("display").style.display = "None";
+        document.getElementById("displayToggle").innerHTML = "Show options";
+    } else {
+        document.getElementById("display").style.display = "Block";
+        document.getElementById("displayToggle").innerHTML = "Hide table";
+    }
+}
+</script>
+<div id="display" style="height:400px;overflow:auto;display:none;">
 <table id="display-boxes">
 <tbody>
     {% for row in site.data.latency %}
-    <td>
-        <input type='checkbox' name='filter' id={{ row.Name }} value={{ row.Name }} />
-        {{ row.Name }}
-    </td>
+    <tr>
+        <td>
+            <input type='checkbox' name='filter' id={{ row.Name }} value={{ row.Name }} />
+            {{ row.Name }}
+        </td>
+    </tr>
     {% endfor %}
 </tbody>
 </table>

@@ -23,6 +23,7 @@ $(document).ready(function () {
       $('.group').hide();
       $('#'+$(this).val()).show();
     });
+    // $("#display").hide();
   });
 
 // annotate latency table
