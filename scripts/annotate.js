@@ -11,8 +11,19 @@ let url_map = new Map([
     ["BTree", "https://github.com/bingmann/stx-btree"],
     ["Wormhole", "https://github.com/wuxb45/wormhole"],
     ["CuckooMap", "https://github.com/learnedsystems/SOSD/blob/master/competitors/stanford_hash.h"],
-    ["RobinHash", "https://github.com/Tessil/robin-map"]
+    ["RobinHash", "https://github.com/Tessil/robin-map"],
+    ["ALEX", "https://github.com/microsoft/ALEX"]
 ]);
+
+// initial displays
+$(document).ready(function () {
+    $('.group').hide();
+    $('#latency-leaderboard').show();
+    $('#select').change(function () {
+      $('.group').hide();
+      $('#'+$(this).val()).show();
+    });
+  });
 
 // annotate latency table
 var $table = $("#latency-table");

@@ -6,16 +6,6 @@ datatable: true
 sorttable: true
 ---
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function () {
-  $('.group').hide();
-  $('#latency-leaderboard').show();
-  $('#select').change(function () {
-    $('.group').hide();
-    $('#'+$(this).val()).show();
-  })
-});
-</script>
 
 ## Results
 Benchmark results are presented below. Initial rankings were calculated through 
@@ -30,7 +20,23 @@ Metric to display by:
     <option value="size-leaderboard">Size</option>
 </select>
 
-Results below are by model. Click on a header to sort by that measure. 
+To select which indexes to display:
+
+<div id="display" style="height:100px;overflow:auto;">
+<table id="display-boxes">
+<tbody>
+    {% for row in site.data.latency %}
+    <td>
+        <input type='checkbox' name='filter' id={{ row.Name }} value={{ row.Name }} />
+        {{ row.Name }}
+    </td>
+    {% endfor %}
+</tbody>
+</table>
+</div>
+<script src="/scripts/checkbox.js" type="text/javascript"></script>
+
+Results below are by model. Click on a header to sort by that measure. Click on an index name to open the relevant Github repo.
 
 The smallest model size is constrained to 0.01% dataset size. Each successive category represents a 10x increase in size.
 <div id="latency-leaderboard" class = "group">

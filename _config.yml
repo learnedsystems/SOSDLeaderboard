@@ -52,3 +52,4 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - sql/
+  - update
