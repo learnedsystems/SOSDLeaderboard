@@ -35,6 +35,6 @@ $(document).ready(function() {
 
     jQuery('input[type="checkbox"][name="filter"]').on('change', filter_magic);
     $("#dataswitch").on('change', filter_magic);
-    $('.tables td:nth-child(7), tr:nth-child(7), th:nth-child(7)').hide();
+    $('.tables td:nth-child(7), th:nth-child(7)').hide();
     filter_magic();
 });

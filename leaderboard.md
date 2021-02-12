@@ -46,7 +46,7 @@ Displaying results on datasets:
 <div id="display" style="height:400px;overflow:auto;display:none;">
 <table id="display-boxes">
 <tbody>
-    {% assign rows = site.data.latency| map: 'Name' | uniq %}
+    {% assign rows = site.data.latency | map: 'Name' | uniq %}
     {% for name in rows %}
     <tr>
         <td>
