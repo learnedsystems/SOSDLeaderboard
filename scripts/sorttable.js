@@ -293,8 +293,6 @@ sorttable = {
       case "GB":
         b_val = bb * 1000000000;
     }
-    console.log(a_val);
-    console.log(b_val);
     return a_val-b_val;
   },
   sort_alpha: function(a,b) {

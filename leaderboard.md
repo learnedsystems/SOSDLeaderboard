@@ -71,7 +71,7 @@ Results below are by model. Click on a header to sort by that measure. Click on 
             <span style="font-size:10px;">0.01% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
             <span style="font-size:10px;">0.1% of data size</span></th>
-            <th style="text-align:center;"><span style="font-size:15px;">M</span><br>
+            <th style="text-align:center;" class="startClick"><span style="font-size:15px;">M</span><br>
             <span style="font-size:10px;">1% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">L</span><br>
             <span style="font-size:10px;">10% of data size</span></th>
@@ -88,7 +88,7 @@ Results below are by model. Click on a header to sort by that measure. Click on 
     {% endfor %}
     </tbody>
 </table>
-Top approach in each row is bold and green. Yellow indicates 2-3x degraded performance. Red indicates > 3x degraded performance.
+Top approach in each column is bold and green. Yellow indicates 2-3x degraded performance. Red indicates > 3x degraded performance.
 <script src="/scripts/annotate.js" type="text/javascript"></script>
 </div>
 <div id="buildtime-leaderboard" class = "group">
@@ -100,7 +100,7 @@ Top approach in each row is bold and green. Yellow indicates 2-3x degraded perfo
             <span style="font-size:10px;">0.01% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
             <span style="font-size:10px;">0.1% of data size</span></th>
-            <th style="text-align:center;"><span style="font-size:15px;">M</span><br>
+            <th style="text-align:center;" class="startClick"><span style="font-size:15px;">M</span><br>
             <span style="font-size:10px;">1% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">L</span><br>
             <span style="font-size:10px;">10% of data size</span></th>
@@ -126,7 +126,7 @@ Top approach in each row is bold and green. Yellow indicates 2-3x degraded perfo
             <span style="font-size:10px;">0.01% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
             <span style="font-size:10px;">0.1% of data size</span></th>
-            <th style="text-align:center;"><span style="font-size:15px;">M</span><br>
+            <th style="text-align:center;" class="startClick"><span style="font-size:15px;">M</span><br>
             <span style="font-size:10px;">1% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">L</span><br>
             <span style="font-size:10px;">10% of data size</span></th>
@@ -143,3 +143,4 @@ Top approach in each row is bold and green. Yellow indicates 2-3x degraded perfo
     </tbody>
 </table>
 </div>
+<script src="/scripts/sort.js" type="text/javascript"></script>

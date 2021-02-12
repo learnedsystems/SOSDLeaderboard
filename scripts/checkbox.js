@@ -7,6 +7,7 @@ starts_checked = [
     "FAST",
     "PGM",
     "ART",
+    "ALEX",
 ]
 
 for (const indexName of starts_checked) {
@@ -15,7 +16,7 @@ for (const indexName of starts_checked) {
 
 $(document).ready(function() {
     var filter_magic = function(e) {
-        var trs = jQuery(`.tables tr:not(:first)`);
+        var trs = jQuery(`.tables tbody tr:not(:first)`);
         trs.hide();
         jQuery('input[type="checkbox"][name="filter"]').each(function() {
             if (jQuery(this).is(':checked')) {
