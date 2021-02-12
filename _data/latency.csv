@@ -1,14 +1,66 @@
-Name,XS,S,M,L,XL
-RMI,593,386,280,244,217
-RS, ,319,369,351,360
-PGM,617,548,402,409,441
-ART, ,632,508,463,597
-BTree,907,694,597,586,593
-IBTree, ,612,545,544,670
-FAST, ,708,600, ,683
-FST, ,1093,1012, , 
-Wormhole,1004,966,951, , 
-RBS,595,541,514,433,384
-RobinHash, , , , ,156
-BS, , ,761, , 
-ALEX, ,629,498,450,415
+Name,XS,S,M,L,XL,Dataset
+RMI,593,386,280,244,217,all
+RS, ,319,369,351,360,all
+PGM,617,548,402,409,441,all
+ART, ,632,508,463,597,all
+BTree,907,694,597,586,593,all
+IBTree, ,612,545,544,670,all
+FAST, ,708,600, ,683,all
+FST, ,1093,1012, , ,all
+Wormhole,1004,966,951, , ,all
+RBS,595,541,514,433,384,all
+RobinHash, , , , ,156,all
+BS, , ,761, , ,all
+ALEX, ,629,498,450,415,all
+RMI,330,238,202,195,176,books
+RS, ,331,255,253,230,books
+PGM,454, ,351,370, ,books
+ART, ,627,454,406,593,books
+BTree,898,695,599,591,592,books
+IBTree, ,571,481,494,566,books
+FAST, ,719,606, ,688,books
+FST, ,1017,929, , ,books
+Wormhole,1002,971,948, , ,books
+RBS,504,385,301,218,132,books
+RobinHash, , , , ,286,books
+BS, , ,774, , ,books
+ALEX, ,608,466,351,285,books
+RMI,512,389,292,265,225,fb
+RS, , ,571,579,642,fb
+PGM,657,587,481,434,441,fb
+ART, ,631,544,485,619,fb
+BTree,900,685,589,579,587,fb
+IBTree, ,564,530,516,650,fb
+FAST, ,700,598, ,676,fb
+FST, ,1137,994, , ,fb
+Wormhole,1007,951,939, , ,fb
+RBS,791,938,1030,983,1006,fb
+RobinHash, , , , ,113,fb
+BS, , ,751, , ,fb
+ALEX, ,584,480,511,574,fb
+RMI,945,631,437,326,277,osm
+RS, , ,354,300,291,osm
+PGM,747,647,455,453, ,osm
+ART, ,639,525,498,580,osm
+BTree,917,691,589,585,593,osm
+IBTree, ,667,607,623,800,osm
+FAST, ,706,597, ,684,osm
+FST, ,1124,1112, , ,osm
+Wormhole,1002,976,967, , ,osm
+RBS,601,483,438,327,244,osm
+RobinHash, , , , ,110,osm
+BS, , ,754, , ,osm
+ALEX, , ,561,551,485,osm
+RMI,584,287,189,193,191,wiki
+RS, ,307,297,273,276,wiki
+PGM,611,410,321,381, ,wiki
+ART, , , , , ,wiki
+BTree,913,705,610,587,599,wiki
+IBTree, ,649,565,543,663,wiki
+FAST, , , , , ,wiki
+FST, , , , , ,wiki
+Wormhole, , , , , ,wiki
+RBS,485,359,289,205,154,wiki
+RobinHash, , , , ,115,wiki
+BS, , ,767, , ,wiki
+ALEX, ,697,485,388,316,wiki

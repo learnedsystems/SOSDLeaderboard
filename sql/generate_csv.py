@@ -68,6 +68,8 @@ def get_ranked_indexes(dbname):
         else:
             raise ValueError("Dataset name does not contain data type")
         
+        dataset = dataset.split("_")[0] # Get shortened version of dataset, ie "fb" instead of "fb_200M_uint64"
+
         build_times[name][size_category][dataset][variant] = build_time
         latencies[name][size_category][dataset][variant] = latency
         sizes[name][size_category][dataset][variant] = size
@@ -85,14 +87,14 @@ def get_ranked_indexes(dbname):
         for size_cat in build_times[index_name]:
             # Possibly filed with zeros
             if all(build_times[index_name][size_cat].values()):
-                build_times[index_name][size_cat] = mean(build_times[index_name][size_cat].values())
+                build_times[index_name][size_cat]["mean"] = mean(build_times[index_name][size_cat].values())
             else:
-                build_times[index_name][size_cat] = None
-            latencies[index_name][size_cat] = mean(latencies[index_name][size_cat].values())
+                build_times[index_name][size_cat]["mean"] = None
+            latencies[index_name][size_cat]["mean"] = mean(latencies[index_name][size_cat].values())
             if all(sizes[index_name][size_cat].values()):
-                sizes[index_name][size_cat] = mean(sizes[index_name][size_cat].values())
+                sizes[index_name][size_cat]["mean"] = mean(sizes[index_name][size_cat].values())
             else:
-                sizes[index_name][size_cat] = None
+                sizes[index_name][size_cat]["mean"] = None
     
     return latencies, build_times, sizes
     
@@ -108,18 +110,19 @@ if __name__ == "__main__":
     db = r"./indexes.db"
     
     latencies, build_times, sizes = get_ranked_indexes(db)
-    headers = ["Name", "XS", "S", "M", "L", "XL"]
+    headers = ["Name", "XS", "S", "M", "L", "XL", "Dataset"]
     with open("./_data/latency.csv", "w") as f:
         writer = csv.writer(f, delimiter=',')
         writer.writerow(headers)
         for index in latencies:
             writer.writerow([
                 index,
-                round(latencies[index]['xs']) if 'xs' in latencies[index] and latencies[index]['xs'] is not None else ' ',
-                round(latencies[index]['s']) if 's' in latencies[index] and latencies[index]['s'] is not None else ' ',
-                round(latencies[index]['m']) if 'm' in latencies[index] and latencies[index]['m'] is not None else ' ',
-                round(latencies[index]['l']) if 'l' in latencies[index] and latencies[index]['l'] is not None else ' ',
-                round(latencies[index]['xl']) if 'xl' in latencies[index] and latencies[index]['xl'] is not None else ' '
+                round(latencies[index]['xs']["mean"]) if 'xs' in latencies[index] and latencies[index]['xs']["mean"] is not None else ' ',
+                round(latencies[index]['s']["mean"]) if 's' in latencies[index] and latencies[index]['s']["mean"] is not None else ' ',
+                round(latencies[index]['m']["mean"]) if 'm' in latencies[index] and latencies[index]['m']["mean"] is not None else ' ',
+                round(latencies[index]['l']["mean"]) if 'l' in latencies[index] and latencies[index]['l']["mean"] is not None else ' ',
+                round(latencies[index]['xl']["mean"]) if 'xl' in latencies[index] and latencies[index]['xl']["mean"] is not None else ' ',
+                "all"
             ])
     
     with open("./_data/buildtimes.csv", "w") as f:
@@ -128,11 +131,12 @@ if __name__ == "__main__":
         for index in build_times:
             writer.writerow([
                 index,
-                round(build_times[index]['xs']) if 'xs' in build_times[index] and build_times[index]['xs'] is not None else ' ',
-                round(build_times[index]['s']) if 's' in build_times[index] and build_times[index]['s'] is not None else ' ',
-                round(build_times[index]['m']) if 'm' in build_times[index] and build_times[index]['m'] is not None else ' ',
-                round(build_times[index]['l']) if 'l' in build_times[index] and build_times[index]['l'] is not None else ' ',
-                round(build_times[index]['xl']) if 'xl' in build_times[index] and build_times[index]['xl'] is not None else ' '
+                round(build_times[index]['xs']["mean"]) if 'xs' in build_times[index] and build_times[index]['xs']["mean"] is not None else ' ',
+                round(build_times[index]['s']["mean"]) if 's' in build_times[index] and build_times[index]['s']["mean"] is not None else ' ',
+                round(build_times[index]['m']["mean"]) if 'm' in build_times[index] and build_times[index]['m']["mean"] is not None else ' ',
+                round(build_times[index]['l']["mean"]) if 'l' in build_times[index] and build_times[index]['l']["mean"] is not None else ' ',
+                round(build_times[index]['xl']["mean"]) if 'xl' in build_times[index] and build_times[index]['xl']["mean"] is not None else ' ',
+                "all"
             ])
     
     with open("./_data/sizes.csv", "w") as f:
@@ -141,9 +145,50 @@ if __name__ == "__main__":
         for index in sizes:
             writer.writerow([
                 index,
-                get_size_str(sizes[index]['xs']) if 'xs' in sizes[index] and sizes[index]['xs'] is not None else ' ',
-                get_size_str(sizes[index]['s']) if 's' in sizes[index] and sizes[index]['s'] is not None else ' ',
-                get_size_str(sizes[index]['m']) if 'm' in sizes[index] and sizes[index]['m'] is not None else ' ',
-                get_size_str(sizes[index]['l']) if 'l' in sizes[index] and sizes[index]['l'] is not None else ' ',
-                get_size_str(sizes[index]['xl']) if 'xl' in sizes[index] and sizes[index]['xl'] is not None else ' '
+                get_size_str(sizes[index]['xs']["mean"]) if 'xs' in sizes[index] and sizes[index]['xs']["mean"] is not None else ' ',
+                get_size_str(sizes[index]['s']["mean"]) if 's' in sizes[index] and sizes[index]['s']["mean"] is not None else ' ',
+                get_size_str(sizes[index]['m']["mean"]) if 'm' in sizes[index] and sizes[index]['m']["mean"] is not None else ' ',
+                get_size_str(sizes[index]['l']["mean"]) if 'l' in sizes[index] and sizes[index]['l']["mean"] is not None else ' ',
+                get_size_str(sizes[index]['xl']["mean"]) if 'xl' in sizes[index] and sizes[index]['xl']["mean"] is not None else ' ',
+                "all"
             ])
+    
+    for dataset in (("books", "fb", "osm", "wiki")):
+        with open(f"./_data/latency.csv", "a") as f:
+            writer = csv.writer(f, delimiter=',')
+            for index in latencies:
+                writer.writerow([
+                    index,
+                    round(latencies[index]['xs'][dataset]) if 'xs' in latencies[index] and type(latencies[index]['xs'][dataset]) is not defaultdict else ' ',
+                    round(latencies[index]['s'][dataset]) if 's' in latencies[index] and type(latencies[index]['s'][dataset]) is not defaultdict else ' ',
+                    round(latencies[index]['m'][dataset]) if 'm' in latencies[index] and type(latencies[index]['m'][dataset]) is not defaultdict else ' ',
+                    round(latencies[index]['l'][dataset]) if 'l' in latencies[index] and type(latencies[index]['l'][dataset]) is not defaultdict else ' ',
+                    round(latencies[index]['xl'][dataset]) if 'xl' in latencies[index] and type(latencies[index]['xl'][dataset]) is not defaultdict else ' ',
+                    dataset
+                ])
+        
+        with open(f"./_data/buildtimes.csv", "a") as f:
+            writer = csv.writer(f, delimiter=',')
+            for index in build_times:
+                writer.writerow([
+                    index,
+                    round(build_times[index]['xs'][dataset]) if 'xs' in build_times[index] and type(build_times[index]['xs'][dataset]) is not defaultdict else ' ',
+                    round(build_times[index]['s'][dataset]) if 's' in build_times[index] and type(build_times[index]['s'][dataset]) is not defaultdict else ' ',
+                    round(build_times[index]['m'][dataset]) if 'm' in build_times[index] and type(build_times[index]['m'][dataset]) is not defaultdict else ' ',
+                    round(build_times[index]['l'][dataset]) if 'l' in build_times[index] and type(build_times[index]['l'][dataset]) is not defaultdict else ' ',
+                    round(build_times[index]['xl'][dataset]) if 'xl' in build_times[index] and type(build_times[index]['xl'][dataset]) is not defaultdict else ' ',
+                    dataset
+                ])
+        
+        with open(f"./_data/sizes.csv", "a") as f:
+            writer = csv.writer(f, delimiter=',')
+            for index in sizes:
+                writer.writerow([
+                    index,
+                    get_size_str(sizes[index]['xs'][dataset]) if 'xs' in sizes[index] and type(sizes[index]['xs'][dataset]) is not defaultdict else ' ',
+                    get_size_str(sizes[index]['s'][dataset]) if 's' in sizes[index] and type(sizes[index]['s'][dataset]) is not defaultdict else ' ',
+                    get_size_str(sizes[index]['m'][dataset]) if 'm' in sizes[index] and type(sizes[index]['m'][dataset]) is not defaultdict else ' ',
+                    get_size_str(sizes[index]['l'][dataset]) if 'l' in sizes[index] and type(sizes[index]['l'][dataset]) is not defaultdict else ' ',
+                    get_size_str(sizes[index]['xl'][dataset]) if 'xl' in sizes[index] and type(sizes[index]['xl'][dataset]) is not defaultdict else ' ',
+                    dataset
+                ])

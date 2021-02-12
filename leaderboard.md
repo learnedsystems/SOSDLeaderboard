@@ -20,7 +20,7 @@ Metric to display by:
     <option value="size-leaderboard">Size</option>
 </select>
 
-To select which indexes to display:
+Select a subset of indexes to display:
 <button id="displayToggle" onclick="changeDisplay()">Show options</button>
 <script type="text/javascript">
 function changeDisplay() {
@@ -33,6 +33,16 @@ function changeDisplay() {
     }
 }
 </script>
+
+Displaying results on datasets:
+<select id="dataswitch">
+    <option value="all">All</option>
+    <option value="osm">OSM</option>
+    <option value="fb">Facebook</option>
+    <option value="wiki">Wiki</option>
+    <option value="books">Books</option>
+</select>
+
 <div id="display" style="height:400px;overflow:auto;display:none;">
 <table id="display-boxes">
 <tbody>
@@ -52,7 +62,7 @@ function changeDisplay() {
 Results below are by model. Click on a header to sort by that measure. Click on an index name to open the relevant GitHub repo.
 
 <div id="latency-leaderboard" class = "group">
-<table id="latency-table" class="sortable">
+<table id="latency-table" class="sortable tables">
     <thead>
         <tr>
             <th>Model</th>
@@ -66,13 +76,14 @@ Results below are by model. Click on a header to sort by that measure. Click on 
             <span style="font-size:10px;">10% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">XL</span><br>
             <span style="font-size:10px;">No limit</span></th>
+            <th style="text-align:center;">Dataset</th> 
         </tr>
     </thead>
     <tbody>
     {% for row in site.data.latency %}
-        {% tablerow pair in row %}
-        {{ pair[1] }}
-        {% endtablerow %}
+            {% tablerow pair in row %}
+            {{ pair[1] }}
+            {% endtablerow %}
     {% endfor %}
     </tbody>
 </table>
@@ -80,7 +91,7 @@ Top approach in each row is bold and green. Yellow indicates 2-3x degraded perfo
 <script src="/scripts/annotate.js" type="text/javascript"></script>
 </div>
 <div id="buildtime-leaderboard" class = "group">
-<table id="buildtime-table" class="sortable">
+<table id="buildtime-table" class="sortable tables">
     <thead>
         <tr>
             <th>Model</th>
@@ -106,7 +117,7 @@ Top approach in each row is bold and green. Yellow indicates 2-3x degraded perfo
 </table>
 </div>
 <div id="size-leaderboard" class = "group">
-<table id="size-table" class="sortable">
+<table id="size-table" class="sortable tables">
     <thead>
         <tr>
             <th>Model</th>
