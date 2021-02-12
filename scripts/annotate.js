@@ -56,7 +56,6 @@ function annotate() {
                 if(index == $trs.length-1)
                 {
                 if ($elementToMark != null) {
-                    $elementToMark.css("font-weight", "bold");
                     minValue = oldValue;
                 }
                 }
@@ -74,15 +73,19 @@ function annotate() {
                         $(this).css("background-color", "green");
                     }
                     else if (currentValue / minValue < 2) {
+                        $(this).css("font-weight", "normal");
                         $(this).css("background-color", "#7be095");
                     }
                     else if (currentValue / minValue < 3) {
+                        $(this).css("font-weight", "normal");
                         $(this).css("background-color", "#e3e16d");
                     }
                     else if (currentValue / minValue < 4) {
+                        $(this).css("font-weight", "normal");
                         $(this).css("background-color", "#e3836d");
                     }
                     else {
+                        $(this).css("font-weight", "normal");
                         $(this).css("background-color", "#eb0e0e");
                     }
                 }
