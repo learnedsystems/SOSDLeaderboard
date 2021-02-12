@@ -46,11 +46,12 @@ Displaying results on datasets:
 <div id="display" style="height:400px;overflow:auto;display:none;">
 <table id="display-boxes">
 <tbody>
-    {% for row in site.data.latency %}
+    {% assign rows = site.data.latency| map: 'Name' | uniq %}
+    {% for name in rows %}
     <tr>
         <td>
-            <input type='checkbox' name='filter' id={{ row.Name }} value={{ row.Name }} />
-            {{ row.Name }}
+            <input type='checkbox' name='filter' id={{ name }} value={{ name }} />
+            {{ name }}
         </td>
     </tr>
     {% endfor %}
