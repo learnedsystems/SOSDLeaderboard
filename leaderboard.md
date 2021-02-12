@@ -7,16 +7,12 @@ sorttable: true
 ---
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-## Results
-Benchmark results are presented below. Initial rankings were calculated through 
-the average improvement of the index over binary search.
-
 ## Leaderboard
 Metric to display by:
 <script src="/scripts/sorttable.js" type="text/javascript"></script>
 <select id="select">
     <option value="latency-leaderboard">Latency (ns)</option>
-    <option value="buildtime-leaderboard">Build time (ns)</option>
+    <option value="buildtime-leaderboard">Build time (μs)</option>
     <option value="size-leaderboard">Size</option>
 </select>
 

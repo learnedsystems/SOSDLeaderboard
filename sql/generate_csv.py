@@ -131,11 +131,11 @@ if __name__ == "__main__":
         for index in build_times:
             writer.writerow([
                 index,
-                round(build_times[index]['xs']["mean"]) if 'xs' in build_times[index] and build_times[index]['xs']["mean"] is not None else ' ',
-                round(build_times[index]['s']["mean"]) if 's' in build_times[index] and build_times[index]['s']["mean"] is not None else ' ',
-                round(build_times[index]['m']["mean"]) if 'm' in build_times[index] and build_times[index]['m']["mean"] is not None else ' ',
-                round(build_times[index]['l']["mean"]) if 'l' in build_times[index] and build_times[index]['l']["mean"] is not None else ' ',
-                round(build_times[index]['xl']["mean"]) if 'xl' in build_times[index] and build_times[index]['xl']["mean"] is not None else ' ',
+                round(build_times[index]['xs']["mean"]/1000, 2) if 'xs' in build_times[index] and build_times[index]['xs']["mean"] is not None else ' ',
+                round(build_times[index]['s']["mean"]/1000, 2) if 's' in build_times[index] and build_times[index]['s']["mean"] is not None else ' ',
+                round(build_times[index]['m']["mean"]/1000, 2) if 'm' in build_times[index] and build_times[index]['m']["mean"] is not None else ' ',
+                round(build_times[index]['l']["mean"]/1000, 2) if 'l' in build_times[index] and build_times[index]['l']["mean"] is not None else ' ',
+                round(build_times[index]['xl']["mean"]/1000, 2) if 'xl' in build_times[index] and build_times[index]['xl']["mean"] is not None else ' ',
                 "all"
             ])
     
@@ -172,11 +172,11 @@ if __name__ == "__main__":
             for index in build_times:
                 writer.writerow([
                     index,
-                    round(build_times[index]['xs'][dataset]) if 'xs' in build_times[index] and type(build_times[index]['xs'][dataset]) is not defaultdict else ' ',
-                    round(build_times[index]['s'][dataset]) if 's' in build_times[index] and type(build_times[index]['s'][dataset]) is not defaultdict else ' ',
-                    round(build_times[index]['m'][dataset]) if 'm' in build_times[index] and type(build_times[index]['m'][dataset]) is not defaultdict else ' ',
-                    round(build_times[index]['l'][dataset]) if 'l' in build_times[index] and type(build_times[index]['l'][dataset]) is not defaultdict else ' ',
-                    round(build_times[index]['xl'][dataset]) if 'xl' in build_times[index] and type(build_times[index]['xl'][dataset]) is not defaultdict else ' ',
+                    round(build_times[index]['xs'][dataset]/1000, 2) if 'xs' in build_times[index] and type(build_times[index]['xs'][dataset]) is not defaultdict else ' ',
+                    round(build_times[index]['s'][dataset]/1000, 2) if 's' in build_times[index] and type(build_times[index]['s'][dataset]) is not defaultdict else ' ',
+                    round(build_times[index]['m'][dataset]/1000, 2) if 'm' in build_times[index] and type(build_times[index]['m'][dataset]) is not defaultdict else ' ',
+                    round(build_times[index]['l'][dataset]/1000, 2) if 'l' in build_times[index] and type(build_times[index]['l'][dataset]) is not defaultdict else ' ',
+                    round(build_times[index]['xl'][dataset]/1000, 2) if 'xl' in build_times[index] and type(build_times[index]['xl'][dataset]) is not defaultdict else ' ',
                     dataset
                 ])
         

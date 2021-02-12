@@ -45,7 +45,8 @@ function annotate() {
                     $(this).css("cursor", "pointer")
                     $(this).css("text-decoration", "underline");
                     $(this).css("color", "blue");
-                    $(this).click( function() {
+                    $(this).on("click", function(e) {
+                        e.stopImmediatePropagation();
                         window.open(url_map.get(currentText), "_blank");
                     });
                 }
