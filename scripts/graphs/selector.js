@@ -22,6 +22,7 @@ Papa.parse("https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data
         $('#indexes').val(startingIndexes);
         $("#indexes").trigger('chosen:updated');
         console.log($('#indexes').val());
+        graphData(obj);
 	},
     header: true
 });
