@@ -18,6 +18,10 @@ Papa.parse("https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data
 	complete: function(results) {
 		addOptions(results);
         $(".chzn-select").chosen({ max_selected_options: 4});
+        var startingIndexes = ["RMI", "RS", "BTree", "ALEX"]
+        $('#indexes').val(startingIndexes);
+        $("#indexes").trigger('chosen:updated');
+        console.log($('#indexes').val());
 	},
     header: true
 });

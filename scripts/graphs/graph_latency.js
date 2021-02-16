@@ -118,8 +118,10 @@ function getSizeStr(num) {
 
 $('#indexes').on('change', function(e) {
     graphData(obj);
+    console.log($("#indexes").val());
 })
 
 $("#select").on('change', function(e) {
     graphData(obj);
+    console.log($("#select").val());
 })
