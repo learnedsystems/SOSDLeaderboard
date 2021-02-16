@@ -1,5 +1,5 @@
 var obj;
-var colors = [];
+var colors = ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)', 'rgb(75, 192, 192)'];
 
 fetch('https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data/all_results.json')
   .then(res => res.json())
@@ -16,13 +16,19 @@ function graphData(obj) {
     }
 
     var indexData = [];
+    var idx = 0;
     for (const index of indexes) {
         if (dataset in obj[index]) {
             indexData.push({
                 label: index,
                 data: convertSizeLatency(obj[index][dataset]),
-                showLine: true
+                showLine: true,
+                tension: 0,
+                backgroundColor: colors[idx],
+                borderColor: colors[idx],
+                fill: false
             });
+            idx++;
         }
     }
 
@@ -74,6 +80,15 @@ function graphData(obj) {
                 mode: 'index'
             },
         }
+    });
+    $('#indexes').on('change', function(e) {
+        console.log("index changed");
+        chart.destroy();
+    });
+    
+    $("#select").on('change', function(e) {
+        console.log("select changed");
+        chart.destroy();
     });
 }
 
