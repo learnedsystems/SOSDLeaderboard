@@ -30,7 +30,7 @@ function annotate() {
     var $table = $("#latency-table");
     $table.find("th").each(function(columnIndex)
     {
-        var oldValue=Infinity, currentValue=0, $elementToMark=null;
+        var oldValue=Infinity, currentValue=0;
         var minValue = null;
         var $trs = $table.find("tr:visible");
         $trs.each(function(index, element)
@@ -52,13 +52,7 @@ function annotate() {
                 }
                 if(!isNaN(currentValue) && currentValue != 0 && currentValue < oldValue)
                 {
-                    $elementToMark = $(this);
-                }
-                if(index == $trs.length-1)
-                {
-                if ($elementToMark != null) {
-                    minValue = oldValue;
-                }
+                    minValue = currentValue;
                 }
             });
         });
