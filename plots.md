@@ -13,10 +13,10 @@ Here we provide a plot of index size against lookup latency on SOSD data.
     <option value="wiki_ts_200M_uint64">Wiki</option>
 </select>
 
-<select class="chzn-select" multiple="true" id="indexes" style="width:350px;"></select>
+<select class="chzn-select" multiple="true" id="indexes"></select>
 
 <div id="latency_plot">
-<canvas id="latencyChart"></canvas>
+<canvas id="latencyChart" style="height:400px;width:600px"></canvas>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
