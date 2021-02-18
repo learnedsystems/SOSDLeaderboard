@@ -11,7 +11,8 @@ var url_map = new Map([
     ["Wormhole", "https://github.com/wuxb45/wormhole"],
     ["CuckooMap", "https://github.com/learnedsystems/SOSD/blob/master/competitors/stanford_hash.h"],
     ["RobinHash", "https://github.com/Tessil/robin-map"],
-    ["ALEX", "https://github.com/microsoft/ALEX"]
+    ["ALEX", "https://github.com/microsoft/ALEX"],
+    ["BinarySearch", "https://github.com/learnedsystems/SOSD/blob/master/searches/branching_binary_search.h"]
 ]);
 
 // initial displays
