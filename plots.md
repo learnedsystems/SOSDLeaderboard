@@ -7,10 +7,26 @@ permalink: /plots/
 
 Here we provide a plot of index size against lookup latency on SOSD data. 
 <select id="select">
-    <option value="osm_cellids_200M_uint64">OSM</option>
+    <option value="" disabled> -- 64-Bit datasets -- </option>
+    <option value="" disabled> - Real-world datasets - </option>
+    <option value="osm_cellids_200M_uint64" selected>OSM</option>
     <option value="fb_200M_uint64">Facebook</option>
     <option value="books_200M_uint64">Books</option>
     <option value="wiki_ts_200M_uint64">Wiki</option>
+    <option value="" disabled> - Synthetic datasets - </option>
+    <option value="normal_200M_uint64"> Normal </option>
+    <option value="lognormal_200M_uint64"> Lognormal </option>
+    <option value="uniform_sparse_200M_uint64"> Uniform sparse </option>
+    <option value="uniform_dense_200M_uint64"> Uniform dense </option>
+    <option value="" disabled> -- 32-Bit datasets -- </option>
+    <option value="" disabled> - Real-world datasets - </option>
+    <option value="fb_200M_uint32">Facebook</option>
+    <option value="books_200M_uint32">Books</option>
+    <option value="" disabled> - Synthetic datasets - </option>
+    <option value="normal_200M_uint32"> Normal </option>
+    <option value="lognormal_200M_uint32"> Lognormal </option>
+    <option value="uniform_sparse_200M_uint32"> Uniform sparse </option>
+    <option value="uniform_dense_200M_uint32"> Uniform dense </option>
 </select>
 
 <select class="chzn-select" multiple="true" id="indexes"></select>

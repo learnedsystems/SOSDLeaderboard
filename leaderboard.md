@@ -32,11 +32,28 @@ function changeDisplay() {
 
 Displaying results on datasets:
 <select id="dataswitch">
-    <option value="all">All</option>
-    <option value="osm">OSM</option>
-    <option value="fb">Facebook</option>
-    <option value="wiki">Wiki</option>
-    <option value="books">Books</option>
+    <option value="" disabled> -- 64-Bit datasets -- </option>
+    <option value="all_uint64" selected>All 64-Bit Datasets</option>
+    <option value="" disabled> - Real-world datasets - </option>
+    <option value="osm_cellids_200M_uint64">OSM</option>
+    <option value="fb_200M_uint64">Facebook</option>
+    <option value="wiki_ts_200M_uint64">Wiki</option>
+    <option value="books_200M_uint64">Books</option>
+    <option value="" disabled> - Synthetic datasets - </option>
+    <option value="normal_200M_uint64"> Normal </option>
+    <option value="lognormal_200M_uint64"> Lognormal </option>
+    <option value="uniform_sparse_200M_uint64"> Uniform sparse </option>
+    <option value="uniform_dense_200M_uint64"> Uniform dense </option>
+    <option value="" disabled> -- 32-Bit datasets -- </option>
+    <option value="all_uint32">All 32-Bit Datasets</option>
+    <option value="" disabled> - Real-world datasets - </option>
+    <option value="fb_200M_uint32">Facebook</option>
+    <option value="books_200M_uint32">Books</option>
+    <option value="" disabled> - Synthetic datasets - </option>
+    <option value="normal_200M_uint32"> Normal </option>
+    <option value="lognormal_200M_uint32"> Lognormal </option>
+    <option value="uniform_sparse_200M_uint32"> Uniform sparse </option>
+    <option value="uniform_dense_200M_uint32"> Uniform dense </option>
 </select>
 
 <div id="display" style="height:400px;overflow:auto;display:none;">

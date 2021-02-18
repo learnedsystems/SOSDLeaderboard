@@ -1,8 +1,9 @@
+// TODO: add back RS after RS has been fitted to the new synthetic datasets
+
 starts_checked = [
     "RMI",
-    "RS",
     "RBS",
-    "BS",
+    "BinarySearch",
     "BTree",
     "FAST",
     "PGM",
@@ -16,7 +17,7 @@ for (const indexName of starts_checked) {
 
 $(document).ready(function() {
     var filter_magic = function(e) {
-        var trs = jQuery(`.tables tbody tr:not(:first)`);
+        var trs = jQuery(`.tables tbody tr`);
         trs.hide();
         jQuery('input[type="checkbox"][name="filter"]').each(function() {
             if (jQuery(this).is(':checked')) {

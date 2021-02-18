@@ -1,4 +1,5 @@
-// Click each element that should start off clicked
+// Click each element that should start off clicked. This script makes sure that tables are 
+// all initially sorted by medium and start off with the arrow denoting this
 
 $(document).ready( function() {
     $clicks = $(".startClick");
