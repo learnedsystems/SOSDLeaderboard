@@ -14,15 +14,8 @@ starts_checked = [
 readOnly = [
     "RMI",
     "RS",
-]
-
-updatable = [
-    "BinarySearch",
-    "BTree",
-    "PGM",
-    "ALEX",
-    "IBTree",
-    "ART"
+    "FAST",
+    "RBS"
 ]
 
 for (const indexName of starts_checked) {
@@ -82,11 +75,11 @@ function showReadOnly() {
 function showUpdatable() {
     jQuery('input[type="checkbox"][name="filter"]').each(function() {
         var val = jQuery(this).val();
-        if (val in updatable) {
-            $(this).prop('checked', true);
+        if (val in readOnly) {
+            $(this).prop('checked', false);
         }
         else {
-            $(this).prop('checked', false);
+            $(this).prop('checked', true);
         }
     });
     filter_magic();
