@@ -11,12 +11,16 @@ to compare their new (learned) index structures on both synthetic and real-world
 as C++ open source code that incurs little overhead (8 instructions and 1 cache miss per lookup), comes 
 with diverse synthetic and real-world datasets, and provides efficient baseline implementations. 
 
+SOSD is a read-only workload and does not measure index performance on inserts.
+
 The original SOSD paper can be found [here](https://arxiv.org/abs/1911.13014), and our detailed findings of learned 
 index performance on SOSD datasets can be found [here](https://arxiv.org/abs/2006.12804).
 
 Benchmark datasets are run five times on an AWS c5.4xlarge VM, and the median latency of these runs
 is taken for each dataset. The average of these latency medians is taken across the eight datasets within SOSD, for which final
 results are reported.
+
+To reproduce results, pull the [SOSD repo](https://github.com/learnedsystems/SOSD) and run scripts/reproduce.sh.
 
 References:
 
