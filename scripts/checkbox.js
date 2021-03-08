@@ -62,7 +62,7 @@ function showAllIndexes() {
 function showReadOnly() {
     jQuery('input[type="checkbox"][name="filter"]').each(function() {
         var val = jQuery(this).val();
-        if (val in readOnly) {
+        if (readOnly.includes(val)) {
             $(this).prop('checked', true);
         }
         else {
@@ -75,7 +75,7 @@ function showReadOnly() {
 function showUpdatable() {
     jQuery('input[type="checkbox"][name="filter"]').each(function() {
         var val = jQuery(this).val();
-        if (val in readOnly) {
+        if (readOnly.includes(val)) {
             $(this).prop('checked', false);
         }
         else {
