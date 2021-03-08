@@ -30,6 +30,11 @@ function changeDisplay() {
 }
 </script>
 
+Quick selections:
+<button id="displayToggle" onclick="showAllIndexes()">All indexes</button>
+<button id="displayToggle" onclick="showReadOnly()">Read-only indexes</button>
+<button id="displayToggle" onclick="showUpdatable()">Updatable indexes</button>
+
 Displaying results on datasets:
 <select id="dataswitch">
     <option value="" disabled> -- 64-Bit datasets -- </option>
