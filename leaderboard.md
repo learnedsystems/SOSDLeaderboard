@@ -40,6 +40,7 @@ Displaying results on datasets:
     <option value="" disabled> -- 64-Bit datasets -- </option>
     <option value="all_uint64" selected>All 64-Bit Datasets</option>
     <option value="" disabled> - Real-world datasets - </option>
+    <option value="real_uint64">All real datasets</option>
     <option value="osm_cellids_200M_uint64">OSM</option>
     <option value="fb_200M_uint64">Facebook</option>
     <option value="wiki_ts_200M_uint64">Wiki</option>
@@ -52,6 +53,7 @@ Displaying results on datasets:
     <option value="" disabled> -- 32-Bit datasets -- </option>
     <option value="all_uint32">All 32-Bit Datasets</option>
     <option value="" disabled> - Real-world datasets - </option>
+    <option value="real_uint32">All real datasets</option>
     <option value="fb_200M_uint32">Facebook</option>
     <option value="books_200M_uint32">Books</option>
     <option value="" disabled> - Synthetic datasets - </option>
