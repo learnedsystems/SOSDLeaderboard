@@ -8,7 +8,7 @@ fetch('https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data/all_
   .then(() => graphData(obj));
 
 function graphData(obj) {
-    var dataset = $("#select").val();
+    var dataset = $("#data_select").val();
     var indexes = $("#indexes").val();
 
     if (indexes.length == 0) {
@@ -86,7 +86,7 @@ function graphData(obj) {
         chart.destroy();
     });
     
-    $("#select").on('change', function(e) {
+    $("#data_select").on('change', function(e) {
         console.log("select changed");
         chart.destroy();
     });
@@ -121,7 +121,7 @@ $('#indexes').on('change', function(e) {
     console.log($("#indexes").val());
 })
 
-$("#select").on('change', function(e) {
+$("#data_select").on('change', function(e) {
     graphData(obj);
-    console.log($("#select").val());
+    console.log($("#data_select").val());
 })

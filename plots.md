@@ -1,12 +1,12 @@
----
+<!-- ---
 layout: page
 title: "Plots"
 permalink: /plots/
----
+--- -->
 # Plots
 
 Here we provide a plot of index size against lookup latency on SOSD data. 
-<select id="select">
+<select id="data_select">
     <option value="" disabled> -- 64-Bit datasets -- </option>
     <option value="" disabled> - Real-world datasets - </option>
     <option value="osm_cellids_200M_uint64" selected>OSM</option>
