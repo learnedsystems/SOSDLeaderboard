@@ -59,10 +59,15 @@ def get_ranked_indexes_uint64(dbname):
             continue
         else:
             raise ValueError("Dataset name does not contain data type")
-
-        build_times[name][size_category][dataset][variant] = build_time
-        latencies[name][size_category][dataset][variant] = latency
-        sizes[name][size_category][dataset][variant] = size
+        
+        if size == 0:
+            for size_category in ['xs', 's', 'm', 'l', 'xl']:
+                build_times[name][size_category][dataset][variant] = build_time
+                latencies[name][size_category][dataset][variant] = latency
+        else:
+            build_times[name][size_category][dataset][variant] = build_time
+            latencies[name][size_category][dataset][variant] = latency
+            sizes[name][size_category][dataset][variant] = size
         datasets.add(dataset)
 
     for index_name in build_times:
@@ -136,9 +141,14 @@ def get_ranked_indexes_uint32(dbname):
         else:
             raise ValueError("Dataset name does not contain data type")
 
-        build_times[name][size_category][dataset][variant] = build_time
-        latencies[name][size_category][dataset][variant] = latency
-        sizes[name][size_category][dataset][variant] = size
+        if size == 0:
+            for size_category in ['xs', 's', 'm', 'l', 'xl']:
+                build_times[name][size_category][dataset][variant] = build_time
+                latencies[name][size_category][dataset][variant] = latency
+        else:
+            build_times[name][size_category][dataset][variant] = build_time
+            latencies[name][size_category][dataset][variant] = latency
+            sizes[name][size_category][dataset][variant] = size
         datasets.add(dataset)
 
     for index_name in build_times:

@@ -21,80 +21,8 @@ RBS,536,414,361,267,194,all_uint64
 RBS,506,383,331,248,184,real_uint64
 RobinHash, , , , ,230,all_uint64
 RobinHash, , , , ,258,real_uint64
-BinarySearch, , ,759, , ,all_uint64
-BinarySearch, , ,761, , ,real_uint64
-RMI,292,211,177,171,165,uniform_sparse_200M_uint64
-PGM,444,324,294,328, ,uniform_sparse_200M_uint64
-ART, ,594,460,352,494,uniform_sparse_200M_uint64
-BTree,889,685,583,587,601,uniform_sparse_200M_uint64
-IBTree, ,500,443,408,462,uniform_sparse_200M_uint64
-FAST, ,702,605, ,683,uniform_sparse_200M_uint64
-ALEX, ,562,435,380,303,uniform_sparse_200M_uint64
-FST, ,850,939, , ,uniform_sparse_200M_uint64
-Wormhole,1000,961,986, , ,uniform_sparse_200M_uint64
-RBS,436,304,252,155,117,uniform_sparse_200M_uint64
-RobinHash, , , , ,102,uniform_sparse_200M_uint64
-BinarySearch, , ,758, , ,uniform_sparse_200M_uint64
-RMI,669,131,103,102,108,lognormal_200M_uint64
-PGM,218, , , , ,lognormal_200M_uint64
-ART, ,657,550,487,578,lognormal_200M_uint64
-BTree,903,692,600,581,598,lognormal_200M_uint64
-IBTree, ,630,515,478,520,lognormal_200M_uint64
-FAST, ,690,619, ,699,lognormal_200M_uint64
-ALEX, ,655,490,374,258,lognormal_200M_uint64
-FST, ,1232,1178, , ,lognormal_200M_uint64
-Wormhole,1012,990,968, , ,lognormal_200M_uint64
-RBS,782,741,702,578,466,lognormal_200M_uint64
-RobinHash, , , , ,107,lognormal_200M_uint64
-BinarySearch, , ,753, , ,lognormal_200M_uint64
-RMI,334,251,205,201,191,books_200M_uint64
-PGM,434, ,339,356, ,books_200M_uint64
-ART, , , , , ,books_200M_uint64
-BTree,910,693,590,581,601,books_200M_uint64
-IBTree, ,585,504,502,554,books_200M_uint64
-FAST, , , , , ,books_200M_uint64
-ALEX, ,607,480,360,283,books_200M_uint64
-FST, , , , , ,books_200M_uint64
-Wormhole, , , , , ,books_200M_uint64
-RBS,493,367,313,207,144,books_200M_uint64
-RobinHash, , , , ,337,books_200M_uint64
-BinarySearch, , ,766, , ,books_200M_uint64
-RMI,524,391,308,270,247,fb_200M_uint64
-PGM,635,580,456,454,420,fb_200M_uint64
-ART, ,618,501,490,454,fb_200M_uint64
-BTree,905,686,595,575,588,fb_200M_uint64
-IBTree, ,565,510,522,667,fb_200M_uint64
-FAST, ,689,596, ,684,fb_200M_uint64
-ALEX, ,578,483,518,524,fb_200M_uint64
-FST, ,984,991, , ,fb_200M_uint64
-Wormhole,982,979,951, , ,fb_200M_uint64
-RBS,444,327,301,241,189,fb_200M_uint64
-RobinHash, , , , ,468,fb_200M_uint64
-BinarySearch, , ,761, , ,fb_200M_uint64
-RMI,77,78,79,132,140,uniform_dense_200M_uint64
-PGM,90, , , , ,uniform_dense_200M_uint64
-ART, ,673,470,489,324,uniform_dense_200M_uint64
-BTree,888,689,597,588,592,uniform_dense_200M_uint64
-IBTree, ,612,490,366,360,uniform_dense_200M_uint64
-FAST, ,703,602, ,697,uniform_dense_200M_uint64
-ALEX, ,563,444,374,249,uniform_dense_200M_uint64
-FST, ,1156,848, , ,uniform_dense_200M_uint64
-Wormhole,996,985,972, , ,uniform_dense_200M_uint64
-RBS,521,347,281,185,101,uniform_dense_200M_uint64
-RobinHash, , , , ,86,uniform_dense_200M_uint64
-BinarySearch, , ,750, , ,uniform_dense_200M_uint64
-RMI,595,298,197,195,192,wiki_ts_200M_uint64
-PGM,586,418,317,387, ,wiki_ts_200M_uint64
-ART, , , , , ,wiki_ts_200M_uint64
-BTree,894,700,606,590,601,wiki_ts_200M_uint64
-IBTree, ,648,559,555,677,wiki_ts_200M_uint64
-FAST, , , , , ,wiki_ts_200M_uint64
-ALEX, ,671,485,385,321,wiki_ts_200M_uint64
-FST, , , , , ,wiki_ts_200M_uint64
-Wormhole, , , , , ,wiki_ts_200M_uint64
-RBS,501,368,287,209,155,wiki_ts_200M_uint64
-RobinHash, , , , ,116,wiki_ts_200M_uint64
-BinarySearch, , ,768, , ,wiki_ts_200M_uint64
+BinarySearch,759,759,759,759,759,all_uint64
+BinarySearch,761,761,761,761,761,real_uint64
 RMI,984,652,438,331,281,osm_cellids_200M_uint64
 PGM,743,615,468,432, ,osm_cellids_200M_uint64
 ART, , , , , ,osm_cellids_200M_uint64
@@ -106,7 +34,19 @@ FST, , , , , ,osm_cellids_200M_uint64
 Wormhole, , , , , ,osm_cellids_200M_uint64
 RBS,587,471,424,337,245,osm_cellids_200M_uint64
 RobinHash, , , , ,110,osm_cellids_200M_uint64
-BinarySearch, , ,750, , ,osm_cellids_200M_uint64
+BinarySearch,750,750,750,750,750,osm_cellids_200M_uint64
+RMI,292,211,177,171,165,uniform_sparse_200M_uint64
+PGM,444,324,294,328, ,uniform_sparse_200M_uint64
+ART, ,594,460,352,494,uniform_sparse_200M_uint64
+BTree,889,685,583,587,601,uniform_sparse_200M_uint64
+IBTree, ,500,443,408,462,uniform_sparse_200M_uint64
+FAST, ,702,605, ,683,uniform_sparse_200M_uint64
+ALEX, ,562,435,380,303,uniform_sparse_200M_uint64
+FST, ,850,939, , ,uniform_sparse_200M_uint64
+Wormhole,1000,961,986, , ,uniform_sparse_200M_uint64
+RBS,436,304,252,155,117,uniform_sparse_200M_uint64
+RobinHash, , , , ,102,uniform_sparse_200M_uint64
+BinarySearch,758,758,758,758,758,uniform_sparse_200M_uint64
 RMI,94,95, , , ,normal_200M_uint64
 PGM,204, , , , ,normal_200M_uint64
 ART, ,625,459,406,478,normal_200M_uint64
@@ -118,7 +58,67 @@ FST, ,995,743, , ,normal_200M_uint64
 Wormhole,971,967,971, , ,normal_200M_uint64
 RBS,523,391,332,221,132,normal_200M_uint64
 RobinHash, , , , ,516,normal_200M_uint64
-BinarySearch, , ,762, , ,normal_200M_uint64
+BinarySearch,762,762,762,762,762,normal_200M_uint64
+RMI,334,251,205,201,191,books_200M_uint64
+PGM,434, ,339,356, ,books_200M_uint64
+ART, , , , , ,books_200M_uint64
+BTree,910,693,590,581,601,books_200M_uint64
+IBTree, ,585,504,502,554,books_200M_uint64
+FAST, , , , , ,books_200M_uint64
+ALEX, ,607,480,360,283,books_200M_uint64
+FST, , , , , ,books_200M_uint64
+Wormhole, , , , , ,books_200M_uint64
+RBS,493,367,313,207,144,books_200M_uint64
+RobinHash, , , , ,337,books_200M_uint64
+BinarySearch,766,766,766,766,766,books_200M_uint64
+RMI,77,78,79,132,140,uniform_dense_200M_uint64
+PGM,90, , , , ,uniform_dense_200M_uint64
+ART, ,673,470,489,324,uniform_dense_200M_uint64
+BTree,888,689,597,588,592,uniform_dense_200M_uint64
+IBTree, ,612,490,366,360,uniform_dense_200M_uint64
+FAST, ,703,602, ,697,uniform_dense_200M_uint64
+ALEX, ,563,444,374,249,uniform_dense_200M_uint64
+FST, ,1156,848, , ,uniform_dense_200M_uint64
+Wormhole,996,985,972, , ,uniform_dense_200M_uint64
+RBS,521,347,281,185,101,uniform_dense_200M_uint64
+RobinHash, , , , ,86,uniform_dense_200M_uint64
+BinarySearch,750,750,750,750,750,uniform_dense_200M_uint64
+RMI,524,391,308,270,247,fb_200M_uint64
+PGM,635,580,456,454,420,fb_200M_uint64
+ART, ,618,501,490,454,fb_200M_uint64
+BTree,905,686,595,575,588,fb_200M_uint64
+IBTree, ,565,510,522,667,fb_200M_uint64
+FAST, ,689,596, ,684,fb_200M_uint64
+ALEX, ,578,483,518,524,fb_200M_uint64
+FST, ,984,991, , ,fb_200M_uint64
+Wormhole,982,979,951, , ,fb_200M_uint64
+RBS,444,327,301,241,189,fb_200M_uint64
+RobinHash, , , , ,468,fb_200M_uint64
+BinarySearch,761,761,761,761,761,fb_200M_uint64
+RMI,595,298,197,195,192,wiki_ts_200M_uint64
+PGM,586,418,317,387, ,wiki_ts_200M_uint64
+ART, , , , , ,wiki_ts_200M_uint64
+BTree,894,700,606,590,601,wiki_ts_200M_uint64
+IBTree, ,648,559,555,677,wiki_ts_200M_uint64
+FAST, , , , , ,wiki_ts_200M_uint64
+ALEX, ,671,485,385,321,wiki_ts_200M_uint64
+FST, , , , , ,wiki_ts_200M_uint64
+Wormhole, , , , , ,wiki_ts_200M_uint64
+RBS,501,368,287,209,155,wiki_ts_200M_uint64
+RobinHash, , , , ,116,wiki_ts_200M_uint64
+BinarySearch,768,768,768,768,768,wiki_ts_200M_uint64
+RMI,669,131,103,102,108,lognormal_200M_uint64
+PGM,218, , , , ,lognormal_200M_uint64
+ART, ,657,550,487,578,lognormal_200M_uint64
+BTree,903,692,600,581,598,lognormal_200M_uint64
+IBTree, ,630,515,478,520,lognormal_200M_uint64
+FAST, ,690,619, ,699,lognormal_200M_uint64
+ALEX, ,655,490,374,258,lognormal_200M_uint64
+FST, ,1232,1178, , ,lognormal_200M_uint64
+Wormhole,1012,990,968, , ,lognormal_200M_uint64
+RBS,782,741,702,578,466,lognormal_200M_uint64
+RobinHash, , , , ,107,lognormal_200M_uint64
+BinarySearch,753,753,753,753,753,lognormal_200M_uint64
 RMI,303,203,169,178,173,all_uint32
 RMI,416,315,260,245,201,real_uint32
 PGM,357,460,370,330,380,all_uint32
@@ -141,56 +141,8 @@ CuckooMap, , , , ,137,all_uint32
 CuckooMap, , , , ,162,real_uint32
 RobinHash, , , , ,157,all_uint32
 RobinHash, , , , ,128,real_uint32
-BinarySearch, , ,770, , ,all_uint32
-BinarySearch, , ,768, , ,real_uint32
-RMI,368,208,132,125, ,lognormal_200M_uint32
-PGM,232, , , , ,lognormal_200M_uint32
-BTree,923,700,560,538,523,lognormal_200M_uint32
-IBTree, ,700,535,465,545,lognormal_200M_uint32
-FAST, , , , , ,lognormal_200M_uint32
-ALEX, ,659,482,391,306,lognormal_200M_uint32
-FST, , , , , ,lognormal_200M_uint32
-Wormhole, , , , , ,lognormal_200M_uint32
-RBS,622,557,415,310,199,lognormal_200M_uint32
-CuckooMap, , , , , ,lognormal_200M_uint32
-RobinHash, , , , ,399,lognormal_200M_uint32
-BinarySearch, , ,762, , ,lognormal_200M_uint32
-RMI,260,91,92, , ,normal_200M_uint32
-PGM,195, , , , ,normal_200M_uint32
-BTree,957,698,568,555,524,normal_200M_uint32
-IBTree, ,659,507,430,411,normal_200M_uint32
-FAST, ,641,497, ,475,normal_200M_uint32
-ALEX, ,658,485,390,250,normal_200M_uint32
-FST, ,1049,897,762, ,normal_200M_uint32
-Wormhole, ,982,962,1065, ,normal_200M_uint32
-RBS,491,420,292,200,122,normal_200M_uint32
-CuckooMap, , , , ,125,normal_200M_uint32
-RobinHash, , , , ,99,normal_200M_uint32
-BinarySearch, , ,767, , ,normal_200M_uint32
-RMI,77,78,79,92,131,uniform_dense_200M_uint32
-PGM,91, , , , ,uniform_dense_200M_uint32
-BTree,919,697,569,560,520,uniform_dense_200M_uint32
-IBTree, ,523,455,353,341,uniform_dense_200M_uint32
-FAST, ,646,504, ,488,uniform_dense_200M_uint32
-ALEX, ,638,431,408,262,uniform_dense_200M_uint32
-FST, ,1039,740,983, ,uniform_dense_200M_uint32
-Wormhole, ,1009,968,1003, ,uniform_dense_200M_uint32
-RBS,514,412,275,178,102,uniform_dense_200M_uint32
-CuckooMap, , , , ,125,uniform_dense_200M_uint32
-RobinHash, , , , ,86,uniform_dense_200M_uint32
-BinarySearch, , ,777, , ,uniform_dense_200M_uint32
-RMI,497,372,294,282,208,fb_200M_uint32
-PGM,629,578,450,370,380,fb_200M_uint32
-BTree,897,682,568,568,524,fb_200M_uint32
-IBTree, ,578,517,490,551,fb_200M_uint32
-FAST, ,638,510, ,479,fb_200M_uint32
-ALEX, ,633,462,489,464,fb_200M_uint32
-FST, ,1008,884,853, ,fb_200M_uint32
-Wormhole, ,1002,997,1047, ,fb_200M_uint32
-RBS,438,397,269,199,129,fb_200M_uint32
-CuckooMap, , , , ,162,fb_200M_uint32
-RobinHash, , , , ,146,fb_200M_uint32
-BinarySearch, , ,768, , ,fb_200M_uint32
+BinarySearch,770,770,770,770,770,all_uint32
+BinarySearch,768,768,768,768,768,real_uint32
 RMI,281,211,189,182,157,uniform_sparse_200M_uint32
 PGM,447,355,293,289, ,uniform_sparse_200M_uint32
 BTree,918,687,581,570,518,uniform_sparse_200M_uint32
@@ -202,7 +154,7 @@ Wormhole, , , , , ,uniform_sparse_200M_uint32
 RBS,446,394,255,160,120,uniform_sparse_200M_uint32
 CuckooMap, , , , , ,uniform_sparse_200M_uint32
 RobinHash, , , , ,100,uniform_sparse_200M_uint32
-BinarySearch, , ,776, , ,uniform_sparse_200M_uint32
+BinarySearch,776,776,776,776,776,uniform_sparse_200M_uint32
 RMI,334,258,226,208,195,books_200M_uint32
 PGM,550,448,367,330,380,books_200M_uint32
 BTree,922,692,566,570,532,books_200M_uint32
@@ -214,4 +166,52 @@ Wormhole, , , , , ,books_200M_uint32
 RBS,471,396,272,187,134,books_200M_uint32
 CuckooMap, , , , , ,books_200M_uint32
 RobinHash, , , , ,110,books_200M_uint32
-BinarySearch, , ,768, , ,books_200M_uint32
+BinarySearch,768,768,768,768,768,books_200M_uint32
+RMI,368,208,132,125, ,lognormal_200M_uint32
+PGM,232, , , , ,lognormal_200M_uint32
+BTree,923,700,560,538,523,lognormal_200M_uint32
+IBTree, ,700,535,465,545,lognormal_200M_uint32
+FAST, , , , , ,lognormal_200M_uint32
+ALEX, ,659,482,391,306,lognormal_200M_uint32
+FST, , , , , ,lognormal_200M_uint32
+Wormhole, , , , , ,lognormal_200M_uint32
+RBS,622,557,415,310,199,lognormal_200M_uint32
+CuckooMap, , , , , ,lognormal_200M_uint32
+RobinHash, , , , ,399,lognormal_200M_uint32
+BinarySearch,762,762,762,762,762,lognormal_200M_uint32
+RMI,77,78,79,92,131,uniform_dense_200M_uint32
+PGM,91, , , , ,uniform_dense_200M_uint32
+BTree,919,697,569,560,520,uniform_dense_200M_uint32
+IBTree, ,523,455,353,341,uniform_dense_200M_uint32
+FAST, ,646,504, ,488,uniform_dense_200M_uint32
+ALEX, ,638,431,408,262,uniform_dense_200M_uint32
+FST, ,1039,740,983, ,uniform_dense_200M_uint32
+Wormhole, ,1009,968,1003, ,uniform_dense_200M_uint32
+RBS,514,412,275,178,102,uniform_dense_200M_uint32
+CuckooMap, , , , ,125,uniform_dense_200M_uint32
+RobinHash, , , , ,86,uniform_dense_200M_uint32
+BinarySearch,777,777,777,777,777,uniform_dense_200M_uint32
+RMI,260,91,92, , ,normal_200M_uint32
+PGM,195, , , , ,normal_200M_uint32
+BTree,957,698,568,555,524,normal_200M_uint32
+IBTree, ,659,507,430,411,normal_200M_uint32
+FAST, ,641,497, ,475,normal_200M_uint32
+ALEX, ,658,485,390,250,normal_200M_uint32
+FST, ,1049,897,762, ,normal_200M_uint32
+Wormhole, ,982,962,1065, ,normal_200M_uint32
+RBS,491,420,292,200,122,normal_200M_uint32
+CuckooMap, , , , ,125,normal_200M_uint32
+RobinHash, , , , ,99,normal_200M_uint32
+BinarySearch,767,767,767,767,767,normal_200M_uint32
+RMI,497,372,294,282,208,fb_200M_uint32
+PGM,629,578,450,370,380,fb_200M_uint32
+BTree,897,682,568,568,524,fb_200M_uint32
+IBTree, ,578,517,490,551,fb_200M_uint32
+FAST, ,638,510, ,479,fb_200M_uint32
+ALEX, ,633,462,489,464,fb_200M_uint32
+FST, ,1008,884,853, ,fb_200M_uint32
+Wormhole, ,1002,997,1047, ,fb_200M_uint32
+RBS,438,397,269,199,129,fb_200M_uint32
+CuckooMap, , , , ,162,fb_200M_uint32
+RobinHash, , , , ,146,fb_200M_uint32
+BinarySearch,768,768,768,768,768,fb_200M_uint32
