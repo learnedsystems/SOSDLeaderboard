@@ -17,9 +17,15 @@ function graphData(obj) {
 
     var indexData = [];
     var idx = 0;
+    var largestSize = 0;
     for (const index of indexes) {
+        var data = convertSizeLatency(obj[index][dataset]);
+        largestSize = Math.max(largestSize, data[data.length - 1].x);
+    }
+    for (const index of indexes) {
+        console.log(largestSize);
         if (dataset in obj[index]) {
-            indexData.push({
+            var nextPoint = {
                 label: index,
                 data: convertSizeLatency(obj[index][dataset]),
                 showLine: true,
@@ -27,7 +33,12 @@ function graphData(obj) {
                 backgroundColor: colors[idx],
                 borderColor: colors[idx],
                 fill: false
-            });
+            }
+            if (nextPoint.data.length == 1 && nextPoint.data[0].x == 0) {
+                nextPoint.data.push({x: largestSize, y: nextPoint.data[0].y});
+                console.log(nextPoint.data);
+            }
+            indexData.push(nextPoint);
             idx++;
         }
     }
