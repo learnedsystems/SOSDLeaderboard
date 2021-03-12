@@ -28,3 +28,30 @@ Papa.parse("https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data
 	},
     header: true
 });
+
+function selectIndex(index) {
+    console.log(`Adding ${index} to plot`);
+    var currentlySelected = $("#indexes").val();
+    if (currentlySelected.includes(index)) {
+        return;
+    }
+    if (currentlySelected.length < 4) {
+        currentlySelected.push(index);
+    } else {
+        currentlySelected[3] = index;
+    }
+    $('#indexes').val(currentlySelected);
+    $("#indexes").trigger('chosen:updated');
+    graphData(obj);
+    console.log($('#indexes').val());
+}
+
+$('.tables').each( function() {
+    $(this).find('tr').each (function() {
+        var trow = $(this);
+        if (trow.index() > 0) {
+            var indexValue = trow.find("td:first").text().trim();
+            trow.append(`<td><button onclick="selectIndex('${indexValue}')">Add to plot</button>`);
+        }
+    });
+});

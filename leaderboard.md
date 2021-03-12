@@ -82,7 +82,7 @@ Displaying results on datasets:
 
 Results below are by model. Click on a header to sort by that measure. Click on an index name to open the relevant GitHub repo.
 
-<div id="latency-leaderboard" class = "group">
+<div id="latency-leaderboard" class = "group" style="width:120%;">
 <table id="latency-table" class="sortable tables">
     <thead>
         <tr>
@@ -167,6 +167,8 @@ Top approach in each column is bold and green. Yellow indicates 2-3x degraded pe
 
 ## Plots
 Here we provide a plot of index size against lookup latency on SOSD data. 
+
+Select the dataset to display against:
 <select id="data_select">
     <option value="" disabled> -- 64-Bit datasets -- </option>
     <option value="" disabled> - Real-world datasets - </option>
@@ -189,6 +191,8 @@ Here we provide a plot of index size against lookup latency on SOSD data.
     <option value="uniform_sparse_200M_uint32"> Uniform sparse </option>
     <option value="uniform_dense_200M_uint32"> Uniform dense </option>
 </select>
+
+Select indexes to display. Note that the table only displays up to 4 indexes.
 
 <select class="chzn-select" multiple="true" id="indexes"></select>
 
