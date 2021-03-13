@@ -19,7 +19,7 @@ Papa.parse("https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data
 	download: true,
 	complete: function(results) {
 		addOptions(results);
-        $(".chzn-select").chosen();
+        $(".chzn-select").chosen({max_selected_options : 4});
         var startingIndexes = ["RMI", "BTree", "ALEX"]
         $('#indexes').val(startingIndexes);
         $("#indexes").trigger('chosen:updated');
@@ -55,3 +55,8 @@ $('.tables').each( function() {
         }
     });
 });
+
+function clearChosen() {
+    $("#indexes").val([]).trigger("chosen:updated");
+    graphData(obj);
+}

@@ -194,7 +194,8 @@ Select the dataset to display against:
 
 Select indexes to display. Note that the table only displays up to 4 indexes.
 
-<select class="chzn-select" multiple="true" id="indexes"></select>
+<select class="chzn-select" multiple="true" id="indexes" style="width:200px;"  data-placeholder="Select indexes to graph"></select>
+<button id="clear-chosen" onclick="clearChosen()">Clear selections</button>
 
 <div id="latency_plot">
 <canvas id="latencyChart" style="height:400px;width:600px"></canvas>

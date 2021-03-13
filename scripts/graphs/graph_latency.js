@@ -19,8 +19,10 @@ function graphData(obj) {
     var idx = 0;
     var largestSize = 0;
     for (const index of indexes) {
-        var data = convertSizeLatency(obj[index][dataset]);
-        largestSize = Math.max(largestSize, data[data.length - 1].x);
+        if (dataset in obj[index]) {
+            var data = convertSizeLatency(obj[index][dataset]);
+            largestSize = Math.max(largestSize, data[data.length - 1].x);
+        }
     }
     for (const index of indexes) {
         console.log(largestSize);
