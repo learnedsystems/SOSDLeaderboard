@@ -23,18 +23,6 @@ RobinHash, , , , ,37013672.28,all_uint64
 RobinHash, , , , ,40834661.81,real_uint64
 BinarySearch, , , , , ,all_uint64
 BinarySearch, , , , , ,real_uint64
-RMI,0.0,0.0,0.0,0.0,0.0,osm_cellids_200M_uint64
-PGM,6538558.47,6611049.96,7800255.05,9866206.39, ,osm_cellids_200M_uint64
-ART, , , , , ,osm_cellids_200M_uint64
-BTree,26.86,219.47,2311.92,60574.51,120245.16,osm_cellids_200M_uint64
-IBTree, ,119355.07,513354.05,662677.46,2381170.11,osm_cellids_200M_uint64
-FAST, , , , , ,osm_cellids_200M_uint64
-ALEX, , ,149703.31,427875.21,10971224.6,osm_cellids_200M_uint64
-FST, , , , , ,osm_cellids_200M_uint64
-Wormhole, , , , , ,osm_cellids_200M_uint64
-RBS,484255.51,740886.03,282701.93,692351.23,1365356.41,osm_cellids_200M_uint64
-RobinHash, , , , ,15397074.4,osm_cellids_200M_uint64
-BinarySearch,0.0,0.0,0.0,0.0,0.0,osm_cellids_200M_uint64
 RMI,0.0,0.0,0.0,0.0,0.0,uniform_sparse_200M_uint64
 PGM,4139088.1,5125268.2,6656282.71,8318642.96, ,uniform_sparse_200M_uint64
 ART, ,124551.51,484766.97,475434.27,7848867.09,uniform_sparse_200M_uint64
@@ -47,42 +35,6 @@ Wormhole,0.77,0.92,1.2, , ,uniform_sparse_200M_uint64
 RBS,255776.68,255691.13,337559.52,601905.27,2704876.29,uniform_sparse_200M_uint64
 RobinHash, , , , ,14792230.78,uniform_sparse_200M_uint64
 BinarySearch,0.0,0.0,0.0,0.0,0.0,uniform_sparse_200M_uint64
-RMI,0.0,0.0, , , ,normal_200M_uint64
-PGM,9037656.13, , , , ,normal_200M_uint64
-ART, ,116335.56,177354.86,562365.44,6807918.03,normal_200M_uint64
-BTree,24.64,201.62,2368.83,60235.82,121968.74,normal_200M_uint64
-IBTree, ,113520.01,565923.91,380417.67,2398006.79,normal_200M_uint64
-FAST, ,2414.86,11151.14, ,784667.09,normal_200M_uint64
-ALEX, ,4462.31,33497.48,577567.5,2440448.35,normal_200M_uint64
-FST, ,4740.01,74413.78, , ,normal_200M_uint64
-Wormhole,0.68,0.97,1.16, , ,normal_200M_uint64
-RBS,720022.35,593896.35,429540.19,293500.1,1310438.36,normal_200M_uint64
-RobinHash, , , , ,96047891.38,normal_200M_uint64
-BinarySearch,0.0,0.0,0.0,0.0,0.0,normal_200M_uint64
-RMI,0.0,0.0,0.0,0.0,0.0,books_200M_uint64
-PGM,4360906.47, ,6355990.13,7513792.91, ,books_200M_uint64
-ART, , , , , ,books_200M_uint64
-BTree,26.12,199.7,4096.52,62609.98,124843.77,books_200M_uint64
-IBTree, ,131042.39,244887.05,242633.27,2433269.89,books_200M_uint64
-FAST, , , , , ,books_200M_uint64
-ALEX, ,4352.26,38146.42,876766.21,4736656.35,books_200M_uint64
-FST, , , , , ,books_200M_uint64
-Wormhole, , , , , ,books_200M_uint64
-RBS,678663.24,388068.23,643864.75,335895.68,1905948.97,books_200M_uint64
-RobinHash, , , , ,59010956.97,books_200M_uint64
-BinarySearch,0.0,0.0,0.0,0.0,0.0,books_200M_uint64
-RMI,0.0,0.0,0.0,0.0,0.0,uniform_dense_200M_uint64
-PGM,9567735.32, , , , ,uniform_dense_200M_uint64
-ART, ,111093.16,157691.32,585184.69,4530715.36,uniform_dense_200M_uint64
-BTree,25.86,231.93,2214.41,56976.9,122288.09,uniform_dense_200M_uint64
-IBTree, ,149182.94,545388.25,378573.45,2400092.03,uniform_dense_200M_uint64
-FAST, ,2192.38,11759.14, ,754376.46,uniform_dense_200M_uint64
-ALEX, ,406.86,3284.36,281565.92,2499972.35,uniform_dense_200M_uint64
-FST, ,5199.38,42002.46, , ,uniform_dense_200M_uint64
-Wormhole,0.83,0.84,0.95, , ,uniform_dense_200M_uint64
-RBS,764840.36,729850.59,291407.9,290594.41,1486141.3,uniform_dense_200M_uint64
-RobinHash, , , , ,6272068.86,uniform_dense_200M_uint64
-BinarySearch,0.0,0.0,0.0,0.0,0.0,uniform_dense_200M_uint64
 RMI,0.0,0.0,0.0,0.0,0.0,fb_200M_uint64
 PGM,5729620.0,6048525.24,7740776.41,9655702.95,10585716.86,fb_200M_uint64
 ART, ,115774.12,218867.83,483899.57,628133.3,fb_200M_uint64
@@ -95,18 +47,6 @@ Wormhole,0.61,0.53,0.99, , ,fb_200M_uint64
 RBS,617123.31,260881.54,574547.47,392472.82,1926381.57,fb_200M_uint64
 RobinHash, , , , ,82080157.44,fb_200M_uint64
 BinarySearch,0.0,0.0,0.0,0.0,0.0,fb_200M_uint64
-RMI,0.0,0.0,0.0,0.0,0.0,wiki_ts_200M_uint64
-PGM,4232433.12,3839121.24,4646920.91,5473211.87, ,wiki_ts_200M_uint64
-ART, , , , , ,wiki_ts_200M_uint64
-BTree,24.12,218.39,2020.56,69557.19,121832.56,wiki_ts_200M_uint64
-IBTree, ,128061.04,471244.9,662120.96,2368483.54,wiki_ts_200M_uint64
-FAST, , , , , ,wiki_ts_200M_uint64
-ALEX, ,9470.27,47521.76,980725.52,11685097.84,wiki_ts_200M_uint64
-FST, , , , , ,wiki_ts_200M_uint64
-Wormhole, , , , , ,wiki_ts_200M_uint64
-RBS,627066.19,629200.94,259880.75,356502.1,1934579.9,wiki_ts_200M_uint64
-RobinHash, , , , ,6850458.43,wiki_ts_200M_uint64
-BinarySearch,0.0,0.0,0.0,0.0,0.0,wiki_ts_200M_uint64
 RMI,0.0,0.0,0.0,0.0,0.0,lognormal_200M_uint64
 PGM,8919871.23, , , , ,lognormal_200M_uint64
 ART, ,118832.5,271132.37,460919.68,7717358.43,lognormal_200M_uint64
@@ -119,6 +59,66 @@ Wormhole,0.74,0.89,0.95, , ,lognormal_200M_uint64
 RBS,727641.77,509919.02,636232.33,714671.41,1277132.25,lognormal_200M_uint64
 RobinHash, , , , ,15658539.97,lognormal_200M_uint64
 BinarySearch,0.0,0.0,0.0,0.0,0.0,lognormal_200M_uint64
+RMI,0.0,0.0,0.0,0.0,0.0,wiki_ts_200M_uint64
+PGM,4232433.12,3839121.24,4646920.91,5473211.87, ,wiki_ts_200M_uint64
+ART, , , , , ,wiki_ts_200M_uint64
+BTree,24.12,218.39,2020.56,69557.19,121832.56,wiki_ts_200M_uint64
+IBTree, ,128061.04,471244.9,662120.96,2368483.54,wiki_ts_200M_uint64
+FAST, , , , , ,wiki_ts_200M_uint64
+ALEX, ,9470.27,47521.76,980725.52,11685097.84,wiki_ts_200M_uint64
+FST, , , , , ,wiki_ts_200M_uint64
+Wormhole, , , , , ,wiki_ts_200M_uint64
+RBS,627066.19,629200.94,259880.75,356502.1,1934579.9,wiki_ts_200M_uint64
+RobinHash, , , , ,6850458.43,wiki_ts_200M_uint64
+BinarySearch,0.0,0.0,0.0,0.0,0.0,wiki_ts_200M_uint64
+RMI,0.0,0.0,0.0,0.0,0.0,osm_cellids_200M_uint64
+PGM,6538558.47,6611049.96,7800255.05,9866206.39, ,osm_cellids_200M_uint64
+ART, , , , , ,osm_cellids_200M_uint64
+BTree,26.86,219.47,2311.92,60574.51,120245.16,osm_cellids_200M_uint64
+IBTree, ,119355.07,513354.05,662677.46,2381170.11,osm_cellids_200M_uint64
+FAST, , , , , ,osm_cellids_200M_uint64
+ALEX, , ,149703.31,427875.21,10971224.6,osm_cellids_200M_uint64
+FST, , , , , ,osm_cellids_200M_uint64
+Wormhole, , , , , ,osm_cellids_200M_uint64
+RBS,484255.51,740886.03,282701.93,692351.23,1365356.41,osm_cellids_200M_uint64
+RobinHash, , , , ,15397074.4,osm_cellids_200M_uint64
+BinarySearch,0.0,0.0,0.0,0.0,0.0,osm_cellids_200M_uint64
+RMI,0.0,0.0,0.0,0.0,0.0,uniform_dense_200M_uint64
+PGM,9567735.32, , , , ,uniform_dense_200M_uint64
+ART, ,111093.16,157691.32,585184.69,4530715.36,uniform_dense_200M_uint64
+BTree,25.86,231.93,2214.41,56976.9,122288.09,uniform_dense_200M_uint64
+IBTree, ,149182.94,545388.25,378573.45,2400092.03,uniform_dense_200M_uint64
+FAST, ,2192.38,11759.14, ,754376.46,uniform_dense_200M_uint64
+ALEX, ,406.86,3284.36,281565.92,2499972.35,uniform_dense_200M_uint64
+FST, ,5199.38,42002.46, , ,uniform_dense_200M_uint64
+Wormhole,0.83,0.84,0.95, , ,uniform_dense_200M_uint64
+RBS,764840.36,729850.59,291407.9,290594.41,1486141.3,uniform_dense_200M_uint64
+RobinHash, , , , ,6272068.86,uniform_dense_200M_uint64
+BinarySearch,0.0,0.0,0.0,0.0,0.0,uniform_dense_200M_uint64
+RMI,0.0,0.0,0.0,0.0,0.0,books_200M_uint64
+PGM,4360906.47, ,6355990.13,7513792.91, ,books_200M_uint64
+ART, , , , , ,books_200M_uint64
+BTree,26.12,199.7,4096.52,62609.98,124843.77,books_200M_uint64
+IBTree, ,131042.39,244887.05,242633.27,2433269.89,books_200M_uint64
+FAST, , , , , ,books_200M_uint64
+ALEX, ,4352.26,38146.42,876766.21,4736656.35,books_200M_uint64
+FST, , , , , ,books_200M_uint64
+Wormhole, , , , , ,books_200M_uint64
+RBS,678663.24,388068.23,643864.75,335895.68,1905948.97,books_200M_uint64
+RobinHash, , , , ,59010956.97,books_200M_uint64
+BinarySearch,0.0,0.0,0.0,0.0,0.0,books_200M_uint64
+RMI,0.0,0.0, , , ,normal_200M_uint64
+PGM,9037656.13, , , , ,normal_200M_uint64
+ART, ,116335.56,177354.86,562365.44,6807918.03,normal_200M_uint64
+BTree,24.64,201.62,2368.83,60235.82,121968.74,normal_200M_uint64
+IBTree, ,113520.01,565923.91,380417.67,2398006.79,normal_200M_uint64
+FAST, ,2414.86,11151.14, ,784667.09,normal_200M_uint64
+ALEX, ,4462.31,33497.48,577567.5,2440448.35,normal_200M_uint64
+FST, ,4740.01,74413.78, , ,normal_200M_uint64
+Wormhole,0.68,0.97,1.16, , ,normal_200M_uint64
+RBS,720022.35,593896.35,429540.19,293500.1,1310438.36,normal_200M_uint64
+RobinHash, , , , ,96047891.38,normal_200M_uint64
+BinarySearch,0.0,0.0,0.0,0.0,0.0,normal_200M_uint64
 RMI, , , , , ,all_uint32
 RMI, , , , , ,real_uint32
 PGM,4730357.32,4552529.41,5846848.27,6879174.18,8738194.61,all_uint32
@@ -143,30 +143,18 @@ RobinHash, , , , ,75239863.6,all_uint32
 RobinHash, , , , ,9492178.8,real_uint32
 BinarySearch, , , , , ,all_uint32
 BinarySearch, , , , , ,real_uint32
-RMI,0.0,0.0,0.0,0.0,0.0,uniform_sparse_200M_uint32
-PGM,3844427.19,4241220.8,5338806.44,6220063.22, ,uniform_sparse_200M_uint32
-BTree,34.22,164.77,1831.99,16021.02,65184.69,uniform_sparse_200M_uint32
-IBTree, ,93356.93,361839.03,353807.29,1970163.4,uniform_sparse_200M_uint32
-FAST, , , , , ,uniform_sparse_200M_uint32
-ALEX, ,245.96,4501.28,363771.46,48357727.34,uniform_sparse_200M_uint32
-FST, , , , , ,uniform_sparse_200M_uint32
-Wormhole, , , , , ,uniform_sparse_200M_uint32
-RBS,225860.12,573823.03,359450.97,374358.9,910453.12,uniform_sparse_200M_uint32
-CuckooMap, , , , , ,uniform_sparse_200M_uint32
-RobinHash, , , , ,10305958.17,uniform_sparse_200M_uint32
-BinarySearch,0.0,0.0,0.0,0.0,0.0,uniform_sparse_200M_uint32
-RMI,0.0,0.0,0.0,0.0,0.0,books_200M_uint32
-PGM,3735372.67,3953889.44,5054191.72,5741137.81,8299213.17,books_200M_uint32
-BTree,18.2,164.75,1614.94,7877.58,64902.3,books_200M_uint32
-IBTree, ,91408.9,177024.52,396356.59,1955193.96,books_200M_uint32
-FAST, , , , , ,books_200M_uint32
-ALEX, ,2034.99,38526.51,410376.48,4764796.43,books_200M_uint32
-FST, , , , , ,books_200M_uint32
-Wormhole, , , , , ,books_200M_uint32
-RBS,574717.9,194075.26,384930.75,355499.57,1964269.72,books_200M_uint32
-CuckooMap, , , , , ,books_200M_uint32
-RobinHash, , , , ,8829307.63,books_200M_uint32
-BinarySearch,0.0,0.0,0.0,0.0,0.0,books_200M_uint32
+RMI,0.0,0.0,0.0,0.0,0.0,fb_200M_uint32
+PGM,4910454.78,5462477.98,7147546.65,8676321.51,9177176.04,fb_200M_uint32
+BTree,18.02,163.12,1851.92,15275.06,65688.1,fb_200M_uint32
+IBTree, ,92812.8,294536.93,228826.04,1995563.62,fb_200M_uint32
+FAST, ,1494.17,22017.51, ,453273.29,fb_200M_uint32
+ALEX, ,418.61,7900.87,437230.92,3270269.77,fb_200M_uint32
+FST, ,2607.3,36505.99,75971.0, ,fb_200M_uint32
+Wormhole, ,0.57,0.81,8.3, ,fb_200M_uint32
+RBS,263265.12,529992.05,219622.39,468992.97,1957707.39,fb_200M_uint32
+CuckooMap, , , , ,41127950.59,fb_200M_uint32
+RobinHash, , , , ,10155049.97,fb_200M_uint32
+BinarySearch,0.0,0.0,0.0,0.0,0.0,fb_200M_uint32
 RMI,0.0,0.0,0.0,0.0, ,lognormal_200M_uint32
 PGM,1771109.61, , , , ,lognormal_200M_uint32
 BTree,32.09,156.66,1709.82,7742.87,49713.83,lognormal_200M_uint32
@@ -191,6 +179,18 @@ RBS,471662.72,567825.86,243899.37,377518.27,1292170.18,uniform_dense_200M_uint32
 CuckooMap, , , , ,40227199.31,uniform_dense_200M_uint32
 RobinHash, , , , ,6265983.37,uniform_dense_200M_uint32
 BinarySearch,0.0,0.0,0.0,0.0,0.0,uniform_dense_200M_uint32
+RMI,0.0,0.0,0.0,0.0,0.0,books_200M_uint32
+PGM,3735372.67,3953889.44,5054191.72,5741137.81,8299213.17,books_200M_uint32
+BTree,18.2,164.75,1614.94,7877.58,64902.3,books_200M_uint32
+IBTree, ,91408.9,177024.52,396356.59,1955193.96,books_200M_uint32
+FAST, , , , , ,books_200M_uint32
+ALEX, ,2034.99,38526.51,410376.48,4764796.43,books_200M_uint32
+FST, , , , , ,books_200M_uint32
+Wormhole, , , , , ,books_200M_uint32
+RBS,574717.9,194075.26,384930.75,355499.57,1964269.72,books_200M_uint32
+CuckooMap, , , , , ,books_200M_uint32
+RobinHash, , , , ,8829307.63,books_200M_uint32
+BinarySearch,0.0,0.0,0.0,0.0,0.0,books_200M_uint32
 RMI,0.0,0.0,0.0, , ,normal_200M_uint32
 PGM,4344938.46, , , , ,normal_200M_uint32
 BTree,18.24,156.34,1567.04,16340.13,63546.87,normal_200M_uint32
@@ -203,15 +203,15 @@ RBS,574486.89,194375.83,293452.85,267914.18,1208947.31,normal_200M_uint32
 CuckooMap, , , , ,40242101.63,normal_200M_uint32
 RobinHash, , , , ,8938643.37,normal_200M_uint32
 BinarySearch,0.0,0.0,0.0,0.0,0.0,normal_200M_uint32
-RMI,0.0,0.0,0.0,0.0,0.0,fb_200M_uint32
-PGM,4910454.78,5462477.98,7147546.65,8676321.51,9177176.04,fb_200M_uint32
-BTree,18.02,163.12,1851.92,15275.06,65688.1,fb_200M_uint32
-IBTree, ,92812.8,294536.93,228826.04,1995563.62,fb_200M_uint32
-FAST, ,1494.17,22017.51, ,453273.29,fb_200M_uint32
-ALEX, ,418.61,7900.87,437230.92,3270269.77,fb_200M_uint32
-FST, ,2607.3,36505.99,75971.0, ,fb_200M_uint32
-Wormhole, ,0.57,0.81,8.3, ,fb_200M_uint32
-RBS,263265.12,529992.05,219622.39,468992.97,1957707.39,fb_200M_uint32
-CuckooMap, , , , ,41127950.59,fb_200M_uint32
-RobinHash, , , , ,10155049.97,fb_200M_uint32
-BinarySearch,0.0,0.0,0.0,0.0,0.0,fb_200M_uint32
+RMI,0.0,0.0,0.0,0.0,0.0,uniform_sparse_200M_uint32
+PGM,3844427.19,4241220.8,5338806.44,6220063.22, ,uniform_sparse_200M_uint32
+BTree,34.22,164.77,1831.99,16021.02,65184.69,uniform_sparse_200M_uint32
+IBTree, ,93356.93,361839.03,353807.29,1970163.4,uniform_sparse_200M_uint32
+FAST, , , , , ,uniform_sparse_200M_uint32
+ALEX, ,245.96,4501.28,363771.46,48357727.34,uniform_sparse_200M_uint32
+FST, , , , , ,uniform_sparse_200M_uint32
+Wormhole, , , , , ,uniform_sparse_200M_uint32
+RBS,225860.12,573823.03,359450.97,374358.9,910453.12,uniform_sparse_200M_uint32
+CuckooMap, , , , , ,uniform_sparse_200M_uint32
+RobinHash, , , , ,10305958.17,uniform_sparse_200M_uint32
+BinarySearch,0.0,0.0,0.0,0.0,0.0,uniform_sparse_200M_uint32

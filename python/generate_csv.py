@@ -208,20 +208,20 @@ if __name__ == "__main__":
         for index in latencies:
             writer.writerow([
                 index,
-                round(latencies[index]['xs']["mean"]) if 'xs' in latencies[index] and latencies[index]['xs']["mean"] is not None else ' ',
-                round(latencies[index]['s']["mean"]) if 's' in latencies[index] and latencies[index]['s']["mean"] is not None else ' ',
-                round(latencies[index]['m']["mean"]) if 'm' in latencies[index] and latencies[index]['m']["mean"] is not None else ' ',
-                round(latencies[index]['l']["mean"]) if 'l' in latencies[index] and latencies[index]['l']["mean"] is not None else ' ',
-                round(latencies[index]['xl']["mean"]) if 'xl' in latencies[index] and latencies[index]['xl']["mean"] is not None else ' ',
+                str(round(latencies[index]['xs']["mean"])) + " ns" if 'xs' in latencies[index] and latencies[index]['xs']["mean"] is not None else ' ',
+                str(round(latencies[index]['s']["mean"])) + " ns" if 's' in latencies[index] and latencies[index]['s']["mean"] is not None else ' ',
+                str(round(latencies[index]['m']["mean"])) + " ns" if 'm' in latencies[index] and latencies[index]['m']["mean"] is not None else ' ',
+                str(round(latencies[index]['l']["mean"])) + " ns" if 'l' in latencies[index] and latencies[index]['l']["mean"] is not None else ' ',
+                str(round(latencies[index]['xl']["mean"])) + " ns" if 'xl' in latencies[index] and latencies[index]['xl']["mean"] is not None else ' ',
                 "all_uint64"
             ])
             writer.writerow([
                 index,
-                round(latencies[index]['xs']["real"]) if 'xs' in latencies[index] and latencies[index]['xs']["real"] is not None else ' ',
-                round(latencies[index]['s']["real"]) if 's' in latencies[index] and latencies[index]['s']["real"] is not None else ' ',
-                round(latencies[index]['m']["real"]) if 'm' in latencies[index] and latencies[index]['m']["real"] is not None else ' ',
-                round(latencies[index]['l']["real"]) if 'l' in latencies[index] and latencies[index]['l']["real"] is not None else ' ',
-                round(latencies[index]['xl']["real"]) if 'xl' in latencies[index] and latencies[index]['xl']["real"] is not None else ' ',
+                str(round(latencies[index]['xs']["real"])) + " ns" if 'xs' in latencies[index] and latencies[index]['xs']["real"] is not None else ' ',
+                str(round(latencies[index]['s']["real"])) + " ns" if 's' in latencies[index] and latencies[index]['s']["real"] is not None else ' ',
+                str(round(latencies[index]['m']["real"])) + " ns" if 'm' in latencies[index] and latencies[index]['m']["real"] is not None else ' ',
+                str(round(latencies[index]['l']["real"])) + " ns" if 'l' in latencies[index] and latencies[index]['l']["real"] is not None else ' ',
+                str(round(latencies[index]['xl']["real"])) + " ns" if 'xl' in latencies[index] and latencies[index]['xl']["real"] is not None else ' ',
                 "real_uint64"
             ])
     
@@ -277,11 +277,11 @@ if __name__ == "__main__":
             for index in latencies:
                 writer.writerow([
                     index,
-                    round(latencies[index]['xs'][dataset]) if 'xs' in latencies[index] and type(latencies[index]['xs'][dataset]) is not defaultdict else ' ',
-                    round(latencies[index]['s'][dataset]) if 's' in latencies[index] and type(latencies[index]['s'][dataset]) is not defaultdict else ' ',
-                    round(latencies[index]['m'][dataset]) if 'm' in latencies[index] and type(latencies[index]['m'][dataset]) is not defaultdict else ' ',
-                    round(latencies[index]['l'][dataset]) if 'l' in latencies[index] and type(latencies[index]['l'][dataset]) is not defaultdict else ' ',
-                    round(latencies[index]['xl'][dataset]) if 'xl' in latencies[index] and type(latencies[index]['xl'][dataset]) is not defaultdict else ' ',
+                    str(round(latencies[index]['xs'][dataset])) + " ns" if 'xs' in latencies[index] and type(latencies[index]['xs'][dataset]) is not defaultdict else ' ',
+                    str(round(latencies[index]['s'][dataset])) + " ns" if 's' in latencies[index] and type(latencies[index]['s'][dataset]) is not defaultdict else ' ',
+                    str(round(latencies[index]['m'][dataset])) + " ns" if 'm' in latencies[index] and type(latencies[index]['m'][dataset]) is not defaultdict else ' ',
+                    str(round(latencies[index]['l'][dataset])) + " ns" if 'l' in latencies[index] and type(latencies[index]['l'][dataset]) is not defaultdict else ' ',
+                    str(round(latencies[index]['xl'][dataset])) + " ns" if 'xl' in latencies[index] and type(latencies[index]['xl'][dataset]) is not defaultdict else ' ',
                     dataset
                 ])
         
@@ -317,20 +317,20 @@ if __name__ == "__main__":
         for index in latencies:
             writer.writerow([
                 index,
-                round(latencies[index]['xs']["mean"]) if 'xs' in latencies[index] and latencies[index]['xs']["mean"] is not None else ' ',
-                round(latencies[index]['s']["mean"]) if 's' in latencies[index] and latencies[index]['s']["mean"] is not None else ' ',
-                round(latencies[index]['m']["mean"]) if 'm' in latencies[index] and latencies[index]['m']["mean"] is not None else ' ',
-                round(latencies[index]['l']["mean"]) if 'l' in latencies[index] and latencies[index]['l']["mean"] is not None else ' ',
-                round(latencies[index]['xl']["mean"]) if 'xl' in latencies[index] and latencies[index]['xl']["mean"] is not None else ' ',
+                str(round(latencies[index]['xs']["mean"])) + " ns" if 'xs' in latencies[index] and latencies[index]['xs']["mean"] is not None else ' ',
+                str(round(latencies[index]['s']["mean"])) + " ns" if 's' in latencies[index] and latencies[index]['s']["mean"] is not None else ' ',
+                str(round(latencies[index]['m']["mean"])) + " ns" if 'm' in latencies[index] and latencies[index]['m']["mean"] is not None else ' ',
+                str(round(latencies[index]['l']["mean"])) + " ns" if 'l' in latencies[index] and latencies[index]['l']["mean"] is not None else ' ',
+                str(round(latencies[index]['xl']["mean"])) + " ns" if 'xl' in latencies[index] and latencies[index]['xl']["mean"] is not None else ' ',
                 "all_uint32"
             ])
             writer.writerow([
                 index,
-                round(latencies[index]['xs']["real"]) if 'xs' in latencies[index] and latencies[index]['xs']["real"] is not None else ' ',
-                round(latencies[index]['s']["real"]) if 's' in latencies[index] and latencies[index]['s']["real"] is not None else ' ',
-                round(latencies[index]['m']["real"]) if 'm' in latencies[index] and latencies[index]['m']["real"] is not None else ' ',
-                round(latencies[index]['l']["real"]) if 'l' in latencies[index] and latencies[index]['l']["real"] is not None else ' ',
-                round(latencies[index]['xl']["real"]) if 'xl' in latencies[index] and latencies[index]['xl']["real"] is not None else ' ',
+                str(round(latencies[index]['xs']["real"])) + " ns" if 'xs' in latencies[index] and latencies[index]['xs']["real"] is not None else ' ',
+                str(round(latencies[index]['s']["real"])) + " ns" if 's' in latencies[index] and latencies[index]['s']["real"] is not None else ' ',
+                str(round(latencies[index]['m']["real"])) + " ns" if 'm' in latencies[index] and latencies[index]['m']["real"] is not None else ' ',
+                str(round(latencies[index]['l']["real"])) + " ns" if 'l' in latencies[index] and latencies[index]['l']["real"] is not None else ' ',
+                str(round(latencies[index]['xl']["real"])) + " ns" if 'xl' in latencies[index] and latencies[index]['xl']["real"] is not None else ' ',
                 "real_uint32"
             ])
     
@@ -384,11 +384,11 @@ if __name__ == "__main__":
             for index in latencies:
                 writer.writerow([
                     index,
-                    round(latencies[index]['xs'][dataset]) if 'xs' in latencies[index] and type(latencies[index]['xs'][dataset]) is not defaultdict else ' ',
-                    round(latencies[index]['s'][dataset]) if 's' in latencies[index] and type(latencies[index]['s'][dataset]) is not defaultdict else ' ',
-                    round(latencies[index]['m'][dataset]) if 'm' in latencies[index] and type(latencies[index]['m'][dataset]) is not defaultdict else ' ',
-                    round(latencies[index]['l'][dataset]) if 'l' in latencies[index] and type(latencies[index]['l'][dataset]) is not defaultdict else ' ',
-                    round(latencies[index]['xl'][dataset]) if 'xl' in latencies[index] and type(latencies[index]['xl'][dataset]) is not defaultdict else ' ',
+                    str(round(latencies[index]['xs'][dataset])) + " ns" if 'xs' in latencies[index] and type(latencies[index]['xs'][dataset]) is not defaultdict else ' ',
+                    str(round(latencies[index]['s'][dataset])) + " ns" if 's' in latencies[index] and type(latencies[index]['s'][dataset]) is not defaultdict else ' ',
+                    str(round(latencies[index]['m'][dataset])) + " ns" if 'm' in latencies[index] and type(latencies[index]['m'][dataset]) is not defaultdict else ' ',
+                    str(round(latencies[index]['l'][dataset])) + " ns" if 'l' in latencies[index] and type(latencies[index]['l'][dataset]) is not defaultdict else ' ',
+                    str(round(latencies[index]['xl'][dataset])) + " ns" if 'xl' in latencies[index] and type(latencies[index]['xl'][dataset]) is not defaultdict else ' ',
                     dataset
                 ])
         
