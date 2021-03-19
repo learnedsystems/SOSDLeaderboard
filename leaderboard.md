@@ -83,6 +83,7 @@ Displaying results on datasets:
 Results below are by model. Click on a header to sort by that measure. Click on an index name to open the relevant GitHub repo.
 
 <div id="latency-leaderboard" class = "group" style="width:120%;">
+Average lookup time for a randomly selected key in a sorted dataset of size 200M
 <table id="latency-table" class="sortable tables">
     <thead>
         <tr>
@@ -197,6 +198,8 @@ Select indexes to display. Note that the table only displays up to 4 indexes.
 <select class="chzn-select" multiple="true" id="indexes" style="width:200px;"  data-placeholder="Select indexes to graph"></select>
 <button id="clear-chosen" onclick="clearChosen()">Clear selections</button>
 
+
+<span id="error_display" style="color:red"></span>
 <div id="latency_plot">
 <canvas id="latencyChart" style="height:400px;width:600px"></canvas>
 </div>

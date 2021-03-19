@@ -1,5 +1,6 @@
 var obj;
 var colors = ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)', 'rgb(75, 192, 192)'];
+var error_display = document.getElementById("error_display");
 
 fetch('https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data/all_results.json')
   .then(res => res.json())
@@ -10,6 +11,7 @@ fetch('https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data/all_
 function graphData(obj) {
     var dataset = $("#data_select").val();
     var indexes = $("#indexes").val();
+    var error_string = "";
 
     if (indexes.length == 0) {
         return;
@@ -22,6 +24,8 @@ function graphData(obj) {
         if (dataset in obj[index]) {
             var data = convertSizeLatency(obj[index][dataset]);
             largestSize = Math.max(largestSize, data[data.length - 1].x);
+        } else {
+            error_string += `Error: Index ${index} was not evaluated on dataset ${dataset}\n`;
         }
     }
     for (const index of indexes) {
@@ -103,6 +107,7 @@ function graphData(obj) {
         console.log("select changed");
         chart.destroy();
     });
+    error_display.textContent = error_string;
 }
 
 function convertSizeLatency(dataset) {
