@@ -201,7 +201,7 @@ Select indexes to display. Note that the table only displays up to 4 indexes.
 
 <span id="error_display" style="color:red"></span>
 <div id="latency_plot">
-<canvas id="latencyChart" style="height:400px;width:600px"></canvas>
+<canvas id="latencyChart" style="height:500px;width:100%"></canvas>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>

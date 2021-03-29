@@ -11,7 +11,7 @@ fetch('https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data/all_
 function graphData(obj) {
     var dataset = $("#data_select").val();
     var indexes = $("#indexes").val();
-    var error_string = "";
+    var error_strings = [];
 
     if (indexes.length == 0) {
         return;
@@ -25,7 +25,7 @@ function graphData(obj) {
             var data = convertSizeLatency(obj[index][dataset]);
             largestSize = Math.max(largestSize, data[data.length - 1].x);
         } else {
-            error_string += `Error: Index ${index} was not evaluated on dataset ${dataset}\n`;
+            error_strings.push(`Error: Index ${index} was not evaluated on dataset ${dataset}`);
         }
     }
     for (const index of indexes) {
@@ -107,7 +107,13 @@ function graphData(obj) {
         console.log("select changed");
         chart.destroy();
     });
-    error_display.textContent = error_string;
+    while( error_display.firstChild ) {
+        error_display.removeChild( error_display.firstChild );
+    }
+    for (const error_string of error_strings) {
+        error_display.appendChild( document.createTextNode(error_string) );
+        error_display.appendChild( document.createElement("br") );
+    }
 }
 
 function convertSizeLatency(dataset) {
