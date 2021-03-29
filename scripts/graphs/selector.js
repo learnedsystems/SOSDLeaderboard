@@ -45,14 +45,17 @@ function selectIndex(index) {
     graphData(obj);
     console.log($('#indexes').val());
 }
-
-$('.tables').each( function() {
-    $(this).find('tr').each (function() {
-        var trow = $(this);
-        if (trow.index() > 0) {
-            var indexValue = trow.find("td:first").text().trim();
-            trow.append(`<td><button onclick="selectIndex('${indexValue}')">Add to plot</button>`);
-        }
+$(document).ready( function() {
+    $('.tables').each( function() {
+        $(this).find('tr').each (function() {
+            var trow = $(this);
+            if (trow.index() > 0) {
+                var indexValue = trow.find("td:first").text().trim();
+                trow.prepend($(`<td><button onclick="selectIndex('${indexValue}')">Add to plot</button>`));
+            } else {
+                trow.prepend("<th></th>");
+            }
+        });
     });
 });
 
