@@ -50,6 +50,9 @@ function graphData(obj) {
     }
 
     var ctx = document.getElementById("latencyChart");
+    while (ctx.firstChild) {
+        ctx.removeChild(ctx.firstChild);
+    }
     console.log(indexData);
     var chart = new Chart(ctx, {
         type: 'scatter',
@@ -100,12 +103,10 @@ function graphData(obj) {
     });
     $('#indexes').on('change', function(e) {
         console.log("index changed");
-        chart.destroy();
     });
     
     $("#data_select").on('change', function(e) {
         console.log("select changed");
-        chart.destroy();
     });
     while( error_display.firstChild ) {
         error_display.removeChild( error_display.firstChild );
