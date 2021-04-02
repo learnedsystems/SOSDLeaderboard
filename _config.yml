@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: SOSD Benchmark
+title: SOSD
 email: learnedsystems@mit.edu
 description: >- # this means to ignore newlines until "baseurl:"
   This website is an informational site for the SOSD dataset, and serves

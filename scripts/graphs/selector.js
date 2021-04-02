@@ -19,7 +19,7 @@ Papa.parse("https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data
 	download: true,
 	complete: function(results) {
 		addOptions(results);
-        $(".chzn-select").chosen({max_selected_options : 4});
+        $(".chzn-select").chosen({max_selected_options : 6});
         var startingIndexes = ["RMI", "BTree", "ALEX"]
         $('#indexes').val(startingIndexes);
         $("#indexes").trigger('chosen:updated');
@@ -35,29 +35,28 @@ function selectIndex(index) {
     if (currentlySelected.includes(index)) {
         return;
     }
-    if (currentlySelected.length < 4) {
+    if (currentlySelected.length < 6) {
         currentlySelected.push(index);
     } else {
-        currentlySelected[3] = index;
+        currentlySelected.push(index);
+        currentlySelected.shift();
     }
     $('#indexes').val(currentlySelected);
     $("#indexes").trigger('chosen:updated');
     graphData(obj);
     console.log($('#indexes').val());
 }
-$(document).ready( function() {
-    $('.tables').each( function() {
-        $(this).find('tr').each (function() {
-            var trow = $(this);
-            if (trow.index() > 0) {
-                var indexValue = trow.find("td:first").text().trim();
-                trow.prepend($(`<td><button onclick="selectIndex('${indexValue}')">Add to plot</button>`));
-            } else {
-                trow.prepend("<th></th>");
-            }
-        });
-    });
-});
+// $(document).ready( function() {
+//     $('.tables').each( function() {
+//         $(this).find('tr').each (function() {
+//             var trow = $(this);
+//             if (trow.index() > 0) {
+//                 var indexValue = trow.find("td:first").text().trim();
+//                 trow.prepend($(`<td><button onclick="selectIndex('${indexValue}')">Add to plot</button>`));
+//             } 
+//         });
+//     });
+// });
 
 function clearChosen() {
     $("#indexes").val([]).trigger("chosen:updated");

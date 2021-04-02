@@ -165,7 +165,7 @@ sorttable = {
 
   guessType: function(table, column) {
     // guess the type of a column based on its first non-blank row
-    sortfn = sorttable.sort_alpha;
+    sortfn = sorttable.sort_numeric;
     for (var i=0; i<table.tBodies[0].rows.length; i++) {
       text = sorttable.getInnerText(table.tBodies[0].rows[i].cells[column]);
       if (text != '') {
@@ -262,10 +262,10 @@ sorttable = {
      each sort function takes two parameters, a and b
      you are comparing a[0] and b[0] */
   sort_numeric: function(a,b) {
-    aa = parseFloat(a[0].replace(/[^0-9.-]/g,''));
-    if (isNaN(aa)) aa = Infinity;
-    bb = parseFloat(b[0].replace(/[^0-9.-]/g,''));
-    if (isNaN(bb)) bb = Infinity;
+    aa = parseFloat(a[0]);
+    if (isNaN(aa)) return 1;
+    bb = parseFloat(b[0]);
+    if (isNaN(bb)) return -1;
     return aa-bb;
   },
   sort_bytes: function(a,b) {

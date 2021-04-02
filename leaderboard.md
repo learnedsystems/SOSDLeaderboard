@@ -2,8 +2,6 @@
 layout: page
 title: "Leaderboard"
 permalink: /leaderboard/
-datatable: true
-sorttable: true
 ---
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -87,6 +85,7 @@ This leaderboard displays the average lookup time for a randomly selected key in
 <table id="latency-table" class="sortable tables">
     <thead>
         <tr>
+            <th> </th>
             <th>Model</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
             <span style="font-size:10px;">0.01% of data size</span></th>
@@ -116,6 +115,7 @@ Top approach in each column is bold and green. Yellow indicates 2-3x degraded pe
 <table id="buildtime-table" class="sortable tables">
     <thead>
         <tr>
+            <th> </th>
             <th>Model</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
             <span style="font-size:10px;">0.01% of data size</span></th>
@@ -142,6 +142,7 @@ Top approach in each column is bold and green. Yellow indicates 2-3x degraded pe
 <table id="size-table" class="sortable tables">
     <thead>
         <tr>
+            <th> </th>
             <th>Model</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
             <span style="font-size:10px;">0.01% of data size</span></th>
@@ -167,36 +168,13 @@ Top approach in each column is bold and green. Yellow indicates 2-3x degraded pe
 <script src="/scripts/sort.js" type="text/javascript"></script>
 
 ## Plots
-Here we provide a plot of index size against lookup latency on SOSD data. 
+Here we provide a plot of index size against lookup latency on SOSD data. Indexes can be added and removed from the plot using
+the corresponding buttons on the table.
 
-Select the dataset to display against:
-<select id="data_select">
-    <option value="" disabled> -- 64-Bit datasets -- </option>
-    <option value="" disabled> - Real-world datasets - </option>
-    <option value="osm_cellids_200M_uint64" selected>OSM</option>
-    <option value="fb_200M_uint64">Facebook</option>
-    <option value="books_200M_uint64">Books</option>
-    <option value="wiki_ts_200M_uint64">Wiki</option>
-    <option value="" disabled> - Synthetic datasets - </option>
-    <option value="normal_200M_uint64"> Normal </option>
-    <option value="lognormal_200M_uint64"> Lognormal </option>
-    <option value="uniform_sparse_200M_uint64"> Uniform sparse </option>
-    <option value="uniform_dense_200M_uint64"> Uniform dense </option>
-    <option value="" disabled> -- 32-Bit datasets -- </option>
-    <option value="" disabled> - Real-world datasets - </option>
-    <option value="fb_200M_uint32">Facebook</option>
-    <option value="books_200M_uint32">Books</option>
-    <option value="" disabled> - Synthetic datasets - </option>
-    <option value="normal_200M_uint32"> Normal </option>
-    <option value="lognormal_200M_uint32"> Lognormal </option>
-    <option value="uniform_sparse_200M_uint32"> Uniform sparse </option>
-    <option value="uniform_dense_200M_uint32"> Uniform dense </option>
-</select>
-
-Select indexes to display. Note that the table only displays up to 4 indexes.
-
-<select class="chzn-select" multiple="true" id="indexes" style="width:200px;"  data-placeholder="Select indexes to graph"></select>
-<button id="clear-chosen" onclick="clearChosen()">Clear selections</button>
+<div hidden>
+<select class="chzn-select" multiple="true" id="indexes" style="visibility:none;"  data-placeholder="Select indexes to graph"></select>
+</div>
+<button id="clear-chosen" onclick="clearChosen()">Clear Plot</button>
 
 
 <span id="error_display" style="color:red"></span>

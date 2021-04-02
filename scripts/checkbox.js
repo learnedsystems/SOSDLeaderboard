@@ -23,9 +23,18 @@ for (const indexName of starts_checked) {
 }
 
 $(document).ready(function() {
+    $('.tables').each( function() {
+        $(this).find('tr').each (function() {
+            var trow = $(this);
+            if (trow.index() > 0) {
+                var indexValue = trow.find("td:first").text().trim();
+                trow.prepend($(`<td><button onclick="selectIndex('${indexValue}')">Add to plot</button>`));
+            } 
+        });
+    });
     jQuery('input[type="checkbox"][name="filter"]').on('change', filter_magic);
     $("#dataswitch").on('change', filter_magic);
-    $('.tables td:nth-child(7), th:nth-child(7)').hide();
+    $('.tables td:nth-child(8), th:nth-child(8)').hide();
     filter_magic();
 });
 
@@ -38,8 +47,8 @@ var filter_magic = function(e) {
             var val = jQuery(this).val();
             trs.each(function() {
                 var tr = jQuery(this);
-                var td = tr.find('td:nth-child(1)');
-                var dataset = tr.find('td:nth-child(7)');
+                var td = tr.find('td:nth-child(2)');
+                var dataset = tr.find('td:nth-child(8)');
                 if (td.text().trim() === val && dataset.text().trim() === $("#dataswitch").val()) {
                     tr.show();
                 }

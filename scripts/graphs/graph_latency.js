@@ -1,5 +1,5 @@
 var obj;
-var colors = ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)', 'rgb(75, 192, 192)'];
+var colors = ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)', 'rgb(14, 249, 68)', 'rgb(167, 20, 169)', 'rgb(14, 249, 244)'];
 var error_display = document.getElementById("error_display");
 
 fetch('https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data/all_results.json')
@@ -9,7 +9,7 @@ fetch('https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data/all_
   .then(() => graphData(obj));
 
 function graphData(obj) {
-    var dataset = $("#data_select").val();
+    var dataset = $("#dataswitch").val();
     var indexes = $("#indexes").val();
     var error_strings = [];
 
@@ -101,13 +101,6 @@ function graphData(obj) {
             },
         }
     });
-    $('#indexes').on('change', function(e) {
-        console.log("index changed");
-    });
-    
-    $("#data_select").on('change', function(e) {
-        console.log("select changed");
-    });
     while( error_display.firstChild ) {
         error_display.removeChild( error_display.firstChild );
     }
@@ -146,7 +139,7 @@ $('#indexes').on('change', function(e) {
     console.log($("#indexes").val());
 })
 
-$("#data_select").on('change', function(e) {
+$("#dataswitch").on('change', function(e) {
     graphData(obj);
-    console.log($("#data_select").val());
+    console.log($("#dataswitch").val());
 })
