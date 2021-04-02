@@ -13,10 +13,6 @@ function graphData(obj) {
     var indexes = $("#indexes").val();
     var error_strings = [];
 
-    if (indexes.length == 0) {
-        return;
-    }
-
     var indexData = [];
     var idx = 0;
     var largestSize = 0;

@@ -46,19 +46,10 @@ function selectIndex(index) {
     graphData(obj);
     console.log($('#indexes').val());
 }
-// $(document).ready( function() {
-//     $('.tables').each( function() {
-//         $(this).find('tr').each (function() {
-//             var trow = $(this);
-//             if (trow.index() > 0) {
-//                 var indexValue = trow.find("td:first").text().trim();
-//                 trow.prepend($(`<td><button onclick="selectIndex('${indexValue}')">Add to plot</button>`));
-//             } 
-//         });
-//     });
-// });
 
 function clearChosen() {
+    console.log("Clearing plot");
     $("#indexes").val([]).trigger("chosen:updated");
+    console.log($('#indexes').val());
     graphData(obj);
 }

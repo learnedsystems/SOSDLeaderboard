@@ -165,7 +165,6 @@ Top approach in each column is bold and green. Yellow indicates 2-3x degraded pe
     </tbody>
 </table>
 </div>
-<script src="/scripts/sort.js" type="text/javascript"></script>
 
 ## Plots
 Here we provide a plot of index size against lookup latency on SOSD data. Indexes can be added and removed from the plot using
@@ -188,3 +187,4 @@ the corresponding buttons on the table.
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css" />
 <script type="text/javascript" src="/scripts/graphs/graph_latency.js"></script>
 <script type="text/javascript" src="/scripts/graphs/selector.js"></script>
+<script type="text/javascript" src="/scripts/onStart.js"></script>
