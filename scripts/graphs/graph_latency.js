@@ -1,6 +1,29 @@
 var obj;
 var colors = ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)', 'rgb(14, 249, 68)', 'rgb(167, 20, 169)', 'rgb(14, 249, 244)'];
 var error_display = document.getElementById("error_display");
+var aggregate_datasets = ["all_uint64", "real_uint64", "all_uint32", "real_uint32"]
+var dataset_aliases = {
+    "all_uint64": "All 64-bit",
+    "real_uint64": "Real 64-bit",
+    "all_uint32": "All 32-bit",
+    "real_uint32": "Real 32-bit",
+    "osm_cellids_200M_uint64": "OSM (64-bit)",
+    "osm_cellids_200M_uint32": "OSM (32-bit)",
+    "fb_200M_uint64": "Facebook (64-bit)",
+    "fb_200M_uint32": "Facebook (32-bit)",
+    "wiki_ts_200M_uint64": "Wiki (64-bit)",
+    "wiki_ts_200M_uint32": "Wiki (32-bit)",
+    "books_200M_uint64": "Books (64-bit)",
+    "books_200M_uint32": "Books (32-bit)",
+    "normal_200M_uint64": "Normal (64-bit)",
+    "normal_200M_uint32": "Normal (32-bit)",
+    "lognormal_200M_uint64": "Lognormal (64-bit)",
+    "lognormal_200M_uint32": "Lognormal (32_bit)",
+    "uniform_sparse_200M_uint64": "Uniform sparse (64-bit)",
+    "uniform_sparse_200M_uint32": "Uniform sparse (32-bit)",
+    "uniform_dense_200M_uint64": "Uniform dense (64-bit)",
+    "uniform_dense_200M_uint32": "Uniform dense (32-bit)"
+}
 
 fetch('https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data/all_results.json')
   .then(res => res.json())
@@ -21,7 +44,7 @@ function graphData(obj) {
             var data = convertSizeLatency(obj[index][dataset]);
             largestSize = Math.max(largestSize, data[data.length - 1].x);
         } else {
-            error_strings.push(`Error: Index ${index} was not evaluated on dataset ${dataset}`);
+            error_strings.push(`Error: Index ${index} was not evaluated on selected dataset.`);
         }
     }
     for (const index of indexes) {
@@ -59,7 +82,7 @@ function graphData(obj) {
             responsive: true,
             title: {
                 display: true,
-                text: 'Size-Latency Pareto Plot'
+                text: `Size-Latency Pareto Plot on dataset ${dataset_aliases[dataset]}`
             },
             scales: {
                 xAxes: [{
@@ -99,6 +122,10 @@ function graphData(obj) {
     });
     while( error_display.firstChild ) {
         error_display.removeChild( error_display.firstChild );
+    }
+    if (aggregate_datasets.includes(dataset)) {
+        error_display.appendChild( document.createTextNode("Plotting aggregate results is not supported. Please select an individual dataset."));
+        return;
     }
     for (const error_string of error_strings) {
         error_display.appendChild( document.createTextNode(error_string) );
