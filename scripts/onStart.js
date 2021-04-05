@@ -15,6 +15,7 @@ readOnly = [
     "RMI",
     "RS",
     "FAST",
+    "FST",
     "RBS"
 ]
 

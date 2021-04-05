@@ -1,4 +1,5 @@
 var obj;
+var chart;
 var colors = ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)', 'rgb(14, 249, 68)', 'rgb(167, 20, 169)', 'rgb(14, 249, 244)'];
 var error_display = document.getElementById("error_display");
 var aggregate_datasets = ["all_uint64", "real_uint64", "all_uint32", "real_uint32"]
@@ -68,18 +69,17 @@ function graphData(obj) {
         }
     }
 
+    $("#latencyChart").remove();
+    $("#latency_plot").append('<canvas id="latencyChart" style="height:500px;width:100%"></canvas>');
     var ctx = document.getElementById("latencyChart");
-    while (ctx.firstChild) {
-        ctx.removeChild(ctx.firstChild);
-    }
     console.log(indexData);
-    var chart = new Chart(ctx, {
+    chart = new Chart(ctx, {
         type: 'scatter',
         data: {
             datasets: indexData
         },
         options: {
-            responsive: true,
+            responsive: false,
             title: {
                 display: true,
                 text: `Size-Latency Pareto Plot on dataset ${dataset_aliases[dataset]}`
