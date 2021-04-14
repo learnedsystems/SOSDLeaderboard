@@ -29,13 +29,14 @@ $(document).ready(function() {
             var trow = $(this);
             if (trow.index() > 0) {
                 var indexValue = trow.find("td:first").text().trim();
-                trow.prepend($(`<td><button onclick="selectIndex('${indexValue}')">Add to plot</button>`));
+                trow.prepend($(`<td><button onclick="removeIndex('${indexValue}')">Remove plot</button>`));
+                trow.prepend($(`<td><button onclick="selectIndex('${indexValue}')">Add plot</button>`));
             } 
         });
     });
     jQuery('input[type="checkbox"][name="filter"]').on('change', filter_magic);
     $("#dataswitch").on('change', filter_magic);
-    $('.tables td:nth-child(8), th:nth-child(8)').hide();
+    $('.tables td:nth-child(9), th:nth-child(9)').hide();
     filter_magic();
     $clicks = $(".startClick");
     $clicks.each( function() {

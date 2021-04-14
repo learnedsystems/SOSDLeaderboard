@@ -47,6 +47,19 @@ function selectIndex(index) {
     console.log($('#indexes').val());
 }
 
+function removeIndex(index) {
+    console.log(`Removing ${index} from plot`);
+    var currentlySelected = $("#indexes").val();
+    if (!currentlySelected.includes(index)) {
+        return;
+    }
+    var newSelected = currentlySelected.filter(function(value){ return value != index;});
+    $('#indexes').val(newSelected);
+    $("#indexes").trigger('chosen:updated');
+    graphData(obj);
+    console.log($('#indexes').val());
+}
+
 function clearChosen() {
     console.log("Clearing plot");
     $("#indexes").val([]).trigger("chosen:updated");

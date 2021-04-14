@@ -80,11 +80,12 @@ Displaying results on datasets:
 
 Results below are by model. Click on a header to sort by that measure. Click on an index name to open the relevant GitHub repo.
 
-<div id="latency-leaderboard" class = "group" style="width:120%;">
+<div id="latency-leaderboard" class = "group" style="width:135%;">
 This leaderboard displays the average lookup time for a randomly selected key in a sorted dataset of size 200M.
 <table id="latency-table" class="sortable tables">
     <thead>
         <tr>
+            <th> </th>
             <th> </th>
             <th>Model</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
@@ -111,10 +112,11 @@ This leaderboard displays the average lookup time for a randomly selected key in
 Top approach in each column is bold and green. Yellow indicates 2-3x degraded performance. Red indicates > 3x degraded performance.
 <script src="/scripts/annotate.js" type="text/javascript"></script>
 </div>
-<div id="buildtime-leaderboard" class = "group" style="width:120%;">
+<div id="buildtime-leaderboard" class = "group" style="width:135%;">
 <table id="buildtime-table" class="sortable tables">
     <thead>
         <tr>
+            <th> </th>
             <th> </th>
             <th>Model</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
@@ -138,10 +140,11 @@ Top approach in each column is bold and green. Yellow indicates 2-3x degraded pe
     </tbody>
 </table>
 </div>
-<div id="size-leaderboard" class = "group" style="width:120%;">
+<div id="size-leaderboard" class = "group" style="width:135%;">
 <table id="size-table" class="sortable tables">
     <thead>
         <tr>
+            <th> </th>
             <th> </th>
             <th>Model</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
