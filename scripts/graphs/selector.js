@@ -39,6 +39,11 @@ function selectIndex(index) {
         currentlySelected.push(index);
     } else {
         currentlySelected.push(index);
+        var removed_index = currentlySelected[0];
+        var buttons = document.getElementsByClassName(`button_${removed_index}`);
+        for (const button of buttons) {
+            button.innerHTML = "Add";
+        }
         currentlySelected.shift();
     }
     $('#indexes').val(currentlySelected);
@@ -60,8 +65,28 @@ function removeIndex(index) {
     console.log($('#indexes').val());
 }
 
+function toggleIndex(index) {
+    var currentlySelected = $("#indexes").val();
+    var buttons = document.getElementsByClassName(`button_${index}`);
+    if (currentlySelected.includes(index)) {
+        removeIndex(index);
+        for (const button of buttons) {
+            button.innerHTML = "Add";
+        }
+    } else {
+        selectIndex(index);
+        for (const button of buttons) {
+            button.innerHTML = "Remove";
+        }
+    }
+}
+
 function clearChosen() {
     console.log("Clearing plot");
+    var indexes = $("#indexes").val();
+    for (const index of indexes) {
+        toggleIndex(index);
+    }
     $("#indexes").val([]).trigger("chosen:updated");
     console.log($('#indexes').val());
     graphData(obj);

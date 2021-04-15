@@ -86,7 +86,6 @@ This leaderboard displays the average lookup time for a randomly selected key in
     <thead>
         <tr>
             <th> </th>
-            <th> </th>
             <th>Model</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
             <span style="font-size:10px;">0.01% of data size</span></th>
@@ -117,7 +116,6 @@ Top approach in each column is bold and green. Yellow indicates 2-3x degraded pe
     <thead>
         <tr>
             <th> </th>
-            <th> </th>
             <th>Model</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
             <span style="font-size:10px;">0.01% of data size</span></th>
@@ -144,7 +142,6 @@ Top approach in each column is bold and green. Yellow indicates 2-3x degraded pe
 <table id="size-table" class="sortable tables">
     <thead>
         <tr>
-            <th> </th>
             <th> </th>
             <th>Model</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>

@@ -19,6 +19,12 @@ readOnly = [
     "RBS"
 ]
 
+starts_plotted = [
+    "RMI",
+    "BTree",
+    "ALEX"
+]
+
 for (const indexName of starts_checked) {
     document.getElementById(indexName).checked = true;
 }
@@ -29,14 +35,17 @@ $(document).ready(function() {
             var trow = $(this);
             if (trow.index() > 0) {
                 var indexValue = trow.find("td:first").text().trim();
-                trow.prepend($(`<td><button onclick="removeIndex('${indexValue}')">Remove plot</button>`));
-                trow.prepend($(`<td><button onclick="selectIndex('${indexValue}')">Add plot</button>`));
+                if (starts_plotted.includes(indexValue)) {
+                    trow.prepend($(`<td>Plot: <button class="button_${indexValue}" onclick="toggleIndex('${indexValue}')">Remove</button>`));
+                } else {
+                    trow.prepend($(`<td>Plot: <button class="button_${indexValue}" onclick="toggleIndex('${indexValue}')">Add</button>`));
+                }
             } 
         });
     });
     jQuery('input[type="checkbox"][name="filter"]').on('change', filter_magic);
     $("#dataswitch").on('change', filter_magic);
-    $('.tables td:nth-child(9), th:nth-child(9)').hide();
+    $('.tables td:nth-child(8), th:nth-child(8)').hide();
     filter_magic();
     $clicks = $(".startClick");
     $clicks.each( function() {

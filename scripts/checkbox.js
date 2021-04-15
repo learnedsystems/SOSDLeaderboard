@@ -6,8 +6,8 @@ var filter_magic = function(e) {
             var val = jQuery(this).val();
             trs.each(function() {
                 var tr = jQuery(this);
-                var td = tr.find('td:nth-child(3)');
-                var dataset = tr.find('td:nth-child(9)');
+                var td = tr.find('td:nth-child(2)');
+                var dataset = tr.find('td:nth-child(8)');
                 if (td.text().trim() === val && dataset.text().trim() === $("#dataswitch").val()) {
                     tr.show();
                 }
