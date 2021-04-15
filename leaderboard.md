@@ -88,13 +88,13 @@ This leaderboard displays the average lookup time for a randomly selected key in
             <th> </th>
             <th>Model</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
-            <span style="font-size:10px;">0.01% of data size</span></th>
+            <span style="font-size:10px;">Up to 0.01% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
-            <span style="font-size:10px;">0.1% of data size</span></th>
+            <span style="font-size:10px;">Up to 0.1% of data size</span></th>
             <th style="text-align:center;" class="startClick"><span style="font-size:15px;">M</span><br>
-            <span style="font-size:10px;">1% of data size</span></th>
+            <span style="font-size:10px;">Up to 1% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">L</span><br>
-            <span style="font-size:10px;">10% of data size</span></th>
+            <span style="font-size:10px;">Up to 10% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">XL</span><br>
             <span style="font-size:10px;">No limit</span></th>
             <th style="text-align:center;">Dataset</th> 
@@ -118,13 +118,13 @@ Top approach in each column is bold and green. Yellow indicates 2-3x degraded pe
             <th> </th>
             <th>Model</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
-            <span style="font-size:10px;">0.01% of data size</span></th>
+            <span style="font-size:10px;">Up to 0.01% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
-            <span style="font-size:10px;">0.1% of data size</span></th>
+            <span style="font-size:10px;">Up to 0.1% of data size</span></th>
             <th style="text-align:center;" class="startClick"><span style="font-size:15px;">M</span><br>
-            <span style="font-size:10px;">1% of data size</span></th>
+            <span style="font-size:10px;">Up to 1% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">L</span><br>
-            <span style="font-size:10px;">10% of data size</span></th>
+            <span style="font-size:10px;">Up to 10% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">XL</span><br>
             <span style="font-size:10px;">No limit</span></th>
         </tr>
@@ -145,13 +145,13 @@ Top approach in each column is bold and green. Yellow indicates 2-3x degraded pe
             <th> </th>
             <th>Model</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
-            <span style="font-size:10px;">0.01% of data size</span></th>
+            <span style="font-size:10px;">Up to 0.01% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
-            <span style="font-size:10px;">0.1% of data size</span></th>
+            <span style="font-size:10px;">Up to 0.1% of data size</span></th>
             <th style="text-align:center;" class="startClick"><span style="font-size:15px;">M</span><br>
-            <span style="font-size:10px;">1% of data size</span></th>
+            <span style="font-size:10px;">Up to 1% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">L</span><br>
-            <span style="font-size:10px;">10% of data size</span></th>
+            <span style="font-size:10px;">Up to 10% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">XL</span><br>
             <span style="font-size:10px;">No limit</span></th>
         </tr>

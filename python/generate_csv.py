@@ -40,31 +40,22 @@ def get_ranked_indexes_uint64(dbname):
     # mean across datasets which gives us name -> size -> mean latency across datasets
     for entry_id, name, variant, latency, size, build_time, searcher, dataset in all_indexes:
         # Could have been multiple runs for latency
-        size_category = ''
-        if 'uint64' in dataset:
-            if size == 0:
-                # on-the-fly algorithm, put the latency in medium
-                size_category = 'm'
-            elif size < XS_SIZE:
-                size_category = 'xs'
-            elif size < S_SIZE:
-                size_category = 's'
-            elif size < M_SIZE:
-                size_category = 'm'
-            elif size < L_SIZE:
-                size_category = 'l'
-            else:
-                size_category = 'xl'
-        elif 'uint32' in dataset:
+        size_categories = ['xl']
+        if 'uint32' in dataset:
             continue
+        elif 'uint64' in dataset:
+            if size < XS_SIZE:
+                size_categories.append('xs')
+            if size < S_SIZE:
+                size_categories.append('s')
+            if size < M_SIZE:
+                size_categories.append('m')
+            if size < L_SIZE:
+                size_categories.append('l')
         else:
             raise ValueError("Dataset name does not contain data type")
-        
-        if size == 0:
-            for size_category in ['xs', 's', 'm', 'l', 'xl']:
-                build_times[name][size_category][dataset][variant] = build_time
-                latencies[name][size_category][dataset][variant] = latency
-        else:
+
+        for size_category in size_categories:
             build_times[name][size_category][dataset][variant] = build_time
             latencies[name][size_category][dataset][variant] = latency
             sizes[name][size_category][dataset][variant] = size
@@ -121,31 +112,22 @@ def get_ranked_indexes_uint32(dbname):
     # mean across datasets which gives us name -> size -> mean latency across datasets
     for entry_id, name, variant, latency, size, build_time, searcher, dataset in all_indexes:
         # Could have been multiple runs for latency
-        size_category = ''
+        size_categories = ['xl']
         if 'uint64' in dataset:
             continue
         elif 'uint32' in dataset:
-            if size == 0:
-                # on-the-fly algorithm, put the latency in medium
-                size_category = 'm'
-            elif size < XS_SIZE_32:
-                size_category = 'xs'
-            elif size < S_SIZE_32:
-                size_category = 's'
-            elif size < M_SIZE_32:
-                size_category = 'm'
-            elif size < L_SIZE_32:
-                size_category = 'l'
-            else:
-                size_category = 'xl'
+            if size < XS_SIZE_32:
+                size_categories.append('xs')
+            if size < S_SIZE_32:
+                size_categories.append('s')
+            if size < M_SIZE_32:
+                size_categories.append('m')
+            if size < L_SIZE_32:
+                size_categories.append('l')
         else:
             raise ValueError("Dataset name does not contain data type")
 
-        if size == 0:
-            for size_category in ['xs', 's', 'm', 'l', 'xl']:
-                build_times[name][size_category][dataset][variant] = build_time
-                latencies[name][size_category][dataset][variant] = latency
-        else:
+        for size_category in size_categories:
             build_times[name][size_category][dataset][variant] = build_time
             latencies[name][size_category][dataset][variant] = latency
             sizes[name][size_category][dataset][variant] = size
