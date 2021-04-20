@@ -7,7 +7,7 @@ permalink: /leaderboard/
 
 ## Leaderboard
 Metric to display by:
-<script src="/scripts/sorttable.js" type="text/javascript"></script>
+<script src="/SOSDLeaderboard/scripts/sorttable.js" type="text/javascript"></script>
 <select id="select">
     <option value="latency-leaderboard">Latency (ns)</option>
     <option value="buildtime-leaderboard">Build time (μs)</option>
@@ -76,7 +76,7 @@ Displaying results on datasets:
 </tbody>
 </table>
 </div>
-<script src="/scripts/checkbox.js" type="text/javascript"></script>
+<script src="/SOSDLeaderboard/scripts/checkbox.js" type="text/javascript"></script>
 
 Results below are by model. Click on a header to sort by that measure. Click on an index name to open the relevant GitHub repo.
 
@@ -109,7 +109,7 @@ This leaderboard displays the average lookup time for a randomly selected key in
     </tbody>
 </table>
 Top approach in each column is bold and green. Yellow indicates 2-3x degraded performance. Red indicates > 3x degraded performance.
-<script src="/scripts/annotate.js" type="text/javascript"></script>
+<script src="/SOSDLeaderboard/scripts/annotate.js" type="text/javascript"></script>
 </div>
 <div id="buildtime-leaderboard" class = "group" style="width:135%;">
 <table id="buildtime-table" class="sortable tables">
@@ -185,6 +185,6 @@ the corresponding buttons on the table.
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css" />
-<script type="text/javascript" src="/scripts/graphs/graph_latency.js"></script>
-<script type="text/javascript" src="/scripts/graphs/selector.js"></script>
-<script type="text/javascript" src="/scripts/onStart.js"></script>
+<script type="text/javascript" src="/SOSDLeaderboard/scripts/graphs/graph_latency.js"></script>
+<script type="text/javascript" src="/SOSDLeaderboard/scripts/graphs/selector.js"></script>
+<script type="text/javascript" src="/SOSDLeaderboard/scripts/onStart.js"></script>
