@@ -39,26 +39,26 @@ Displaying results on datasets:
     <option value="all_uint64">All 64-Bit Datasets</option>
     <option value="" disabled> - Real-world datasets - </option>
     <option value="real_uint64">All real datasets</option>
+    <option value="books_200M_uint64" selected>Books</option>
+    <option value="fb_200M_uint64">Facebook</option>
     <option value="osm_cellids_200M_uint64">OSM</option>
-    <option value="fb_200M_uint64" selected>Facebook</option>
     <option value="wiki_ts_200M_uint64">Wiki</option>
-    <option value="books_200M_uint64">Books</option>
     <option value="" disabled> - Synthetic datasets - </option>
-    <option value="normal_200M_uint64"> Normal </option>
     <option value="lognormal_200M_uint64"> Lognormal </option>
-    <option value="uniform_sparse_200M_uint64"> Uniform sparse </option>
+    <option value="normal_200M_uint64"> Normal </option>
     <option value="uniform_dense_200M_uint64"> Uniform dense </option>
+    <option value="uniform_sparse_200M_uint64"> Uniform sparse </option>
     <option value="" disabled> -- 32-Bit datasets -- </option>
     <option value="all_uint32">All 32-Bit Datasets</option>
     <option value="" disabled> - Real-world datasets - </option>
     <option value="real_uint32">All real datasets</option>
-    <option value="fb_200M_uint32">Facebook</option>
     <option value="books_200M_uint32">Books</option>
+    <option value="fb_200M_uint32">Facebook</option>
     <option value="" disabled> - Synthetic datasets - </option>
-    <option value="normal_200M_uint32"> Normal </option>
     <option value="lognormal_200M_uint32"> Lognormal </option>
-    <option value="uniform_sparse_200M_uint32"> Uniform sparse </option>
+    <option value="normal_200M_uint32"> Normal </option>
     <option value="uniform_dense_200M_uint32"> Uniform dense </option>
+    <option value="uniform_sparse_200M_uint32"> Uniform sparse </option>
 </select>
 
 <div id="display" style="height:400px;overflow:auto;display:none;">
@@ -86,7 +86,7 @@ This leaderboard displays the average lookup time for a randomly selected key in
     <thead>
         <tr>
             <th> </th>
-            <th>Model</th>
+            <th>Index / Index Size</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
             <span style="font-size:10px;">Up to 0.01% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
@@ -116,7 +116,7 @@ Top approach in each column is bold and green. Yellow indicates 2-3x degraded pe
     <thead>
         <tr>
             <th> </th>
-            <th>Model</th>
+            <th>Index / Index Size</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
             <span style="font-size:10px;">Up to 0.01% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">S</span><br>
@@ -143,7 +143,7 @@ Top approach in each column is bold and green. Yellow indicates 2-3x degraded pe
     <thead>
         <tr>
             <th> </th>
-            <th>Model</th>
+            <th>Index / Index Size</th>
             <th style="text-align:center;"><span style="font-size:15px;">XS</span><br>
             <span style="font-size:10px;">Up to 0.01% of data size</span></th>
             <th style="text-align:center;"><span style="font-size:15px;">S</span><br>

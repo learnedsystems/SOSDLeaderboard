@@ -98,7 +98,7 @@ function graphData(obj) {
                         },
                     },
                     scaleLabel: {
-                        labelString: 'Size',
+                        labelString: 'Index Size',
                         display: true,
                     }
                 }],
