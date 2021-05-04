@@ -66,11 +66,11 @@ function annotate() {
                 {
                     if (currentValue == minValue) {
                         $(this).css("font-weight", "bold");
-                        $(this).css("background-color", "green");
+                        $(this).css("background-color", "#01DB06");
                     }
                     else if (currentValue / minValue < 2) {
                         $(this).css("font-weight", "normal");
-                        $(this).css("background-color", "#7be095");
+                        $(this).css("background-color", "#A8F8B8");
                     }
                     else if (currentValue / minValue < 3) {
                         $(this).css("font-weight", "normal");
@@ -78,11 +78,11 @@ function annotate() {
                     }
                     else if (currentValue / minValue < 4) {
                         $(this).css("font-weight", "normal");
-                        $(this).css("background-color", "#e3836d");
+                        $(this).css("background-color", "#F7A441");
                     }
                     else {
                         $(this).css("font-weight", "normal");
-                        $(this).css("background-color", "#eb0e0e");
+                        $(this).css("background-color", "#FD250C");
                     }
                 }
             });

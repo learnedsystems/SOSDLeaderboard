@@ -74,12 +74,12 @@ def get_ranked_indexes_uint64(dbname):
         for size_cat in build_times[index_name]:
             # Possibly filed with zeros
             if all(build_times[index_name][size_cat].values()):
-                build_times[index_name][size_cat]["mean"] = mean(build_times[index_name][size_cat].values())
+                build_times[index_name][size_cat]["mean"] = mean((val for key, val in build_times[index_name][size_cat].items() if "200M" in key))
             else:
                 build_times[index_name][size_cat]["mean"] = None
-            latencies[index_name][size_cat]["mean"] = mean(latencies[index_name][size_cat].values())
+            latencies[index_name][size_cat]["mean"] = mean((val for key, val in latencies[index_name][size_cat].items() if "200M" in key))
             if all(sizes[index_name][size_cat].values()):
-                sizes[index_name][size_cat]["mean"] = mean(sizes[index_name][size_cat].values())
+                sizes[index_name][size_cat]["mean"] = mean((val for key, val in sizes[index_name][size_cat].items() if "200M" in key))
             else:
                 sizes[index_name][size_cat]["mean"] = None
             
@@ -146,12 +146,12 @@ def get_ranked_indexes_uint32(dbname):
         for size_cat in build_times[index_name]:
             # Possibly filed with zeros
             if all(build_times[index_name][size_cat].values()):
-                build_times[index_name][size_cat]["mean"] = mean(build_times[index_name][size_cat].values())
+                build_times[index_name][size_cat]["mean"] = mean((val for key, val in build_times[index_name][size_cat].items() if "200M" in key))
             else:
                 build_times[index_name][size_cat]["mean"] = None
-            latencies[index_name][size_cat]["mean"] = mean(latencies[index_name][size_cat].values())
+            latencies[index_name][size_cat]["mean"] = mean((val for key, val in latencies[index_name][size_cat].items() if "200M" in key))
             if all(sizes[index_name][size_cat].values()):
-                sizes[index_name][size_cat]["mean"] = mean(sizes[index_name][size_cat].values())
+                sizes[index_name][size_cat]["mean"] = mean((val for key, val in sizes[index_name][size_cat].items() if "200M" in key))
             else:
                 sizes[index_name][size_cat]["mean"] = None
             
