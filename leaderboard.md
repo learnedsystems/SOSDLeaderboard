@@ -60,12 +60,12 @@ Displaying results on datasets:
     <option value="uniform_dense_200M_uint32"> Uniform dense </option>
     <option value="uniform_sparse_200M_uint32"> Uniform sparse </option>
     <option value="" disabled> --- Larger Datasets --- </option>
+    <option value="books_400M_uint64">Books (400M)</option>
+    <option value="books_600M_uint64">Books (600M)</option>
+    <option value="books_800M_uint64">Books (800M)</option>
     <option value="osm_cellids_400M_uint64">OSM (400M)</option>
     <option value="osm_cellids_600M_uint64">OSM (600M)</option>
     <option value="osm_cellids_800M_uint64">OSM (800M)</option>
-    <option value="books_400M_uint64" selected>Books (400M)</option>
-    <option value="books_600M_uint64" selected>Books (600M)</option>
-    <option value="books_800M_uint64" selected>Books (800M)</option>
 </select>
 
 <div id="display" style="height:400px;overflow:auto;display:none;">

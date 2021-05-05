@@ -66,7 +66,7 @@ function annotate() {
                 {
                     if (currentValue == minValue) {
                         $(this).css("font-weight", "bold");
-                        $(this).css("background-color", "#01DB06");
+                        $(this).css("background-color", "#00CA08");
                     }
                     else if (currentValue / minValue < 2) {
                         $(this).css("font-weight", "normal");
@@ -82,7 +82,7 @@ function annotate() {
                     }
                     else {
                         $(this).css("font-weight", "normal");
-                        $(this).css("background-color", "#FD250C");
+                        $(this).css("background-color", "#E15959");
                     }
                 }
             });
