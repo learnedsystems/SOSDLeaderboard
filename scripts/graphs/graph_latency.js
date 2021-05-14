@@ -23,10 +23,16 @@ var dataset_aliases = {
     "uniform_sparse_200M_uint64": "Uniform sparse (64-bit)",
     "uniform_sparse_200M_uint32": "Uniform sparse (32-bit)",
     "uniform_dense_200M_uint64": "Uniform dense (64-bit)",
-    "uniform_dense_200M_uint32": "Uniform dense (32-bit)"
+    "uniform_dense_200M_uint32": "Uniform dense (32-bit)",
+    "osm_cellids_400M_uint64": "OSM (64-bit) 400M",
+    "osm_cellids_600M_uint64": "OSM (64-bit) 600M",
+    "osm_cellids_800M_uint64": "OSM(64-bit) 800M",
+    "books_400M_uint64": "Books (64-bit) 400M",
+    "books_600M_uint64": "Books (64-bit) 600M",
+    "books_800M_uint64": "Books (64-bit) 800M"
 }
 
-fetch('https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data/all_results.json')
+fetch('https://raw.githubusercontent.com/learnedsystems/SOSDLeaderboard/main/_data/all_results.json')
   .then(res => res.json())
   .then(data => obj = data)
   .then(() => console.log(obj))

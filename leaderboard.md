@@ -52,8 +52,7 @@ Displaying results on datasets:
     <option value="" disabled> -- 32-Bit datasets -- </option>
     <option value="all_uint32">All 32-Bit Datasets</option>
     <option value="" disabled> - Real-world datasets - </option>
-    <option value="real_uint32">All real datasets</option>
-    <option value="fb_200M_uint32">Facebook</option>
+    <option value="books_200M_uint32">Books</option>
     <option value="" disabled> - Synthetic datasets - </option>
     <option value="lognormal_200M_uint32"> Lognormal </option>
     <option value="normal_200M_uint32"> Normal </option>
