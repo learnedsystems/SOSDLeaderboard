@@ -24,6 +24,13 @@ function showAllIndexes() {
             $(this).prop('checked', true);
         }
     });
+    clearChosen();
+    for (const index of starts_plotted) {
+        toggleIndex(index);
+    }
+    $("#indexes").val(starts_plotted).trigger("chosen:updated");
+    console.log($('#indexes').val());
+    graphData(obj);
     filter_magic();
 }
 
@@ -37,6 +44,14 @@ function showReadOnly() {
             $(this).prop('checked', false);
         }
     });
+    clearChosen();
+    indexes_to_show = ["RMI", "RS"];
+    for (const index of indexes_to_show) {
+        toggleIndex(index);
+    }
+    $("#indexes").val(indexes_to_show).trigger("chosen:updated");
+    console.log($('#indexes').val());
+    graphData(obj);
     filter_magic();
 }
 
@@ -50,5 +65,13 @@ function showUpdatable() {
             $(this).prop('checked', true);
         }
     });
+    clearChosen();
+    indexes_to_show = ["BinarySearch", "BTree", "ALEX"];
+    for (const index of indexes_to_show) {
+        toggleIndex(index);
+    }
+    $("#indexes").val(indexes_to_show).trigger("chosen:updated");
+    console.log($('#indexes').val());
+    graphData(obj);
     filter_magic();
 }

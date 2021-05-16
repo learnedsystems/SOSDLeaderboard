@@ -32,9 +32,9 @@ for (const indexName of starts_checked) {
 
 $(document).ready(function() {
     $('.tables').each( function() {
-        $(this).find('tr').each (function() {
+        $(this).find('tbody > tr').each (function() {
             var trow = $(this);
-            if (trow.index() > 0) {
+            if (trow.index() >= 0) {
                 var indexValue = trow.find("td:first").text().trim();
                 if (starts_plotted.includes(indexValue)) {
                     trow.prepend($(`<td>Plot: <button class="button_${indexValue}" onclick="toggleIndex('${indexValue}')">Remove</button>`));
