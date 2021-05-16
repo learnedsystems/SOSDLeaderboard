@@ -13,7 +13,7 @@ function addOptions(results) {
     }
 }
 
-Papa.parse("https://raw.githubusercontent.com/alhuan/alhuan.github.io/main/_data/latency.csv", {
+Papa.parse("https://raw.githubusercontent.com/learnedsystems/SOSDLeaderboard/main/_data/latency.csv", {
 	download: true,
 	complete: function(results) {
 		addOptions(results);
