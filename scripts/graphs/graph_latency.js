@@ -2,7 +2,7 @@ var obj;
 var chart;
 var colors = ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)', 'rgb(14, 249, 68)', 'rgb(167, 20, 169)', 'rgb(14, 249, 244)'];
 var error_display = document.getElementById("error_display");
-var aggregate_datasets = ["all_uint64", "real_uint64", "all_uint32", "real_uint32"]
+var aggregate_datasets = ["all_uint64", "real_uint64", "all_uint32", "real_uint32", "synthetic_uint64", "synthetic_uint32"]
 var dataset_aliases = {
     "all_uint64": "All 64-bit",
     "real_uint64": "Real 64-bit",

@@ -83,9 +83,9 @@ def get_ranked_indexes_uint64(dbname):
             else:
                 sizes[index_name][size_cat]["mean"] = None
             
-            real_builds = [val for key, val in build_times[index_name][size_cat].items() if key in REAL_DATASETS_64]
-            real_latencies = [val for key, val in latencies[index_name][size_cat].items() if key in REAL_DATASETS_64]
-            real_sizes = [val for key, val in sizes[index_name][size_cat].items() if key in REAL_DATASETS_64]
+            real_builds = [val for key, val in build_times[index_name][size_cat].items() if "200M" in key and key in REAL_DATASETS_64]
+            real_latencies = [val for key, val in latencies[index_name][size_cat].items() if "200M" in key and key in REAL_DATASETS_64]
+            real_sizes = [val for key, val in sizes[index_name][size_cat].items() if "200M" in key and key in REAL_DATASETS_64]
 
             if all(real_builds):
                 build_times[index_name][size_cat]["real"] = mean(real_builds)
@@ -96,6 +96,20 @@ def get_ranked_indexes_uint64(dbname):
                 sizes[index_name][size_cat]["real"] = mean(real_sizes)
             else:
                 sizes[index_name][size_cat]["real"] = None
+
+            synthetic_builds = [val for key, val in build_times[index_name][size_cat].items() if "200M" in key and key not in REAL_DATASETS_64]
+            synthetic_latencies = [val for key, val in latencies[index_name][size_cat].items() if "200M" in key and key not in REAL_DATASETS_64]
+            synthetic_sizes = [val for key, val in sizes[index_name][size_cat].items() if "200M" in key and key not in REAL_DATASETS_64]
+
+            if all(synthetic_builds):
+                build_times[index_name][size_cat]["synthetic"] = mean(synthetic_builds)
+            else:
+                build_times[index_name][size_cat]["synthetic"] = None
+            latencies[index_name][size_cat]["synthetic"] = mean(synthetic_latencies)
+            if all(synthetic_sizes):
+                sizes[index_name][size_cat]["synthetic"] = mean(synthetic_sizes)
+            else:
+                sizes[index_name][size_cat]["synthetic"] = None
 
     return latencies, build_times, sizes, datasets
 
@@ -168,6 +182,20 @@ def get_ranked_indexes_uint32(dbname):
             #     sizes[index_name][size_cat]["real"] = mean(real_sizes)
             # else:
             #     sizes[index_name][size_cat]["real"] = None
+
+            synthetic_builds = [val for key, val in build_times[index_name][size_cat].items() if "200M" in key and key not in REAL_DATASETS_32]
+            synthetic_latencies = [val for key, val in latencies[index_name][size_cat].items() if "200M" in key and key not in REAL_DATASETS_32]
+            synthetic_sizes = [val for key, val in sizes[index_name][size_cat].items() if "200M" in key and key not in REAL_DATASETS_32]
+
+            if all(synthetic_builds):
+                build_times[index_name][size_cat]["synthetic"] = mean(synthetic_builds)
+            else:
+                build_times[index_name][size_cat]["synthetic"] = None
+            latencies[index_name][size_cat]["synthetic"] = mean(synthetic_latencies)
+            if all(synthetic_sizes):
+                sizes[index_name][size_cat]["synthetic"] = mean(synthetic_sizes)
+            else:
+                sizes[index_name][size_cat]["synthetic"] = None
     
     return latencies, build_times, sizes, datasets
 
@@ -206,6 +234,15 @@ if __name__ == "__main__":
                 str(round(latencies[index]['xl']["real"])) + " ns" if 'xl' in latencies[index] and latencies[index]['xl']["real"] is not None else ' ',
                 "real_uint64"
             ])
+            writer.writerow([
+                index,
+                str(round(latencies[index]['xs']["synthetic"])) + " ns" if 'xs' in latencies[index] and latencies[index]['xs']["synthetic"] is not None else ' ',
+                str(round(latencies[index]['s']["synthetic"])) + " ns" if 's' in latencies[index] and latencies[index]['s']["synthetic"] is not None else ' ',
+                str(round(latencies[index]['m']["synthetic"])) + " ns" if 'm' in latencies[index] and latencies[index]['m']["synthetic"] is not None else ' ',
+                str(round(latencies[index]['l']["synthetic"])) + " ns" if 'l' in latencies[index] and latencies[index]['l']["synthetic"] is not None else ' ',
+                str(round(latencies[index]['xl']["synthetic"])) + " ns" if 'xl' in latencies[index] and latencies[index]['xl']["synthetic"] is not None else ' ',
+                "synthetic_uint64"
+            ])
     
     with open("./_data/buildtimes.csv", "w") as f:
         writer = csv.writer(f, delimiter=',')
@@ -229,6 +266,15 @@ if __name__ == "__main__":
                 str(round(build_times[index]['xl']["real"]/1000)) + " ns" if 'xl' in build_times[index] and build_times[index]['xl']["real"] is not None else ' ',
                 "real_uint64"
             ])
+            writer.writerow([
+                index,
+                str(round(build_times[index]['xs']["synthetic"]/1000)) + " ns" if 'xs' in build_times[index] and build_times[index]['xs']["synthetic"] is not None else ' ',
+                str(round(build_times[index]['s']["synthetic"]/1000)) + " ns" if 's' in build_times[index] and build_times[index]['s']["synthetic"] is not None else ' ',
+                str(round(build_times[index]['m']["synthetic"]/1000)) + " ns" if 'm' in build_times[index] and build_times[index]['m']["synthetic"] is not None else ' ',
+                str(round(build_times[index]['l']["synthetic"]/1000)) + " ns" if 'l' in build_times[index] and build_times[index]['l']["synthetic"] is not None else ' ',
+                str(round(build_times[index]['xl']["synthetic"]/1000)) + " ns" if 'xl' in build_times[index] and build_times[index]['xl']["synthetic"] is not None else ' ',
+                "synthetic_uint64"
+            ])
     
     with open("./_data/sizes.csv", "w") as f:
         writer = csv.writer(f, delimiter=',')
@@ -251,6 +297,15 @@ if __name__ == "__main__":
                 get_size_str(sizes[index]['l']["real"]) if 'l' in sizes[index] and sizes[index]['l']["real"] is not None else ' ',
                 get_size_str(sizes[index]['xl']["real"]) if 'xl' in sizes[index] and sizes[index]['xl']["real"] is not None else ' ',
                 "real_uint64"
+            ])
+            writer.writerow([
+                index,
+                get_size_str(sizes[index]['xs']["synthetic"]) if 'xs' in sizes[index] and sizes[index]['xs']["synthetic"] is not None else ' ',
+                get_size_str(sizes[index]['s']["synthetic"]) if 's' in sizes[index] and sizes[index]['s']["synthetic"] is not None else ' ',
+                get_size_str(sizes[index]['m']["synthetic"]) if 'm' in sizes[index] and sizes[index]['m']["synthetic"] is not None else ' ',
+                get_size_str(sizes[index]['l']["synthetic"]) if 'l' in sizes[index] and sizes[index]['l']["synthetic"] is not None else ' ',
+                get_size_str(sizes[index]['xl']["synthetic"]) if 'xl' in sizes[index] and sizes[index]['xl']["synthetic"] is not None else ' ',
+                "synthetic_uint64"
             ])
     
     for dataset in datasets:
@@ -315,6 +370,15 @@ if __name__ == "__main__":
             #     str(round(latencies[index]['xl']["real"])) + " ns" if 'xl' in latencies[index] and latencies[index]['xl']["real"] is not None else ' ',
             #     "real_uint32"
             # ])
+            writer.writerow([
+                index,
+                str(round(latencies[index]['xs']["synthetic"])) + " ns" if 'xs' in latencies[index] and latencies[index]['xs']["synthetic"] is not None else ' ',
+                str(round(latencies[index]['s']["synthetic"])) + " ns" if 's' in latencies[index] and latencies[index]['s']["synthetic"] is not None else ' ',
+                str(round(latencies[index]['m']["synthetic"])) + " ns" if 'm' in latencies[index] and latencies[index]['m']["synthetic"] is not None else ' ',
+                str(round(latencies[index]['l']["synthetic"])) + " ns" if 'l' in latencies[index] and latencies[index]['l']["synthetic"] is not None else ' ',
+                str(round(latencies[index]['xl']["synthetic"])) + " ns" if 'xl' in latencies[index] and latencies[index]['xl']["synthetic"] is not None else ' ',
+                "synthetic_uint32"
+            ])
     
     with open("./_data/buildtimes.csv", "a") as f:
         writer = csv.writer(f, delimiter=',')
@@ -337,6 +401,15 @@ if __name__ == "__main__":
             #     str(round(build_times[index]['xl']["real"]/1000)) + " ns" if 'xl' in build_times[index] and build_times[index]['xl']["real"] is not None else ' ',
             #     "real_uint32"
             # ])
+            writer.writerow([
+                index,
+                str(round(build_times[index]['xs']["synthetic"]/1000)) + " ns" if 'xs' in build_times[index] and build_times[index]['xs']["synthetic"] is not None else ' ',
+                str(round(build_times[index]['s']["synthetic"]/1000)) + " ns" if 's' in build_times[index] and build_times[index]['s']["synthetic"] is not None else ' ',
+                str(round(build_times[index]['m']["synthetic"]/1000)) + " ns" if 'm' in build_times[index] and build_times[index]['m']["synthetic"] is not None else ' ',
+                str(round(build_times[index]['l']["synthetic"]/1000)) + " ns" if 'l' in build_times[index] and build_times[index]['l']["synthetic"] is not None else ' ',
+                str(round(build_times[index]['xl']["synthetic"]/1000)) + " ns" if 'xl' in build_times[index] and build_times[index]['xl']["synthetic"] is not None else ' ',
+                "synthetic_uint32"
+            ])
     
     with open("./_data/sizes.csv", "a") as f:
         writer = csv.writer(f, delimiter=',')
@@ -359,6 +432,15 @@ if __name__ == "__main__":
             #     get_size_str(sizes[index]['xl']["real"]) if 'xl' in sizes[index] and sizes[index]['xl']["real"] is not None else ' ',
             #     "real_uint32"
             # ])
+            writer.writerow([
+                index,
+                get_size_str(sizes[index]['xs']["synthetic"]) if 'xs' in sizes[index] and sizes[index]['xs']["synthetic"] is not None else ' ',
+                get_size_str(sizes[index]['s']["synthetic"]) if 's' in sizes[index] and sizes[index]['s']["synthetic"] is not None else ' ',
+                get_size_str(sizes[index]['m']["synthetic"]) if 'm' in sizes[index] and sizes[index]['m']["synthetic"] is not None else ' ',
+                get_size_str(sizes[index]['l']["synthetic"]) if 'l' in sizes[index] and sizes[index]['l']["synthetic"] is not None else ' ',
+                get_size_str(sizes[index]['xl']["synthetic"]) if 'xl' in sizes[index] and sizes[index]['xl']["synthetic"] is not None else ' ',
+                "synthetic_uint32"
+            ])
     
     for dataset in datasets:
         with open(f"./_data/latency.csv", "a") as f:

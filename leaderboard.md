@@ -45,6 +45,7 @@ Displaying results on datasets:
     <option value="osm_cellids_200M_uint64">OSM</option>
     <option value="wiki_ts_200M_uint64">Wiki</option>
     <option value="" disabled> - Synthetic datasets - </option>
+    <option value="synthetic_uint64">All synthetic datasets</option>
     <option value="lognormal_200M_uint64"> Lognormal </option>
     <option value="normal_200M_uint64"> Normal </option>
     <option value="uniform_dense_200M_uint64"> Uniform dense </option>
@@ -54,6 +55,7 @@ Displaying results on datasets:
     <option value="" disabled> - Real-world datasets - </option>
     <option value="books_200M_uint32">Books</option>
     <option value="" disabled> - Synthetic datasets - </option>
+    <option value="synthetic_uint32">All synthetic datasets</option>
     <option value="lognormal_200M_uint32"> Lognormal </option>
     <option value="normal_200M_uint32"> Normal </option>
     <option value="uniform_dense_200M_uint32"> Uniform dense </option>

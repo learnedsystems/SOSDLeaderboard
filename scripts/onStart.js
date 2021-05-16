@@ -2,7 +2,7 @@
 
 starts_checked = [
     "RMI",
-    "RBS",
+    "RS",
     "BinarySearch",
     "BTree",
     "FAST",
@@ -22,7 +22,8 @@ readOnly = [
 starts_plotted = [
     "RMI",
     "BTree",
-    "ALEX"
+    "ALEX",
+    "RS"
 ]
 
 for (const indexName of starts_checked) {
