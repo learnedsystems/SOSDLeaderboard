@@ -27,7 +27,7 @@ for row in results:
     indexes[name][dataset].append({
         "latency": float(latency),
         "size": int(size),
-        "build_time": int(build_time)
+        "build_time": int(float(build_time))
     })
 
 with open("./_data/all_results.json", "w") as f:
