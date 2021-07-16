@@ -2,7 +2,7 @@
 This website serves as an informational site for the SOSD Benchmark.
 
 ## Updating new results
-To obtain new results, results should be present in a local copy of the original [SOSD repo](https://github.com/learnedsystems/SOSD). Once results are present, move them to `SOSDLeaderboard/benchmark_results`. Once the leaderboard and HTMl are updated, submit a pull request to the SOSDLeaderboard repo to update the repo.
+To obtain new results, results should be present in a local copy of the original [SOSD repo](https://github.com/learnedsystems/SOSD). Once results are present, move them to `SOSDLeaderboard/benchmark_results`. Once the leaderboard and HTML are updated, submit a pull request to the SOSDLeaderboard repo to update the repo.
 
 ## Updating the leaderboard
 Scripts to update the leaderboard are in the `update` directory. To update the index, just move new result CSV files into the
