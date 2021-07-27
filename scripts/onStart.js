@@ -26,6 +26,13 @@ starts_plotted = [
     "RS"
 ]
 
+learned_indexes = [
+    "RMI",
+    "RS",
+    "ALEX",
+    "PGM"
+]
+
 for (const indexName of starts_checked) {
     document.getElementById(indexName).checked = true;
 }
@@ -35,7 +42,8 @@ $(document).ready(function() {
         $(this).find('tbody > tr').each (function() {
             var trow = $(this);
             if (trow.index() >= 0) {
-                var indexValue = trow.find("td:first").text().trim();
+                const nameCell = trow.find("td:first")
+                var indexValue = nameCell.text().trim();
                 if (starts_plotted.includes(indexValue)) {
                     trow.prepend($(`<td>Plot: <button class="button_${indexValue}" onclick="toggleIndex('${indexValue}')">Remove</button>`));
                 } else {
