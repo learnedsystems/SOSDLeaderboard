@@ -52,9 +52,9 @@ function annotate() {
                     });
                 }
                 if (learned_indexes.includes(currentText)) {
-                    $(this).css("background-color", "#81fca4")
+                    $(this).css("background-color", "#81fca4");
                 } else {
-                    $(this).css("background-color", "#89ebfa")
+                    $(this).css("background-color", "#89ebfa");
                 }
                 if(!isNaN(currentValue) && currentValue != 0 && currentValue < oldValue)
                 {
