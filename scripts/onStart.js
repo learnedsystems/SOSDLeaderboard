@@ -52,8 +52,7 @@ $(document).ready(function() {
             }
             const td = trow.find('td:nth-child(2)');
             if (learned_indexes.includes(td.text.trim())) {
-                console.log(indexValue)
-                td.css("background-color", "#81fca4");
+                td.css("background-color", "#ff80f4");
             } else {
                 td.css("background-color", "#89ebfa");
             }
