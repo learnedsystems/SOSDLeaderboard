@@ -19,9 +19,7 @@ var filter_magic = function(e) {
                     tr.show();
                 }
                 if (learned_indexes.includes(td.text().trim())) {
-                    td.css("background-color", "#f1b5ff");
-                } else {
-                    td.css("background-color", "#89ebfa");
+                    td.css("font-weight", "bold")
                 }
             });
         }
