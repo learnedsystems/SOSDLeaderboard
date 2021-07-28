@@ -40,7 +40,13 @@ for (const indexName of starts_checked) {
 $(document).ready(function() {
     $('.tables').each( function() {
         $(this).find('tbody > tr').each (function() {
-            var trow = $(this);
+            const trow = $(this);
+            const td = trow.find('td:nth-child(1)');
+            if (learned_indexes.includes(td.text.trim())) {
+                td.css("background-color", "#ff80f4");
+            } else {
+                td.css("background-color", "#89ebfa");
+            }
             if (trow.index() >= 0) {
                 const nameCell = trow.find("td:first")
                 const indexValue = nameCell.text().trim();
@@ -49,12 +55,6 @@ $(document).ready(function() {
                 } else {
                     trow.prepend($(`<td>Plot: <button class="button_${indexValue}" onclick="toggleIndex('${indexValue}')">Add</button>`));
                 }
-            }
-            const td = trow.find('td:nth-child(2)');
-            if (learned_indexes.includes(td.text.trim())) {
-                td.css("background-color", "#ff80f4");
-            } else {
-                td.css("background-color", "#89ebfa");
             }
         });
     });
