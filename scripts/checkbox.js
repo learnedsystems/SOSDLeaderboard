@@ -20,6 +20,7 @@ var filter_magic = function(e) {
 function showAllIndexes() {
     jQuery('input[type="checkbox"][name="filter"]').each(function() {
         if (!jQuery(this).is(':checked')) {
+            console.log($(this).val());
             $(this).prop('checked', true);
         }
     });
@@ -28,6 +29,7 @@ function showAllIndexes() {
         toggleIndex(index);
     }
     $("#indexes").val(starts_plotted).trigger("chosen:updated");
+    console.log($('#indexes').val());
     graphData(obj);
     filter_magic();
 }
@@ -48,6 +50,7 @@ function showReadOnly() {
         toggleIndex(index);
     }
     $("#indexes").val(indexes_to_show).trigger("chosen:updated");
+    console.log($('#indexes').val());
     graphData(obj);
     filter_magic();
 }
@@ -68,6 +71,7 @@ function showUpdatable() {
         toggleIndex(index);
     }
     $("#indexes").val(indexes_to_show).trigger("chosen:updated");
+    console.log($('#indexes').val());
     graphData(obj);
     filter_magic();
 }
