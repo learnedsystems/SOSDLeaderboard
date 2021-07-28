@@ -35,7 +35,6 @@ var dataset_aliases = {
 fetch('https://raw.githubusercontent.com/learnedsystems/SOSDLeaderboard/main/_data/all_results.json')
   .then(res => res.json())
   .then(data => obj = data)
-  .then(() => console.log(obj))
   .then(() => graphData(obj));
 
 function graphData(obj) {
@@ -55,7 +54,6 @@ function graphData(obj) {
         }
     }
     for (const index of indexes) {
-        console.log(largestSize);
         if (dataset in obj[index]) {
             var nextPoint = {
                 label: index,
@@ -68,7 +66,6 @@ function graphData(obj) {
             }
             if (nextPoint.data.length == 1 && nextPoint.data[0].x == 0) {
                 nextPoint.data.push({x: largestSize, y: nextPoint.data[0].y});
-                console.log(nextPoint.data);
             }
             indexData.push(nextPoint);
             idx++;
@@ -78,7 +75,6 @@ function graphData(obj) {
     $("#latencyChart").remove();
     $("#latency_plot").append('<canvas id="latencyChart" style="height:500px;width:100%"></canvas>');
     var ctx = document.getElementById("latencyChart");
-    console.log(indexData);
     chart = new Chart(ctx, {
         type: 'scatter',
         data: {
@@ -165,10 +161,8 @@ function getSizeStr(num) {
 
 $('#indexes').on('change', function(e) {
     graphData(obj);
-    console.log($("#indexes").val());
 })
 
 $("#dataswitch").on('change', function(e) {
     graphData(obj);
-    console.log($("#dataswitch").val());
 })
