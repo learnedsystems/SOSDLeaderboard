@@ -11,6 +11,7 @@ var filter_magic = function(e) {
                 if (td.text().trim() === val && dataset.text().trim() === $("#dataswitch").val()) {
                     tr.show();
                 }
+                td.css("background-color", "#fff2cf")
             });
         }
     });
