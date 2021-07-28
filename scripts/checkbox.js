@@ -6,15 +6,10 @@ var filter_magic = function(e) {
             var val = jQuery(this).val();
             trs.each(function() {
                 var tr = jQuery(this);
-                const td = tr.find('td:nth-child(2)');
+                var td = tr.find('td:nth-child(2)');
                 var dataset = tr.find('td:nth-child(8)');
                 if (td.text().trim() === val && dataset.text().trim() === $("#dataswitch").val()) {
                     tr.show();
-                }
-                if (learned_indexes.includes(td.text.trim())) {
-                    td.css("background-color", "#ff80f4");
-                } else {
-                    td.css("background-color", "#89ebfa");
                 }
             });
         }
@@ -25,6 +20,7 @@ var filter_magic = function(e) {
 function showAllIndexes() {
     jQuery('input[type="checkbox"][name="filter"]').each(function() {
         if (!jQuery(this).is(':checked')) {
+            console.log($(this).val());
             $(this).prop('checked', true);
         }
     });
@@ -33,6 +29,7 @@ function showAllIndexes() {
         toggleIndex(index);
     }
     $("#indexes").val(starts_plotted).trigger("chosen:updated");
+    console.log($('#indexes').val());
     graphData(obj);
     filter_magic();
 }
@@ -53,6 +50,7 @@ function showReadOnly() {
         toggleIndex(index);
     }
     $("#indexes").val(indexes_to_show).trigger("chosen:updated");
+    console.log($('#indexes').val());
     graphData(obj);
     filter_magic();
 }
@@ -73,6 +71,7 @@ function showUpdatable() {
         toggleIndex(index);
     }
     $("#indexes").val(indexes_to_show).trigger("chosen:updated");
+    console.log($('#indexes').val());
     graphData(obj);
     filter_magic();
 }
