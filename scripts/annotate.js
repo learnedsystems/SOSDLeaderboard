@@ -52,6 +52,7 @@ function annotate() {
                     });
                 }
                 if (learned_indexes.includes(currentText)) {
+                    console.log(currentText)
                     $(this).css("background-color", "#81fca4");
                 } else {
                     $(this).css("background-color", "#89ebfa");
