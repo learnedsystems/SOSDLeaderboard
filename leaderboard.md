@@ -91,7 +91,7 @@ Results below are by model. Click on a header to sort by that measure. Click on 
 <div id="latency-leaderboard" class = "group" style="width:135%;">
 This leaderboard displays the average lookup time for a randomly selected key in a sorted dataset of size 200M.
 
-<p><strong>Magenta</strong> names are learned indexes. <strong>Blue</strong> names are traditional indexes.</p>
+<p><strong>Green</strong> names are learned indexes. <strong>Blue</strong> names are traditional indexes.</p>
 <table id="latency-table" class="sortable tables">
     <thead>
         <tr>
