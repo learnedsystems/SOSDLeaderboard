@@ -49,13 +49,14 @@ $(document).ready(function() {
                 } else {
                     trow.prepend($(`<td>Plot: <button class="button_${indexValue}" onclick="toggleIndex('${indexValue}')">Add</button>`));
                 }
-                if (learned_indexes.includes(indexValue)) {
-                    console.log(indexValue)
-                    nameCell.css("background-color", "#81fca4");
-                } else {
-                    nameCell.css("background-color", "#89ebfa");
-                }
-            } 
+            }
+            const td = trow.find('td:nth-child(2)');
+            if (learned_indexes.includes(td.text.trim())) {
+                console.log(indexValue)
+                td.css("background-color", "#81fca4");
+            } else {
+                td.css("background-color", "#89ebfa");
+            }
         });
     });
     jQuery('input[type="checkbox"][name="filter"]').on('change', filter_magic);
