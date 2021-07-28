@@ -51,12 +51,6 @@ function annotate() {
                         window.open(url_map.get(currentText), "_blank");
                     });
                 }
-                if (learned_indexes.includes(currentText)) {
-                    console.log(currentText)
-                    $(this).css("background-color", "#81fca4");
-                } else {
-                    $(this).css("background-color", "#89ebfa");
-                }
                 if(!isNaN(currentValue) && currentValue != 0 && currentValue < oldValue)
                 {
                     minValue = currentValue;

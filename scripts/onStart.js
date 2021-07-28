@@ -43,11 +43,17 @@ $(document).ready(function() {
             var trow = $(this);
             if (trow.index() >= 0) {
                 const nameCell = trow.find("td:first")
-                var indexValue = nameCell.text().trim();
+                const indexValue = nameCell.text().trim();
                 if (starts_plotted.includes(indexValue)) {
                     trow.prepend($(`<td>Plot: <button class="button_${indexValue}" onclick="toggleIndex('${indexValue}')">Remove</button>`));
                 } else {
                     trow.prepend($(`<td>Plot: <button class="button_${indexValue}" onclick="toggleIndex('${indexValue}')">Add</button>`));
+                }
+                if (learned_indexes.includes(indexValue)) {
+                    console.log(indexValue)
+                    nameCell.css("background-color", "#81fca4");
+                } else {
+                    nameCell.css("background-color", "#89ebfa");
                 }
             } 
         });
