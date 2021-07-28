@@ -21,14 +21,12 @@ Papa.parse("https://raw.githubusercontent.com/learnedsystems/SOSDLeaderboard/mai
         var startingIndexes = ["RMI", "BTree", "ALEX", "RS"];
         $('#indexes').val(startingIndexes);
         $("#indexes").trigger('chosen:updated');
-        console.log($('#indexes').val());
         graphData(obj);
 	},
     header: true
 });
 
 function selectIndex(index) {
-    console.log(`Adding ${index} to plot`);
     var currentlySelected = $("#indexes").val();
     if (currentlySelected.includes(index)) {
         return;
@@ -47,11 +45,9 @@ function selectIndex(index) {
     $('#indexes').val(currentlySelected);
     $("#indexes").trigger('chosen:updated');
     graphData(obj);
-    console.log($('#indexes').val());
 }
 
 function removeIndex(index) {
-    console.log(`Removing ${index} from plot`);
     var currentlySelected = $("#indexes").val();
     if (!currentlySelected.includes(index)) {
         return;
@@ -60,7 +56,6 @@ function removeIndex(index) {
     $('#indexes').val(newSelected);
     $("#indexes").trigger('chosen:updated');
     graphData(obj);
-    console.log($('#indexes').val());
 }
 
 function toggleIndex(index) {
@@ -80,12 +75,10 @@ function toggleIndex(index) {
 }
 
 function clearChosen() {
-    console.log("Clearing plot");
     var indexes = $("#indexes").val();
     for (const index of indexes) {
         toggleIndex(index);
     }
     $("#indexes").val([]).trigger("chosen:updated");
-    console.log($('#indexes').val());
     graphData(obj);
 }
