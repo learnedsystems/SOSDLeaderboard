@@ -16,7 +16,7 @@ SOSD is a read-only workload and does not measure index performance on inserts.
 The original SOSD paper can be found [here](https://arxiv.org/abs/1911.13014), and our detailed findings of learned 
 index performance on SOSD datasets can be found [here](https://arxiv.org/abs/2006.12804).
 
-Benchmark datasets are run five times on an AWS c5.4xlarge VM, and the median latency of these runs
+Benchmark datasets are run five times on an AWS m5zn.metal VM for an even playing field, and the median latency of these runs
 is taken for each dataset. The average of these latency medians is taken across the eight datasets within SOSD, for which final
 results are reported.
 
